@@ -1,0 +1,8 @@
+syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
+
+
+message BaseResponse{
+	int32 code = 1;
+	string errMsg = 2;
+}

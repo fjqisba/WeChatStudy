@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="常量">
+      <UniqueIdentifier>{1d481f58-91b2-40e2-8760-cf5c5798e089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="InlineHook">
+      <UniqueIdentifier>{e26afa42-c8d2-49b8-92b0-c151b84b875e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BeaEngine">
+      <UniqueIdentifier>{353109b3-55e1-4a2c-a42c-a994a309b42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MinHook">
+      <UniqueIdentifier>{0a275d51-a7b1-4d23-a6fd-9c783cfd5d5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MinHook\hde">
+      <UniqueIdentifier>{f8751c4a-eb70-4be6-b165-0b4e7444fbd6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Function">
+      <UniqueIdentifier>{0765867e-55da-4adc-9155-ac9a971c08c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="public">
+      <UniqueIdentifier>{7e0f8175-aaa9-41bd-97f0-eb286f7d1264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyXml">
+      <UniqueIdentifier>{04d82f69-be07-4b20-9411-a94ba4292f2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WeChat">
+      <UniqueIdentifier>{b5165554-402a-4fcd-87d8-a5839711441b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyTinySTL">
+      <UniqueIdentifier>{08597978-ea79-476c-b97a-bf8d2f6e9135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ApiServer">
+      <UniqueIdentifier>{ce1897ee-ebac-46bf-a9bd-25ca243a8dec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="proto">
+      <UniqueIdentifier>{9640a523-eca6-46c1-954b-901a6729d1a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WeChatDLL.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InlineHook\InlineHook.cpp">
+      <Filter>InlineHook</Filter>
+    </ClCompile>
+    <ClCompile Include="BeaEngine\BeaEngine.c">
+      <Filter>BeaEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\buffer.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\hook.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\trampoline.c">
+      <Filter>MinHook</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\hde\hde64.c">
+      <Filter>MinHook\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="MinHook\hde\hde32.c">
+      <Filter>MinHook\hde</Filter>
+    </ClCompile>
+    <ClCompile Include="TinyXml\tinyxml2.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="WeChat\Contact.cpp">
+      <Filter>WeChat</Filter>
+    </ClCompile>
+    <ClCompile Include="WeChat\ChatMsg.cpp">
+      <Filter>WeChat</Filter>
+    </ClCompile>
+    <ClCompile Include="WeChat\common.cpp">
+      <Filter>WeChat</Filter>
+    </ClCompile>
+    <ClCompile Include="public\Strings.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\WinApi.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="public\Public.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="ApiServer.cpp">
+      <Filter>ApiServer</Filter>
+    </ClCompile>
+    <ClCompile Include="include\AnyCall\AnyCall.cpp">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Function\LogFunction.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Function\SnsFunction.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Function\微信多开.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Function\ContactFunction.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Function\MsgMonitor.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="Function\AccountFunction.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="WeChat\SnsObj.cpp">
+      <Filter>WeChat</Filter>
+    </ClCompile>
+    <ClCompile Include="include\MyTinySTL\algobase.cpp">
+      <Filter>MyTinySTL</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\BaseResponse.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\ChatRoomMemberData.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\ChatRoomMemberInfo.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\GetChatroomMemberDetailResponse.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="WeChat\ChatRoom.cpp">
+      <Filter>WeChat</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="微信偏移.h">
+      <Filter>常量</Filter>
+    </ClInclude>
+    <ClInclude Include="WeChatDLL.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InlineHook\InlineHook.h">
+      <Filter>InlineHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\buffer.h">
+      <Filter>MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\MinHook.h">
+      <Filter>MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\trampoline.h">
+      <Filter>MinHook</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\hde\hde64.h">
+      <Filter>MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\hde\pstdint.h">
+      <Filter>MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\hde\table32.h">
+      <Filter>MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\hde\table64.h">
+      <Filter>MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="MinHook\hde\hde32.h">
+      <Filter>MinHook\hde</Filter>
+    </ClInclude>
+    <ClInclude Include="TinyXml\tinyxml2.h">
+      <Filter>TinyXml</Filter>
+    </ClInclude>
+    <ClInclude Include="WeChat\Contact.h">
+      <Filter>WeChat</Filter>
+    </ClInclude>
+    <ClInclude Include="WeChat\ChatMsg.h">
+      <Filter>WeChat</Filter>
+    </ClInclude>
+    <ClInclude Include="WeChat\common.h">
+      <Filter>WeChat</Filter>
+    </ClInclude>
+    <ClInclude Include="public\Strings.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\WinApi.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\Public.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="public\RWMutex.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="ApiServer.h">
+      <Filter>ApiServer</Filter>
+    </ClInclude>
+    <ClInclude Include="include\AnyCall\AnyCall.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\LogFunction.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\SnsFunction.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\微信多开.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\ContactFunction.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\MsgMonitor.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\AccountFunction.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="WeChat\SnsObj.h">
+      <Filter>WeChat</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\iterator.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\list.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\map.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\memory.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\numeric.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\queue.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\rb_tree.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\set.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\set_algo.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\stack.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\type_traits.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\uninitialized.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\unordered_map.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\unordered_set.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\util.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\vector.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\algo.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\algobase.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\algorithm.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\alloc.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\allocator.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\astring.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\basic_string.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\construct.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\deque.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\exceptdef.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\functional.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\hashtable.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\MyTinySTL\heap_algo.h">
+      <Filter>MyTinySTL</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\GetChatroomMemberDetailResponse.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\BaseResponse.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\ChatRoomMemberData.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\ChatRoomMemberInfo.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="WeChat\ChatRoom.h">
+      <Filter>WeChat</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
