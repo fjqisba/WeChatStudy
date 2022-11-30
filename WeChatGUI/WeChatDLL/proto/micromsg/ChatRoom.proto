@@ -1,0 +1,40 @@
+syntax = "proto3";
+import "Common.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+message ChatRoomWatchMember {
+    optional  string  userName  = 1;
+}
+
+message ChatRoomMemberInfo {
+    optional  string  userName  = 1;
+    optional  string  nickName  = 2;
+    optional  string  displayName  = 3;
+    optional  string  bigHeadImgUrl  = 4;
+    optional  string  smallHeadImgUrl  = 5;
+    uint32  chatroomMemberFlag  = 6;
+    optional  string  inviterUserName  = 7;
+    optional  uint32  status  = 8;
+    optional  string  textStatus  = 9;
+    optional  string  associateOpenImappId  = 10;
+    optional  string  associateOpenImdescId  = 11;
+    optional  string  textStatusId  = 17;
+    optional  string  textStatusExtInfo  = 19;
+}
+
+message ChatRoomMemberData {
+    uint32  memberCount  = 1;
+    repeated  ChatRoomMemberInfo  chatRoomMember  = 2;
+    optional  uint32  infoMask  = 3;
+    optional  SKBuiltinString_t  chatRoomUserName  = 4;
+    optional  uint32  watchMemberCount  = 5;
+    repeated  ChatRoomWatchMember  watchMembers  = 6;
+}
+
+message GetChatroomMemberDetailResponse {
+    BaseResponse  baseResponse  = 1;
+    optional  string  chatroomUserName  = 2;
+    uint32  serverVersion  = 3;
+    ChatRoomMemberData  newChatroomData  = 4;
+}

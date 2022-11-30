@@ -192,7 +192,7 @@ struct MyChatMsg
 	unsigned int CreateTime;	//消息时间戳
 	std::wstring FromUserName;	//消息来源,微信群wxid
 	std::wstring sendWxid;		//发送者的wxid
-	std::wstring msgContent;		//消息内容
+	std::wstring msgContent;	//消息内容
 	std::wstring imagePath;		//图片消息路径
 };
 

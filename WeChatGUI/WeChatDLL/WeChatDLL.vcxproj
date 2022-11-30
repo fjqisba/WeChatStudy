@@ -107,10 +107,8 @@
     <ClCompile Include="MinHook\hde\hde64.c" />
     <ClCompile Include="MinHook\hook.c" />
     <ClCompile Include="MinHook\trampoline.c" />
-    <ClCompile Include="proto\BaseResponse.pb.cc" />
-    <ClCompile Include="proto\ChatRoomMemberData.pb.cc" />
-    <ClCompile Include="proto\ChatRoomMemberInfo.pb.cc" />
-    <ClCompile Include="proto\GetChatroomMemberDetailResponse.pb.cc" />
+    <ClCompile Include="proto\ChatRoom.pb.cc" />
+    <ClCompile Include="proto\Common.pb.cc" />
     <ClCompile Include="public\Public.cpp" />
     <ClCompile Include="public\Strings.cpp" />
     <ClCompile Include="public\WinApi.cpp" />
@@ -169,10 +167,8 @@
     <ClInclude Include="MinHook\hde\table64.h" />
     <ClInclude Include="MinHook\MinHook.h" />
     <ClInclude Include="MinHook\trampoline.h" />
-    <ClInclude Include="proto\BaseResponse.pb.h" />
-    <ClInclude Include="proto\ChatRoomMemberData.pb.h" />
-    <ClInclude Include="proto\ChatRoomMemberInfo.pb.h" />
-    <ClInclude Include="proto\GetChatroomMemberDetailResponse.pb.h" />
+    <ClInclude Include="proto\ChatRoom.pb.h" />
+    <ClInclude Include="proto\Common.pb.h" />
     <ClInclude Include="public\Public.h" />
     <ClInclude Include="public\RWMutex.h" />
     <ClInclude Include="public\Strings.h" />

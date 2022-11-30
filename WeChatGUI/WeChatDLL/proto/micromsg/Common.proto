@@ -1,0 +1,11 @@
+syntax = "proto3";
+option optimize_for = LITE_RUNTIME;
+
+message SKBuiltinString_t {
+    optional  string  string  = 1;
+}
+
+message BaseResponse {
+    int32  ret  = 1;
+    SKBuiltinString_t  errMsg  = 2;
+}

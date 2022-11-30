@@ -16,7 +16,7 @@
 #include "../Î¢ÐÅÆ«ÒÆ.h"
 #include "ContactFunction.h"
 #include "AccountFunction.h"
-#include "../proto/GetChatroomMemberDetailResponse.pb.h"
+#include "../proto/ChatRoom.pb.h"
 
 InlineHook gHook_AddChatMsg;
 InlineHook gHook_ImageDownload;
@@ -169,19 +169,19 @@ void __stdcall MyGetChatroomMemberDetail(HookContext* hookContext)
 		WeChatDLL::Instance().MsgRecvLogger()->error(BinToHex((unsigned char*)pResponseBuf,respLen));
 		return;
 	}
-	int memberCount = memberDetailResp.chatroomdata().membercount();
+	int memberCount = memberDetailResp.newchatroomdata().membercount();
 	if (!memberCount) {
 		return;
 	}
 	MsgMonitor& gMsgMonitor = MsgMonitor::Instance();
-	auto memberList = memberDetailResp.chatroomdata().memberlist();
+	auto memberList = memberDetailResp.newchatroomdata().chatroommember();
 	for (int n = 0; n < memberList.size(); ++n) {
 		MsgUploadInfo addMemberMsg;
-		std::wstring eventName = Utf8ToUnicode(memberDetailResp.chatroomid().c_str()) + L"_" + Utf8ToUnicode(memberList[n].userwxid().c_str());
+		std::wstring eventName = Utf8ToUnicode(memberDetailResp.chatroomusername().c_str()) + L"_" + Utf8ToUnicode(memberList[n].username().c_str());
 		if (!gMsgMonitor.getAddMemberEventMsg(eventName, addMemberMsg)) {
 			continue;
 		}
-		addMemberMsg.msg["inviter_wxid"] = memberList[n].inviteuserwxid();
+		addMemberMsg.msg["inviter_wxid"] = memberList[n].inviterusername();
 		MsgMonitor::Instance().AddMsg(addMemberMsg);
 	}
 }

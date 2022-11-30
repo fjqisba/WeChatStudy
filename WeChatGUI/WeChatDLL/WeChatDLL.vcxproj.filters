@@ -129,20 +129,14 @@
     <ClCompile Include="include\MyTinySTL\algobase.cpp">
       <Filter>MyTinySTL</Filter>
     </ClCompile>
-    <ClCompile Include="proto\BaseResponse.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
-    <ClCompile Include="proto\ChatRoomMemberData.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
-    <ClCompile Include="proto\ChatRoomMemberInfo.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
-    <ClCompile Include="proto\GetChatroomMemberDetailResponse.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
     <ClCompile Include="WeChat\ChatRoom.cpp">
       <Filter>WeChat</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\ChatRoom.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\Common.pb.cc">
+      <Filter>proto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -317,20 +311,14 @@
     <ClInclude Include="include\MyTinySTL\heap_algo.h">
       <Filter>MyTinySTL</Filter>
     </ClInclude>
-    <ClInclude Include="proto\GetChatroomMemberDetailResponse.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
-    <ClInclude Include="proto\BaseResponse.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
-    <ClInclude Include="proto\ChatRoomMemberData.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
-    <ClInclude Include="proto\ChatRoomMemberInfo.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
     <ClInclude Include="WeChat\ChatRoom.h">
       <Filter>WeChat</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\ChatRoom.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\Common.pb.h">
+      <Filter>proto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
