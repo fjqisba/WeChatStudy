@@ -20,8 +20,21 @@ def test_syncMsg():
     resp = requests.get("http://127.0.0.1:5000/syncMsg")
     print(resp.text)
 
+def test_getContactList():
+    resp = requests.get("http://127.0.0.1:5000/getContactList")
+    print(resp.text)
+def test_sendTextMsgEx():
+    data = {"to_wxid": "12346755172@chatroom"}
+    msgList = []
+    msgList.append({"atUser":"wxid_6axcd25watzn92"})
+    msgList.append({"msg":"你是笨蛋"})
+    data["msg_list"] = msgList
+    resp = requests.post("http://127.0.0.1:5000/sendTextMsgEx", json=data)
+    print(resp.text)
+
 test_syncMsg()
 exit(0)
+test_sendTextMsgEx()
 test_SendText()
 test_getContanct()
 test_syncSns()

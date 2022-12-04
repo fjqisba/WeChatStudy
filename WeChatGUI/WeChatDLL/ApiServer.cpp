@@ -154,40 +154,46 @@ void Api_sendTextMsgEx(const httplib::Request& req, httplib::Response& res)
 {
 	nlohmann::json json = nlohmann::json::parse(req.body);
 	nlohmann::json retJson;
-	mmStringX toWxid;
+
+	//组装原始消息
+	mmString toWxid;
 	toWxid.assignUTF8(json["to_wxid"].get<std::string>().c_str());
 	mystl::vector<mmStringX> atUserList;
 	std::wstring msgContent;
 	auto msgList = json["msg_list"];
 	for (unsigned int n = 0; n < msgList.size(); ++n) {
-		int msgType = msgList[n]["type"];
-		//普通文本
-		if (msgType == 0) {
+		if (msgList[n].contains("msg")) {
+			//普通消息
 			std::string msg = msgList[n]["msg"];
 			msgContent.append(Utf8ToUnicode(msg.c_str()));
 		}
-		//@用户
-		else if (msgType == 1) {
+		else {
+			//@用户
 			std::string tmpAtUser = msgList[n]["atUser"];
-			std::string tmpNickName = msgList[n]["nickName"];
 			std::wstring strAtUser = Utf8ToUnicode(tmpAtUser.c_str());
-			std::wstring nickName = Utf8ToUnicode(tmpNickName.c_str());
-			if (strAtUser == L"notify@all") {
-				nickName = L"所有人";
+			std::wstring strNickName;
+			if (tmpAtUser == "notify@all") {
+				strNickName = L"所有人";
 			}
-			else if (nickName.empty()) {
-				nickName = ContactModule::Instance().GetContactInfoDynamic(strAtUser).nickName;
+			else if (msgList[n].contains("nickName")) {
+				//自定义用户昵称
+				std::string tmpNickName = msgList[n]["nickName"];
+				strNickName = Utf8ToUnicode(tmpNickName.c_str());
 			}
-			msgContent.append(L"@" + nickName + L" ");
+			else {
+				//默认用户昵称
+				strNickName = ContactModule::Instance().GetContactInfoDynamic(strAtUser).nickName;
+			}
+			msgContent.append(L"@" + strNickName + L" ");
 			mmStringX mmStrAtUser;
 			mmStrAtUser.assign(strAtUser.c_str(), strAtUser.length());
 			atUserList.push_back(mmStrAtUser);
 		}
 	}
+	//组装二进制
 	ChatMsgX objMsg;
 	mmStringX sendMsg;
 	sendMsg.assign(msgContent.c_str(), msgContent.length());
-
 	switch (WeChatDLL::Instance().getWechatVersion()) {
 	case WeChat_3_7_6_44:
 		AnyCall::invokeAnycall(&objMsg, &toWxid, (void*)(gWechatInstance + 0x5CD2E0), &sendMsg, &atUserList, (void*)1, 0, 0x0);
@@ -249,11 +255,6 @@ void Api_syncSns(const httplib::Request& req, httplib::Response& res)
 	return;
 }
 
-//获取当前登录用户信息
-void Api_getLoginUserInfo(const httplib::Request& req, httplib::Response& res)
-{
-
-}
 
 //获取个人表情列表
 void Api_getCustomEmotionList(const httplib::Request& req, httplib::Response& res)
@@ -337,10 +338,8 @@ void StartApiServer(int port)
 	svr.Get("/getContactList", Api_getContactList);
 	svr.Get("/getCustomEmotionList", Api_getCustomEmotionList);
 	svr.Post("/sendCustomEmotion", Api_sendCustomEmotion);
-	svr.Get("/getLoginUserInfo", Api_getLoginUserInfo);
 
 	svr.Get("/", Api_getHome);
-
 	svr.listen("0.0.0.0", port);
 	if (svr.listen("0.0.0.0", port) == false) {
 		ExitProcess(0xdead);

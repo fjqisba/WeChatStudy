@@ -20,7 +20,7 @@ def handleMsg(wechat,eMsg):
 def testDemo():
 
     #启动微信,需要填入一个端口
-    wechat = webot.new_bot(1234)
+    wechat = webot.new_bot(5000)
     while True:
         time.sleep(3)
         msgList = wechat.sync_msg()
