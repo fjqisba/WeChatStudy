@@ -5,6 +5,11 @@ message SKBuiltinString_t {
     optional  string  string  = 1;
 }
 
+message SKBuiltinBuffer_t {
+    uint32  iLen  = 1;
+    optional  bytes  buffer  = 2;
+}
+
 message BaseResponse {
     int32  ret  = 1;
     SKBuiltinString_t  errMsg  = 2;

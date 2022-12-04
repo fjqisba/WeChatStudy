@@ -214,7 +214,7 @@ void __stdcall MyAddChatroomChangeList(HookContext* hookContext)
 	for (unsigned int n = 0; n < pChatroomDiffList->addUserList.size(); n++) {
 		std::wstring addUserWxid = copyMMString(&pChatroomDiffList->addUserList[n].memberWxid);
 		MsgUploadInfo tmpMsg;
-		tmpMsg.msg["msg_type"] = 20001;
+		tmpMsg.msg["msg_type"] = WX_ChatRoomMemberInvite;
 		tmpMsg.msg["robot_id"] = UnicodeToUtf8(AccountFunction::Instance().getCurrentUserWxid().c_str());
 		tmpMsg.msg["event_time"] = time(NULL);
 		tmpMsg.msg["chatroom_id"] = UnicodeToUtf8(chatRoomID.c_str());
@@ -227,7 +227,7 @@ void __stdcall MyAddChatroomChangeList(HookContext* hookContext)
 	for (unsigned int n = 0; n < pChatroomDiffList->delelteUserList.size(); n++) {
 		std::wstring deleteUserWxid = copyMMString(&pChatroomDiffList->delelteUserList[n].memberWxid);
 		MsgUploadInfo tmpMsg;
-		tmpMsg.msg["msg_type"] = 20002;
+		tmpMsg.msg["msg_type"] = WX_ChatRoomMemberLeave;
 		tmpMsg.msg["robot_id"] = UnicodeToUtf8(AccountFunction::Instance().getCurrentUserWxid().c_str());
 		tmpMsg.msg["event_time"] = time(NULL);
 		tmpMsg.msg["chatroom_id"] = UnicodeToUtf8(chatRoomID.c_str());

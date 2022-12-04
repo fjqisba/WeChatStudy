@@ -10,7 +10,14 @@ enum msgCategory
 {
 	WX_Unknow = 0x0,
 	//登录二维码消息
-	WX_LoginQRCodeMsg = 0x20000,
+	WX_LoginQRCodeMsg = 20000,
+	//登录成功后,同步用户信息
+	WX_SyncUserProfile = 20001,
+
+	//群聊成员增加
+	WX_ChatRoomMemberInvite = 20010,
+	//群聊成员减少
+	WX_ChatRoomMemberLeave = 20011,
 };
 
 struct MsgUploadInfo

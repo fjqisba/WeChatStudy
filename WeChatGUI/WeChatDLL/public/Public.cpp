@@ -29,6 +29,53 @@ unsigned int ReadUint(void* lp)
 	return *(unsigned int*)lp;
 }
 
+std::string base64_encode(unsigned char* pBuf, unsigned int len)
+{
+	char BASE64_PAD = '=';
+	std::string 编码结果;
+	编码结果.resize((len + 2) / 3 * 4);
+
+	int s = 0;
+	unsigned int Len = 0;
+	unsigned char lastC = 0;
+	for (unsigned int n = 0; n < len; ++n)
+	{
+		unsigned char c = pBuf[n];
+
+		switch (s)
+		{
+		case 0:
+			s = 1;
+			编码结果[Len++] = 码表[(c >> 2) & 0x3F];
+			break;
+		case 1:
+			s = 2;
+			编码结果[Len++] = 码表[((lastC & 0x3) << 4) | ((c >> 4) & 0xF)];
+			break;
+		case 2:
+			s = 0;
+			编码结果[Len++] = 码表[((lastC & 0xF) << 2) | ((c >> 6) & 0x3)];
+			编码结果[Len++] = 码表[c & 0x3F];
+			break;
+		}
+		lastC = c;
+	}
+
+	switch (s)
+	{
+	case 1:
+		编码结果[Len++] = 码表[(lastC & 0x3) << 4];
+		编码结果[Len++] = BASE64_PAD;
+		编码结果[Len++] = BASE64_PAD;
+		break;
+	case 2:
+		编码结果[Len++] = 码表[(lastC & 0xF) << 2];
+		编码结果[Len++] = BASE64_PAD;
+		break;
+	}
+
+	return 编码结果;
+}
 
 std::string base64_encode(std::vector<unsigned char>& 编码数据)
 {

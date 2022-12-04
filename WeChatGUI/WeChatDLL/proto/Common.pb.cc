@@ -31,6 +31,21 @@ struct SKBuiltinString_tDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SKBuiltinString_tDefaultTypeInternal _SKBuiltinString_t_default_instance_;
+PROTOBUF_CONSTEXPR SKBuiltinBuffer_t::SKBuiltinBuffer_t(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.buffer_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ilen_)*/0u} {}
+struct SKBuiltinBuffer_tDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SKBuiltinBuffer_tDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SKBuiltinBuffer_tDefaultTypeInternal() {}
+  union {
+    SKBuiltinBuffer_t _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SKBuiltinBuffer_tDefaultTypeInternal _SKBuiltinBuffer_t_default_instance_;
 PROTOBUF_CONSTEXPR BaseResponse::BaseResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.errmsg_)*/nullptr
@@ -267,6 +282,247 @@ std::string SKBuiltinString_t::GetTypeName() const {
 
 // ===================================================================
 
+class SKBuiltinBuffer_t::_Internal {
+ public:
+  using HasBits = decltype(std::declval<SKBuiltinBuffer_t>()._impl_._has_bits_);
+  static void set_has_buffer(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+SKBuiltinBuffer_t::SKBuiltinBuffer_t(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:SKBuiltinBuffer_t)
+}
+SKBuiltinBuffer_t::SKBuiltinBuffer_t(const SKBuiltinBuffer_t& from)
+  : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
+  SKBuiltinBuffer_t* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.buffer_){}
+    , decltype(_impl_.ilen_){}};
+
+  _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+  _impl_.buffer_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.buffer_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_buffer()) {
+    _this->_impl_.buffer_.Set(from._internal_buffer(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.ilen_ = from._impl_.ilen_;
+  // @@protoc_insertion_point(copy_constructor:SKBuiltinBuffer_t)
+}
+
+inline void SKBuiltinBuffer_t::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.buffer_){}
+    , decltype(_impl_.ilen_){0u}
+  };
+  _impl_.buffer_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.buffer_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SKBuiltinBuffer_t::~SKBuiltinBuffer_t() {
+  // @@protoc_insertion_point(destructor:SKBuiltinBuffer_t)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<std::string>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SKBuiltinBuffer_t::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.buffer_.Destroy();
+}
+
+void SKBuiltinBuffer_t::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SKBuiltinBuffer_t::Clear() {
+// @@protoc_insertion_point(message_clear_start:SKBuiltinBuffer_t)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.buffer_.ClearNonDefaultToEmpty();
+  }
+  _impl_.ilen_ = 0u;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<std::string>();
+}
+
+const char* SKBuiltinBuffer_t::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // uint32 iLen = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.ilen_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional bytes buffer = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_buffer();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<std::string>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SKBuiltinBuffer_t::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:SKBuiltinBuffer_t)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // uint32 iLen = 1;
+  if (this->_internal_ilen() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_ilen(), target);
+  }
+
+  // optional bytes buffer = 2;
+  if (_internal_has_buffer()) {
+    target = stream->WriteBytesMaybeAliased(
+        2, this->_internal_buffer(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = stream->WriteRaw(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).data(),
+        static_cast<int>(_internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:SKBuiltinBuffer_t)
+  return target;
+}
+
+size_t SKBuiltinBuffer_t::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:SKBuiltinBuffer_t)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional bytes buffer = 2;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+        this->_internal_buffer());
+  }
+
+  // uint32 iLen = 1;
+  if (this->_internal_ilen() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_ilen());
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
+  }
+  int cached_size = ::_pbi::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void SKBuiltinBuffer_t::CheckTypeAndMergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::MessageLite& from) {
+  MergeFrom(*::_pbi::DownCast<const SKBuiltinBuffer_t*>(
+      &from));
+}
+
+void SKBuiltinBuffer_t::MergeFrom(const SKBuiltinBuffer_t& from) {
+  SKBuiltinBuffer_t* const _this = this;
+  // @@protoc_insertion_point(class_specific_merge_from_start:SKBuiltinBuffer_t)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_buffer()) {
+    _this->_internal_set_buffer(from._internal_buffer());
+  }
+  if (from._internal_ilen() != 0) {
+    _this->_internal_set_ilen(from._internal_ilen());
+  }
+  _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
+}
+
+void SKBuiltinBuffer_t::CopyFrom(const SKBuiltinBuffer_t& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:SKBuiltinBuffer_t)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SKBuiltinBuffer_t::IsInitialized() const {
+  return true;
+}
+
+void SKBuiltinBuffer_t::InternalSwap(SKBuiltinBuffer_t* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.buffer_, lhs_arena,
+      &other->_impl_.buffer_, rhs_arena
+  );
+  swap(_impl_.ilen_, other->_impl_.ilen_);
+}
+
+std::string SKBuiltinBuffer_t::GetTypeName() const {
+  return "SKBuiltinBuffer_t";
+}
+
+
+// ===================================================================
+
 class BaseResponse::_Internal {
  public:
   static const ::SKBuiltinString_t& errmsg(const BaseResponse* msg);
@@ -496,6 +752,10 @@ PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::SKBuiltinString_t*
 Arena::CreateMaybeMessage< ::SKBuiltinString_t >(Arena* arena) {
   return Arena::CreateMessageInternal< ::SKBuiltinString_t >(arena);
+}
+template<> PROTOBUF_NOINLINE ::SKBuiltinBuffer_t*
+Arena::CreateMaybeMessage< ::SKBuiltinBuffer_t >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::SKBuiltinBuffer_t >(arena);
 }
 template<> PROTOBUF_NOINLINE ::BaseResponse*
 Arena::CreateMaybeMessage< ::BaseResponse >(Arena* arena) {

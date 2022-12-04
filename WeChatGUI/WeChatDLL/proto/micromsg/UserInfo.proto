@@ -1,0 +1,187 @@
+syntax = "proto3";
+import "Common.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+message GmailList {
+    uint32  count  = 1;
+    repeated  GmailInfo  list  = 2;
+}
+
+message MusicRingBackSetting {
+    optional  uint32  sid  = 1;
+}
+
+message FinderRingBackSetting {
+    optional  uint64  finderObjectId  = 1;
+    optional  string  finderNonceId  = 2;
+}
+
+message NewRingBackSetting {
+    optional  uint32  type  = 1;
+    optional  uint32  startTime  = 2;
+    optional  uint32  endTime  = 3;
+    optional  MusicRingBackSetting  music  = 4;
+    optional  FinderRingBackSetting  finder  = 5;
+}
+
+message RingBackSetting {
+    uint64  finderObjectId  = 1;
+    string  finderNonceId  = 2;
+    uint32  startTs  = 3;
+    uint32  endTs  = 4;
+}
+
+message XAgreementInfo {
+    optional  uint64  funcsSwitch  = 1;
+    optional  uint64  funcsUserChoiceSwitch  = 2;
+}
+
+message LinkedinContactItem {
+    optional  string  linkedinName  = 1;
+    optional  string  linkedinMemberId  = 2;
+    optional  string  linkedinPublicUrl  = 3;
+}
+
+message PatternLockInfo {
+    optional  uint32  patternVersion  = 1;
+    optional  SKBuiltinBuffer_t  sign  = 2;
+    optional  uint32  lockStatus  = 3;
+}
+
+message SafeDevice {
+    optional  string  name  = 1;
+    optional  string  uuid  = 2;
+    optional  string  deviceType  = 3;
+    uint32  createTime  = 4;
+}
+
+message SafeDeviceList {
+    uint32  count  = 1;
+    repeated  SafeDevice  list  = 2;
+}
+
+message SnsUserInfo {
+    uint32  snsFlag  = 1;
+    optional  string  snsBgimgId  = 2;
+    optional  uint64  snsBgobjectId  = 3;
+    optional  uint32  snsFlagEx  = 4;
+    optional  uint32  snsPrivacyRecent  = 5;
+}
+
+message GmailInfo {
+    optional  string  gmailAcct  = 1;
+    uint32  gmailSwitch  = 2;
+    uint32  gmailErrCode  = 3;
+}
+
+message DisturbTimeSpan {
+    uint32  beginTime  = 1;
+    uint32  endTime  = 2;
+}
+
+message DisturbSetting {
+    uint32  nightSetting  = 1;
+    DisturbTimeSpan  nightTime  = 2;
+    uint32  allDaySetting  = 3;
+    DisturbTimeSpan  allDayTime  = 4;
+}
+
+message ModUserInfo {
+    uint32  bitFlag  = 1;
+    SKBuiltinString_t  userName  = 2;
+    SKBuiltinString_t  nickName  = 3;
+    uint32  bindUin  = 4;
+    SKBuiltinString_t  bindEmail  = 5;
+    SKBuiltinString_t  bindMobile  = 6;
+    uint32  status  = 7;
+    uint32  imgLen  = 8;
+    optional  bytes  imgBuf  = 9;
+    optional  int32  sex  = 10;
+    optional  string  province  = 11;
+    optional  string  city  = 12;
+    optional  string  signature  = 13;
+    optional  uint32  personalCard  = 14;
+    optional  DisturbSetting  disturbSetting  = 15;
+    optional  uint32  pluginFlag  = 16;
+    optional  uint32  verifyFlag  = 17;
+    optional  string  verifyInfo  = 18;
+    optional  int32  point  = 19;
+    optional  int32  experience  = 20;
+    optional  int32  level  = 21;
+    optional  int32  levelLowExp  = 22;
+    optional  int32  levelHighExp  = 23;
+    optional  string  weibo  = 24;
+    optional  uint32  pluginSwitch  = 25;
+    optional  GmailList  gmailList  = 26;
+    optional  string  alias  = 27;
+    optional  string  weiboNickname  = 28;
+    optional  uint32  weiboFlag  = 29;
+    optional  uint32  faceBookFlag  = 30;
+    optional  uint64  fbuserId  = 31;
+    optional  string  fbuserName  = 32;
+    optional  int32  albumStyle  = 33;
+    optional  int32  albumFlag  = 34;
+    optional  string  albumBgimgId  = 35;
+    optional  uint32  txnewsCategory  = 36;
+    optional  string  fbtoken  = 37;
+    optional  string  country  = 38;
+}
+
+message UserInfoExt {
+    SnsUserInfo  snsUserInfo  = 1;
+    optional  string  myBrandList  = 2;
+    optional  string  msgPushSound  = 3;
+    optional  string  voipPushSound  = 4;
+    optional  uint32  bigChatRoomSize  = 5;
+    optional  uint32  bigChatRoomQuota  = 6;
+    optional  uint32  bigChatRoomInvite  = 7;
+    optional  string  safeMobile  = 8;
+    optional  string  bigHeadImgUrl  = 9;
+    optional  string  smallHeadImgUrl  = 10;
+    optional  uint32  mainAcctType  = 11;
+    optional  SKBuiltinString_t  extXml  = 12;
+    optional  SafeDeviceList  safeDeviceList  = 13;
+    optional  uint32  safeDevice  = 14;
+    optional  uint32  grayscaleFlag  = 15;
+    optional  string  googleContactName  = 16;
+    optional  string  idcardNum  = 17;
+    optional  string  realName  = 18;
+    optional  string  regCountry  = 19;
+    optional  string  bbppid  = 20;
+    optional  string  bbpin  = 21;
+    optional  string  bbmnickName  = 22;
+    optional  LinkedinContactItem  linkedinContactItem  = 23;
+    optional  string  kfinfo  = 24;
+    optional  PatternLockInfo  patternLockInfo  = 25;
+    optional  string  securityDeviceId  = 26;
+    optional  uint32  payWalletType  = 27;
+    optional  string  weiDianInfo  = 28;
+    optional  uint32  walletRegion  = 29;
+    optional  uint64  extStatus  = 30;
+    optional  string  f2FpushSound  = 31;
+    optional  uint32  userStatus  = 32;
+    optional  uint64  paySetting  = 34;
+    optional  string  bindXmail  = 37;
+    optional  string  patSuffix  = 38;
+    optional  uint32  patSuffixVersion  = 39;
+    optional  uint32  teenagerModeFinderSetting  = 44;
+    optional  uint32  teenagerModeBizAcctSetting  = 45;
+    optional  uint32  teenagerModeMiniProgramSetting  = 46;
+    optional  XAgreementInfo  xagreementInfo  = 47;
+    optional  string  textStatusId  = 49;
+    optional  string  textStatusExtInfo  = 51;
+    optional  string  salt  = 52;
+    optional  uint64  finderSetting  = 53;
+    optional  RingBackSetting  ringBackSetting  = 55;
+    optional  uint32  smcryptoFlag  = 56;
+    optional  NewRingBackSetting  globalRingBackSetting  = 57;
+    optional  uint32  newcomeMsgDefaultVoiceNumber  = 58;
+    optional  uint64  discoveryPageCtrlFlag  = 59;
+}
+
+message GetProfileResponse {
+    BaseResponse  baseResponse  = 1;
+    ModUserInfo  userInfo  = 2;
+    UserInfoExt  userInfoExt  = 3;
+}

@@ -18,6 +18,22 @@ LoginWnd::eventProc -> LoginWnd::qrCodeScaned
 
 NetSceneManualAuth::doManualAuthSuccess
 
+
+
+登录获取二维码，proto包GetLoginQRCodeRequest  -> GetLoginQRCodeResponse。
+
+PushLoginURLRequest
+
+授权通过，ManualAuthRequest，获取授权信息。
+
+GetCDNDnsRequest
+
+LoginMgr::TransferSetting 投递事件 -> proto.GetProfileRequest，获取用户配置信息
+
+
+
+
+
 ## 判断微信主窗口是否加载
 
 关键字符串MainWnd has been launched

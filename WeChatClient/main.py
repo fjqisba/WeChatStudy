@@ -1,33 +1,34 @@
-import base64
 import time
-import webbrowser
-
-import qrcode
 import webot
-import requests
 
-#给大家做个示例吧
+def handleMsg(wechat,eMsg):
+    msgType = eMsg["msg_type"]
+    if msgType == 20000:
+        print("获取登录二维码:",eMsg["qrcode"])
+        return
+    if msgType == 20001:
+        print("登录成功:",eMsg)
+        return
+    if msgType == 20010:
+        print("群聊成员增加:",eMsg)
+        return
+    if msgType == 20011:
+        print("群聊成员减少:",eMsg)
+        return
+
+#给大家做个简单的示例吧
 def testDemo():
 
     #启动微信,需要填入一个端口
     wechat = webot.new_bot(1234)
-
-    #等待加载微信二维码
-    time.sleep(3)
-
-    #获取登录二维码
-    qrcodeStr = wechat.get_login_qrcode()
-    if qrcodeStr != "":
-        print("成功获取微信登录二维码:",qrcodeStr)
-
-    #等待扫码登录
-    userWxid = wechat.wait_util_login()
-    print("登录成功",userWxid)
     while True:
-        msgList = wechat.sync_msg()
-        print(msgList)
         time.sleep(3)
-        pass
+        msgList = wechat.sync_msg()
+        if msgList == None:
+            continue
+        for eMsg in msgList:
+            handleMsg(wechat,eMsg)
+        continue
     return
 
 if __name__ == '__main__':

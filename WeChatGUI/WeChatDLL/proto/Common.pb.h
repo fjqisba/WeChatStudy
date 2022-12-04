@@ -44,11 +44,15 @@ struct TableStruct_Common_2eproto {
 class BaseResponse;
 struct BaseResponseDefaultTypeInternal;
 extern BaseResponseDefaultTypeInternal _BaseResponse_default_instance_;
+class SKBuiltinBuffer_t;
+struct SKBuiltinBuffer_tDefaultTypeInternal;
+extern SKBuiltinBuffer_tDefaultTypeInternal _SKBuiltinBuffer_t_default_instance_;
 class SKBuiltinString_t;
 struct SKBuiltinString_tDefaultTypeInternal;
 extern SKBuiltinString_tDefaultTypeInternal _SKBuiltinString_t_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::BaseResponse* Arena::CreateMaybeMessage<::BaseResponse>(Arena*);
+template<> ::SKBuiltinBuffer_t* Arena::CreateMaybeMessage<::SKBuiltinBuffer_t>(Arena*);
 template<> ::SKBuiltinString_t* Arena::CreateMaybeMessage<::SKBuiltinString_t>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 
@@ -194,6 +198,157 @@ class SKBuiltinString_t final :
 };
 // -------------------------------------------------------------------
 
+class SKBuiltinBuffer_t final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:SKBuiltinBuffer_t) */ {
+ public:
+  inline SKBuiltinBuffer_t() : SKBuiltinBuffer_t(nullptr) {}
+  ~SKBuiltinBuffer_t() override;
+  explicit PROTOBUF_CONSTEXPR SKBuiltinBuffer_t(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SKBuiltinBuffer_t(const SKBuiltinBuffer_t& from);
+  SKBuiltinBuffer_t(SKBuiltinBuffer_t&& from) noexcept
+    : SKBuiltinBuffer_t() {
+    *this = ::std::move(from);
+  }
+
+  inline SKBuiltinBuffer_t& operator=(const SKBuiltinBuffer_t& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SKBuiltinBuffer_t& operator=(SKBuiltinBuffer_t&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const SKBuiltinBuffer_t& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SKBuiltinBuffer_t* internal_default_instance() {
+    return reinterpret_cast<const SKBuiltinBuffer_t*>(
+               &_SKBuiltinBuffer_t_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(SKBuiltinBuffer_t& a, SKBuiltinBuffer_t& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SKBuiltinBuffer_t* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SKBuiltinBuffer_t* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SKBuiltinBuffer_t* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SKBuiltinBuffer_t>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const SKBuiltinBuffer_t& from);
+  void MergeFrom(const SKBuiltinBuffer_t& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(SKBuiltinBuffer_t* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "SKBuiltinBuffer_t";
+  }
+  protected:
+  explicit SKBuiltinBuffer_t(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBufferFieldNumber = 2,
+    kILenFieldNumber = 1,
+  };
+  // optional bytes buffer = 2;
+  bool has_buffer() const;
+  private:
+  bool _internal_has_buffer() const;
+  public:
+  void clear_buffer();
+  const std::string& buffer() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_buffer(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_buffer();
+  PROTOBUF_NODISCARD std::string* release_buffer();
+  void set_allocated_buffer(std::string* buffer);
+  private:
+  const std::string& _internal_buffer() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_buffer(const std::string& value);
+  std::string* _internal_mutable_buffer();
+  public:
+
+  // uint32 iLen = 1;
+  void clear_ilen();
+  uint32_t ilen() const;
+  void set_ilen(uint32_t value);
+  private:
+  uint32_t _internal_ilen() const;
+  void _internal_set_ilen(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:SKBuiltinBuffer_t)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr buffer_;
+    uint32_t ilen_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
 class BaseResponse final :
     public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:BaseResponse) */ {
  public:
@@ -233,7 +388,7 @@ class BaseResponse final :
                &_BaseResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   friend void swap(BaseResponse& a, BaseResponse& b) {
     a.Swap(&b);
@@ -423,6 +578,98 @@ inline void SKBuiltinString_t::set_allocated_string(std::string* string) {
 
 // -------------------------------------------------------------------
 
+// SKBuiltinBuffer_t
+
+// uint32 iLen = 1;
+inline void SKBuiltinBuffer_t::clear_ilen() {
+  _impl_.ilen_ = 0u;
+}
+inline uint32_t SKBuiltinBuffer_t::_internal_ilen() const {
+  return _impl_.ilen_;
+}
+inline uint32_t SKBuiltinBuffer_t::ilen() const {
+  // @@protoc_insertion_point(field_get:SKBuiltinBuffer_t.iLen)
+  return _internal_ilen();
+}
+inline void SKBuiltinBuffer_t::_internal_set_ilen(uint32_t value) {
+  
+  _impl_.ilen_ = value;
+}
+inline void SKBuiltinBuffer_t::set_ilen(uint32_t value) {
+  _internal_set_ilen(value);
+  // @@protoc_insertion_point(field_set:SKBuiltinBuffer_t.iLen)
+}
+
+// optional bytes buffer = 2;
+inline bool SKBuiltinBuffer_t::_internal_has_buffer() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool SKBuiltinBuffer_t::has_buffer() const {
+  return _internal_has_buffer();
+}
+inline void SKBuiltinBuffer_t::clear_buffer() {
+  _impl_.buffer_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& SKBuiltinBuffer_t::buffer() const {
+  // @@protoc_insertion_point(field_get:SKBuiltinBuffer_t.buffer)
+  return _internal_buffer();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SKBuiltinBuffer_t::set_buffer(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.buffer_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:SKBuiltinBuffer_t.buffer)
+}
+inline std::string* SKBuiltinBuffer_t::mutable_buffer() {
+  std::string* _s = _internal_mutable_buffer();
+  // @@protoc_insertion_point(field_mutable:SKBuiltinBuffer_t.buffer)
+  return _s;
+}
+inline const std::string& SKBuiltinBuffer_t::_internal_buffer() const {
+  return _impl_.buffer_.Get();
+}
+inline void SKBuiltinBuffer_t::_internal_set_buffer(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.buffer_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SKBuiltinBuffer_t::_internal_mutable_buffer() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.buffer_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SKBuiltinBuffer_t::release_buffer() {
+  // @@protoc_insertion_point(field_release:SKBuiltinBuffer_t.buffer)
+  if (!_internal_has_buffer()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.buffer_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.buffer_.IsDefault()) {
+    _impl_.buffer_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void SKBuiltinBuffer_t::set_allocated_buffer(std::string* buffer) {
+  if (buffer != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.buffer_.SetAllocated(buffer, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.buffer_.IsDefault()) {
+    _impl_.buffer_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:SKBuiltinBuffer_t.buffer)
+}
+
+// -------------------------------------------------------------------
+
 // BaseResponse
 
 // int32 ret = 1;
@@ -538,6 +785,8 @@ inline void BaseResponse::set_allocated_errmsg(::SKBuiltinString_t* errmsg) {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

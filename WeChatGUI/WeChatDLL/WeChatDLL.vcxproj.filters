@@ -138,6 +138,12 @@
     <ClCompile Include="proto\Common.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
+    <ClCompile Include="public\SigSearch.cpp">
+      <Filter>public</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\UserInfo.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="微信偏移.h">
@@ -318,6 +324,12 @@
       <Filter>proto</Filter>
     </ClInclude>
     <ClInclude Include="proto\Common.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="public\SigSearch.h">
+      <Filter>public</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\UserInfo.pb.h">
       <Filter>proto</Filter>
     </ClInclude>
   </ItemGroup>

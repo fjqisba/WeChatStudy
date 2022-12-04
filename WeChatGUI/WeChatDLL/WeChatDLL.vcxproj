@@ -109,7 +109,9 @@
     <ClCompile Include="MinHook\trampoline.c" />
     <ClCompile Include="proto\ChatRoom.pb.cc" />
     <ClCompile Include="proto\Common.pb.cc" />
+    <ClCompile Include="proto\UserInfo.pb.cc" />
     <ClCompile Include="public\Public.cpp" />
+    <ClCompile Include="public\SigSearch.cpp" />
     <ClCompile Include="public\Strings.cpp" />
     <ClCompile Include="public\WinApi.cpp" />
     <ClCompile Include="TinyXml\tinyxml2.cpp" />
@@ -169,8 +171,10 @@
     <ClInclude Include="MinHook\trampoline.h" />
     <ClInclude Include="proto\ChatRoom.pb.h" />
     <ClInclude Include="proto\Common.pb.h" />
+    <ClInclude Include="proto\UserInfo.pb.h" />
     <ClInclude Include="public\Public.h" />
     <ClInclude Include="public\RWMutex.h" />
+    <ClInclude Include="public\SigSearch.h" />
     <ClInclude Include="public\Strings.h" />
     <ClInclude Include="public\WinApi.h" />
     <ClInclude Include="TinyXml\tinyxml2.h" />
