@@ -28,15 +28,9 @@ pip3 install pefile
 
 1、安装Visual Studio，运行WeChatGUI.sln工程文件，编译DLL。
 
-2、项目使用到了proto，版本为3.21.9，因此你需要自行编译libprotobuf-lite，传送门
+2、项目使用到了libprotobuf-lite库，因此你需要自行编译，传送门
 
 https://github.com/protocolbuffers/protobuf/releases
-
-你也可以自行替换新版本的proto。
-
-
-
-
 
 # API接口说明
 

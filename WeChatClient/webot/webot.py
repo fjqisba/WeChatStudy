@@ -44,19 +44,3 @@ class webot:
         if retJson["code"] == 200:
             return retJson["data"]
         return retJson["msg"]
-
-    def get_login_qrcode(self):
-        url = str.format("http://{0}:{1}/getLoginQRCode",self.host,self.port)
-        resp = requests.get(url,timeout=None)
-        retJson = json.loads(resp.text)
-        if retJson["code"] == 200:
-            return retJson["qrcode"]
-        return ""
-    def wait_util_login(self):
-        '''等待用户登录'''
-        url = str.format("http://{0}:{1}/waitForLogin",self.host,self.port)
-        resp = requests.get(url,timeout=None)
-        retJson = json.loads(resp.text)
-        if retJson["code"] == 200:
-            return retJson["wxid"]
-        return ""
