@@ -2,7 +2,7 @@
 StudyWechat，theoretically the following versions are supported：
 
 - [x]  3.7.6.44
-- [x]  3.8.0.33
+- [x]  3.8.0.33(建议使用此版本)
 
 The project is for study only, it is prohibited to use it for illegal purposes.
 
@@ -27,10 +27,6 @@ pip3 install pefile
 # 项目源码搭建
 
 1、安装Visual Studio，运行WeChatGUI.sln工程文件，编译DLL。
-
-2、项目使用到了libprotobuf-lite库，因此你需要自行编译，传送门
-
-https://github.com/protocolbuffers/protobuf/releases
 
 # API接口说明
 
