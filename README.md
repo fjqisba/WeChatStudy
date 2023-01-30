@@ -8,13 +8,13 @@ The project is for study only, it is prohibited to use it for illegal purposes.
 
 项目仅供学习参考，禁止用于非法用途。
 
-
+微信安装包:[Releases · wechat-windows-versions (github.com)](https://github.com/tom-snow/wechat-windows-versions/releases)
 
 # 项目说明
 
-WeChatDLL为核心DLL，作用为搭建一个http服务。
+WeChatDLL为核心DLL，用于注入微信，并搭建一个http服务。
 
-WeChatClient为客户端，通过http协议与微信通讯，使用前需要安装以下python库。
+WeChatClient为客户端，通过http协议来与WeChatDLL进行交互，使用前需要安装以下python库。
 
 ```bash
 pip3 install pywin32
@@ -24,9 +24,9 @@ pip3 install pefile
 
 作者本人并没有使用该项目的需求，因此该项目的代码几乎未进行测试。
 
-# 项目源码搭建
+# 微信各个版本下载
 
-1、安装Visual Studio，运行WeChatGUI.sln工程文件，编译DLL。
+
 
 # API接口说明
 
