@@ -1,0 +1,63 @@
+﻿  any_lite.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\any_lite.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/io/zero_copy_stream_impl_lite.h”: No such file or directory
+  arena.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\arena.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/arena.h”: No such file or directory
+  arenastring.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\arenastring.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/arenastring.h”: No such file or directory
+  arenaz_sampler.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\arenaz_sampler.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/arenaz_sampler.h”: No such file or directory
+  extension_set.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\extension_set.cc(35,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/extension_set.h”: No such file or directory
+  generated_enum_util.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\generated_enum_util.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/generated_enum_util.h”: No such file or directory
+  generated_message_tctable_lite.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\generated_message_tctable_lite.cc(34,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/extension_set.h”: No such file or directory
+  generated_message_util.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\generated_message_util.cc(35,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/generated_message_util.h”: No such file or directory
+  implicit_weak_message.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\implicit_weak_message.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/implicit_weak_message.h”: No such file or directory
+  inlined_string_field.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\inlined_string_field.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/inlined_string_field.h”: No such file or directory
+  coded_stream.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\io\coded_stream.cc(41,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/io/coded_stream.h”: No such file or directory
+  io_win32.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\io\io_win32.cc(52,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/io/io_win32.h”: No such file or directory
+  strtod.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\io\strtod.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/io/strtod.h”: No such file or directory
+  zero_copy_stream.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\io\zero_copy_stream.cc(35,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/io/zero_copy_stream.h”: No such file or directory
+  zero_copy_stream_impl.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\io\zero_copy_stream_impl.cc(46,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/common.h”: No such file or directory
+  zero_copy_stream_impl_lite.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\io\zero_copy_stream_impl_lite.cc(35,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/io/zero_copy_stream_impl_lite.h”: No such file or directory
+  map.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\map.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/map.h”: No such file or directory
+  message_lite.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\message_lite.cc(36,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/message_lite.h”: No such file or directory
+  parse_context.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\parse_context.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/parse_context.h”: No such file or directory
+  repeated_field.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\repeated_field.cc(35,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/repeated_field.h”: No such file or directory
+  正在编译...
+  repeated_ptr_field.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\repeated_ptr_field.cc(37,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/logging.h”: No such file or directory
+  bytestream.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\bytestream.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/bytestream.h”: No such file or directory
+  common.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\common.cc(33,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/common.h”: No such file or directory
+  int128.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\int128.cc(31,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/int128.h”: No such file or directory
+  status.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\status.cc(30,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/status.h”: No such file or directory
+  stringpiece.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\stringpiece.cc(30,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/stringpiece.h”: No such file or directory
+  stringprintf.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\stringprintf.cc(33,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/stringprintf.h”: No such file or directory
+  structurally_valid.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\structurally_valid.cc(33,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/common.h”: No such file or directory
+  strutil.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\strutil.cc(33,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/strutil.h”: No such file or directory
+  time.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\stubs\time.cc(1,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/stubs/time.h”: No such file or directory
+  wire_format_lite.cc
+C:\Work\WeChatStudy\WeChatGUI\libprotobuf-lite\wire_format_lite.cc(35,10): fatal  error C1083: 无法打开包括文件: “google/protobuf/wire_format_lite.h”: No such file or directory

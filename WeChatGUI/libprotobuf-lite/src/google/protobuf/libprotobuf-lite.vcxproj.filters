@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="any.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arena.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arena_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arenastring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="arenaz_sampler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="endian.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="explicitly_constructed.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="extension_set.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="extension_set_inl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="generated_enum_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="generated_message_tctable_decl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="generated_message_tctable_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="generated_message_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="has_bits.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="implicit_weak_message.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="inlined_string_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="map.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="map_entry_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="map_field_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="map_type_handler.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="message_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="metadata_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="parse_context.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="port.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="repeated_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="repeated_ptr_field.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="wire_format_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\bytestream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\callback.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\casts.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io\coded_stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\hash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io\io_win32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\logging.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\map_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\mutex.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\once.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\platform_macros.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\port.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\status.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\stl_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\stringpiece.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io\strtod.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\strutil.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\template_util.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io\zero_copy_stream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io\zero_copy_stream_impl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="io\zero_copy_stream_impl_lite.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stubs\statusor.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="any_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="arena.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="arenastring.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="arenaz_sampler.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\bytestream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="io\coded_stream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\common.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="extension_set.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="generated_enum_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="generated_message_tctable_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="generated_message_util.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="implicit_weak_message.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="inlined_string_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\int128.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="io\io_win32.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="map.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="message_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="parse_context.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="repeated_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\status.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="repeated_ptr_field.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\stringpiece.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\stringprintf.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="io\strtod.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\structurally_valid.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\strutil.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stubs\time.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="wire_format_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="io\zero_copy_stream_impl_lite.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="io\zero_copy_stream.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="io\zero_copy_stream_impl.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="version.rc">
+      <Filter>源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
