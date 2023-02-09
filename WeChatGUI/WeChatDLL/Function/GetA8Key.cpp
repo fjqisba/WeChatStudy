@@ -19,14 +19,14 @@ void* SceneCenter_Instance()
 
 std::string GetA8Key(std::string reqUrl)
 {
-	char* pNetSceneGetA8Key = new char[0x238];
+	char* pNetSceneGetA8Key = new char[0x298];
 	mmStringX mmReqUrl;
 	mmStringX extraData;
 	mmReqUrl.assignUTF8(reqUrl.c_str());
 	AnyCall::invokeThiscall<void*>(pNetSceneGetA8Key, (void*)(WeChatDLL::Instance().getWinMoudule() + 0x556CE0), mmReqUrl,
 		0x0, 0x0, 0x4, 0x2, extraData, 0x0);
-	pNetSceneGetA8Key[529] = 0x0;
-	pNetSceneGetA8Key[528] = 0x0;
+	pNetSceneGetA8Key[577] = 0x0;
+	pNetSceneGetA8Key[576] = 0x0;
 
 	struct RefNetSceneGetA8Key
 	{
