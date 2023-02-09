@@ -9,6 +9,8 @@
 #include "Function/AccountFunction.h"
 #include "Function/SnsFunction.h"
 #include "Function/LogFunction.h"
+#include "Function/GetA8Key.h"
+#include "Function/H5Web.h"
 #include "微信偏移.h"
 #include "ApiServer.h"
 #include "WeChat/ChatMsg.h"
@@ -54,6 +56,9 @@ void WeChatDLL::InitDLL()
 	if (!listenPort) {
 		listenPort = 5000;
 	}
+
+	//PLUGIN_GetA8Key();
+	//PLUGIN_H5Web();
 
 	//用std::thread貌似有兼容性问题?改用CreateThread
 	CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)StartApiServer, (LPVOID)listenPort, 0,0);

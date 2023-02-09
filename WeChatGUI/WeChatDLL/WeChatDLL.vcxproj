@@ -97,6 +97,7 @@
     <ClCompile Include="Function\AccountFunction.cpp" />
     <ClCompile Include="Function\ContactFunction.cpp" />
     <ClCompile Include="Function\GetA8Key.cpp" />
+    <ClCompile Include="Function\H5Web.cpp" />
     <ClCompile Include="Function\LogFunction.cpp" />
     <ClCompile Include="Function\MsgMonitor.cpp" />
     <ClCompile Include="Function\SnsFunction.cpp" />
@@ -131,6 +132,7 @@
     <ClInclude Include="Function\AccountFunction.h" />
     <ClInclude Include="Function\ContactFunction.h" />
     <ClInclude Include="Function\GetA8Key.h" />
+    <ClInclude Include="Function\H5Web.h" />
     <ClInclude Include="Function\LogFunction.h" />
     <ClInclude Include="Function\MsgMonitor.h" />
     <ClInclude Include="Function\SnsFunction.h" />

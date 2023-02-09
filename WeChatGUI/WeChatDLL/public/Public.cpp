@@ -29,6 +29,18 @@ unsigned int ReadUint(void* lp)
 	return *(unsigned int*)lp;
 }
 
+std::string ReadStdString(void* lp)
+{
+	if (!lp) {
+		return "";
+	}
+	unsigned int strLen = *(unsigned int*)((char*)lp + 0x10);
+	if (strLen > 0xF) {
+		return *(char**)lp;
+	}
+	return (char*)lp;
+}
+
 std::string base64_encode(unsigned char* pBuf, unsigned int len)
 {
 	char BASE64_PAD = '=';

@@ -158,6 +158,10 @@ A8Key的作用是让链接带上exportkey和passticket这些参数，使之能�
 
 核心类是NetSceneGetA8Key
 
+## 关于浏览器
+
+CefBrowserCore::LoadPage -> H5ExtTransferHandler::handleJsEvent -> H5AuthMgr::DoH5Transfer -> NetSceneH5ExtTransfer::NetSceneH5ExtTransfer -> NetSceneH5ExtTransfer::onGYNetEnd
+
 
 
 ## 结构体逆向

@@ -150,6 +150,9 @@
     <ClCompile Include="proto\A8Key.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
+    <ClCompile Include="Function\H5Web.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="微信偏移.h">
@@ -343,6 +346,9 @@
     </ClInclude>
     <ClInclude Include="proto\A8Key.pb.h">
       <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\H5Web.h">
+      <Filter>Function</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
