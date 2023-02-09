@@ -44,6 +44,24 @@ struct TableStruct_Common_2eproto {
 class BaseResponse;
 struct BaseResponseDefaultTypeInternal;
 extern BaseResponseDefaultTypeInternal _BaseResponse_default_instance_;
+class BizApiInfo;
+struct BizApiInfoDefaultTypeInternal;
+extern BizApiInfoDefaultTypeInternal _BizApiInfo_default_instance_;
+class BizScopeInfo;
+struct BizScopeInfoDefaultTypeInternal;
+extern BizScopeInfoDefaultTypeInternal _BizScopeInfo_default_instance_;
+class DeepLinkBitSet;
+struct DeepLinkBitSetDefaultTypeInternal;
+extern DeepLinkBitSetDefaultTypeInternal _DeepLinkBitSet_default_instance_;
+class GeneralControlBitSet;
+struct GeneralControlBitSetDefaultTypeInternal;
+extern GeneralControlBitSetDefaultTypeInternal _GeneralControlBitSet_default_instance_;
+class HttpHeader;
+struct HttpHeaderDefaultTypeInternal;
+extern HttpHeaderDefaultTypeInternal _HttpHeader_default_instance_;
+class JSAPIPermissionBitSet;
+struct JSAPIPermissionBitSetDefaultTypeInternal;
+extern JSAPIPermissionBitSetDefaultTypeInternal _JSAPIPermissionBitSet_default_instance_;
 class SKBuiltinBuffer_t;
 struct SKBuiltinBuffer_tDefaultTypeInternal;
 extern SKBuiltinBuffer_tDefaultTypeInternal _SKBuiltinBuffer_t_default_instance_;
@@ -52,6 +70,12 @@ struct SKBuiltinString_tDefaultTypeInternal;
 extern SKBuiltinString_tDefaultTypeInternal _SKBuiltinString_t_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::BaseResponse* Arena::CreateMaybeMessage<::BaseResponse>(Arena*);
+template<> ::BizApiInfo* Arena::CreateMaybeMessage<::BizApiInfo>(Arena*);
+template<> ::BizScopeInfo* Arena::CreateMaybeMessage<::BizScopeInfo>(Arena*);
+template<> ::DeepLinkBitSet* Arena::CreateMaybeMessage<::DeepLinkBitSet>(Arena*);
+template<> ::GeneralControlBitSet* Arena::CreateMaybeMessage<::GeneralControlBitSet>(Arena*);
+template<> ::HttpHeader* Arena::CreateMaybeMessage<::HttpHeader>(Arena*);
+template<> ::JSAPIPermissionBitSet* Arena::CreateMaybeMessage<::JSAPIPermissionBitSet>(Arena*);
 template<> ::SKBuiltinBuffer_t* Arena::CreateMaybeMessage<::SKBuiltinBuffer_t>(Arena*);
 template<> ::SKBuiltinString_t* Arena::CreateMaybeMessage<::SKBuiltinString_t>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
@@ -87,6 +111,13 @@ class SKBuiltinString_t final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const SKBuiltinString_t& default_instance() {
@@ -229,6 +260,13 @@ class SKBuiltinBuffer_t final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const SKBuiltinBuffer_t& default_instance() {
     return *internal_default_instance();
   }
@@ -322,7 +360,11 @@ class SKBuiltinBuffer_t final :
   std::string* _internal_mutable_buffer();
   public:
 
-  // uint32 iLen = 1;
+  // required uint32 iLen = 1;
+  bool has_ilen() const;
+  private:
+  bool _internal_has_ilen() const;
+  public:
   void clear_ilen();
   uint32_t ilen() const;
   void set_ilen(uint32_t value);
@@ -378,6 +420,13 @@ class BaseResponse final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const BaseResponse& default_instance() {
@@ -455,7 +504,7 @@ class BaseResponse final :
     kErrMsgFieldNumber = 2,
     kRetFieldNumber = 1,
   };
-  // .SKBuiltinString_t errMsg = 2;
+  // required .SKBuiltinString_t errMsg = 2;
   bool has_errmsg() const;
   private:
   bool _internal_has_errmsg() const;
@@ -473,7 +522,11 @@ class BaseResponse final :
       ::SKBuiltinString_t* errmsg);
   ::SKBuiltinString_t* unsafe_arena_release_errmsg();
 
-  // int32 ret = 1;
+  // required int32 ret = 1;
+  bool has_ret() const;
+  private:
+  bool _internal_has_ret() const;
+  public:
   void clear_ret();
   int32_t ret() const;
   void set_ret(int32_t value);
@@ -486,13 +539,1022 @@ class BaseResponse final :
  private:
   class _Internal;
 
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::SKBuiltinString_t* errmsg_;
     int32_t ret_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
+class HttpHeader final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:HttpHeader) */ {
+ public:
+  inline HttpHeader() : HttpHeader(nullptr) {}
+  ~HttpHeader() override;
+  explicit PROTOBUF_CONSTEXPR HttpHeader(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  HttpHeader(const HttpHeader& from);
+  HttpHeader(HttpHeader&& from) noexcept
+    : HttpHeader() {
+    *this = ::std::move(from);
+  }
+
+  inline HttpHeader& operator=(const HttpHeader& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline HttpHeader& operator=(HttpHeader&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const HttpHeader& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const HttpHeader* internal_default_instance() {
+    return reinterpret_cast<const HttpHeader*>(
+               &_HttpHeader_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(HttpHeader& a, HttpHeader& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(HttpHeader* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(HttpHeader* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  HttpHeader* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<HttpHeader>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const HttpHeader& from);
+  void MergeFrom(const HttpHeader& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(HttpHeader* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "HttpHeader";
+  }
+  protected:
+  explicit HttpHeader(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kKeyFieldNumber = 1,
+    kValueFieldNumber = 2,
+  };
+  // optional string key = 1;
+  bool has_key() const;
+  private:
+  bool _internal_has_key() const;
+  public:
+  void clear_key();
+  const std::string& key() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_key(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_key();
+  PROTOBUF_NODISCARD std::string* release_key();
+  void set_allocated_key(std::string* key);
+  private:
+  const std::string& _internal_key() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_key(const std::string& value);
+  std::string* _internal_mutable_key();
+  public:
+
+  // optional string value = 2;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  const std::string& value() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_value(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_value();
+  PROTOBUF_NODISCARD std::string* release_value();
+  void set_allocated_value(std::string* value);
+  private:
+  const std::string& _internal_value() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_value(const std::string& value);
+  std::string* _internal_mutable_value();
+  public:
+
+  // @@protoc_insertion_point(class_scope:HttpHeader)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr key_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr value_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BizApiInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:BizApiInfo) */ {
+ public:
+  inline BizApiInfo() : BizApiInfo(nullptr) {}
+  ~BizApiInfo() override;
+  explicit PROTOBUF_CONSTEXPR BizApiInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BizApiInfo(const BizApiInfo& from);
+  BizApiInfo(BizApiInfo&& from) noexcept
+    : BizApiInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline BizApiInfo& operator=(const BizApiInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BizApiInfo& operator=(BizApiInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const BizApiInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BizApiInfo* internal_default_instance() {
+    return reinterpret_cast<const BizApiInfo*>(
+               &_BizApiInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    4;
+
+  friend void swap(BizApiInfo& a, BizApiInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BizApiInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BizApiInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BizApiInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BizApiInfo>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const BizApiInfo& from);
+  void MergeFrom(const BizApiInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(BizApiInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "BizApiInfo";
+  }
+  protected:
+  explicit BizApiInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApiNameFieldNumber = 1,
+  };
+  // optional string apiName = 1;
+  bool has_apiname() const;
+  private:
+  bool _internal_has_apiname() const;
+  public:
+  void clear_apiname();
+  const std::string& apiname() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_apiname(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_apiname();
+  PROTOBUF_NODISCARD std::string* release_apiname();
+  void set_allocated_apiname(std::string* apiname);
+  private:
+  const std::string& _internal_apiname() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_apiname(const std::string& value);
+  std::string* _internal_mutable_apiname();
+  public:
+
+  // @@protoc_insertion_point(class_scope:BizApiInfo)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr apiname_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
+class DeepLinkBitSet final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:DeepLinkBitSet) */ {
+ public:
+  inline DeepLinkBitSet() : DeepLinkBitSet(nullptr) {}
+  ~DeepLinkBitSet() override;
+  explicit PROTOBUF_CONSTEXPR DeepLinkBitSet(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  DeepLinkBitSet(const DeepLinkBitSet& from);
+  DeepLinkBitSet(DeepLinkBitSet&& from) noexcept
+    : DeepLinkBitSet() {
+    *this = ::std::move(from);
+  }
+
+  inline DeepLinkBitSet& operator=(const DeepLinkBitSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline DeepLinkBitSet& operator=(DeepLinkBitSet&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const DeepLinkBitSet& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const DeepLinkBitSet* internal_default_instance() {
+    return reinterpret_cast<const DeepLinkBitSet*>(
+               &_DeepLinkBitSet_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  friend void swap(DeepLinkBitSet& a, DeepLinkBitSet& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(DeepLinkBitSet* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(DeepLinkBitSet* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  DeepLinkBitSet* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<DeepLinkBitSet>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const DeepLinkBitSet& from);
+  void MergeFrom(const DeepLinkBitSet& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(DeepLinkBitSet* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "DeepLinkBitSet";
+  }
+  protected:
+  explicit DeepLinkBitSet(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBitValueFieldNumber = 1,
+  };
+  // required uint64 bitValue = 1;
+  bool has_bitvalue() const;
+  private:
+  bool _internal_has_bitvalue() const;
+  public:
+  void clear_bitvalue();
+  uint64_t bitvalue() const;
+  void set_bitvalue(uint64_t value);
+  private:
+  uint64_t _internal_bitvalue() const;
+  void _internal_set_bitvalue(uint64_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:DeepLinkBitSet)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint64_t bitvalue_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
+class BizScopeInfo final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:BizScopeInfo) */ {
+ public:
+  inline BizScopeInfo() : BizScopeInfo(nullptr) {}
+  ~BizScopeInfo() override;
+  explicit PROTOBUF_CONSTEXPR BizScopeInfo(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  BizScopeInfo(const BizScopeInfo& from);
+  BizScopeInfo(BizScopeInfo&& from) noexcept
+    : BizScopeInfo() {
+    *this = ::std::move(from);
+  }
+
+  inline BizScopeInfo& operator=(const BizScopeInfo& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline BizScopeInfo& operator=(BizScopeInfo&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const BizScopeInfo& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const BizScopeInfo* internal_default_instance() {
+    return reinterpret_cast<const BizScopeInfo*>(
+               &_BizScopeInfo_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  friend void swap(BizScopeInfo& a, BizScopeInfo& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(BizScopeInfo* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(BizScopeInfo* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  BizScopeInfo* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<BizScopeInfo>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const BizScopeInfo& from);
+  void MergeFrom(const BizScopeInfo& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(BizScopeInfo* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "BizScopeInfo";
+  }
+  protected:
+  explicit BizScopeInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kApiListFieldNumber = 5,
+    kScopeFieldNumber = 1,
+    kScopeDescFieldNumber = 3,
+    kScopeStatusFieldNumber = 2,
+    kApiCountFieldNumber = 4,
+  };
+  // repeated .BizApiInfo apiList = 5;
+  int apilist_size() const;
+  private:
+  int _internal_apilist_size() const;
+  public:
+  void clear_apilist();
+  ::BizApiInfo* mutable_apilist(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::BizApiInfo >*
+      mutable_apilist();
+  private:
+  const ::BizApiInfo& _internal_apilist(int index) const;
+  ::BizApiInfo* _internal_add_apilist();
+  public:
+  const ::BizApiInfo& apilist(int index) const;
+  ::BizApiInfo* add_apilist();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::BizApiInfo >&
+      apilist() const;
+
+  // optional string scope = 1;
+  bool has_scope() const;
+  private:
+  bool _internal_has_scope() const;
+  public:
+  void clear_scope();
+  const std::string& scope() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_scope(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_scope();
+  PROTOBUF_NODISCARD std::string* release_scope();
+  void set_allocated_scope(std::string* scope);
+  private:
+  const std::string& _internal_scope() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_scope(const std::string& value);
+  std::string* _internal_mutable_scope();
+  public:
+
+  // optional string scopeDesc = 3;
+  bool has_scopedesc() const;
+  private:
+  bool _internal_has_scopedesc() const;
+  public:
+  void clear_scopedesc();
+  const std::string& scopedesc() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_scopedesc(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_scopedesc();
+  PROTOBUF_NODISCARD std::string* release_scopedesc();
+  void set_allocated_scopedesc(std::string* scopedesc);
+  private:
+  const std::string& _internal_scopedesc() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_scopedesc(const std::string& value);
+  std::string* _internal_mutable_scopedesc();
+  public:
+
+  // required uint32 scopeStatus = 2;
+  bool has_scopestatus() const;
+  private:
+  bool _internal_has_scopestatus() const;
+  public:
+  void clear_scopestatus();
+  uint32_t scopestatus() const;
+  void set_scopestatus(uint32_t value);
+  private:
+  uint32_t _internal_scopestatus() const;
+  void _internal_set_scopestatus(uint32_t value);
+  public:
+
+  // required uint32 apiCount = 4;
+  bool has_apicount() const;
+  private:
+  bool _internal_has_apicount() const;
+  public:
+  void clear_apicount();
+  uint32_t apicount() const;
+  void set_apicount(uint32_t value);
+  private:
+  uint32_t _internal_apicount() const;
+  void _internal_set_apicount(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:BizScopeInfo)
+ private:
+  class _Internal;
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::BizApiInfo > apilist_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scope_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr scopedesc_;
+    uint32_t scopestatus_;
+    uint32_t apicount_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
+class JSAPIPermissionBitSet final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:JSAPIPermissionBitSet) */ {
+ public:
+  inline JSAPIPermissionBitSet() : JSAPIPermissionBitSet(nullptr) {}
+  ~JSAPIPermissionBitSet() override;
+  explicit PROTOBUF_CONSTEXPR JSAPIPermissionBitSet(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  JSAPIPermissionBitSet(const JSAPIPermissionBitSet& from);
+  JSAPIPermissionBitSet(JSAPIPermissionBitSet&& from) noexcept
+    : JSAPIPermissionBitSet() {
+    *this = ::std::move(from);
+  }
+
+  inline JSAPIPermissionBitSet& operator=(const JSAPIPermissionBitSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline JSAPIPermissionBitSet& operator=(JSAPIPermissionBitSet&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const JSAPIPermissionBitSet& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const JSAPIPermissionBitSet* internal_default_instance() {
+    return reinterpret_cast<const JSAPIPermissionBitSet*>(
+               &_JSAPIPermissionBitSet_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    7;
+
+  friend void swap(JSAPIPermissionBitSet& a, JSAPIPermissionBitSet& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(JSAPIPermissionBitSet* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(JSAPIPermissionBitSet* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  JSAPIPermissionBitSet* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<JSAPIPermissionBitSet>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const JSAPIPermissionBitSet& from);
+  void MergeFrom(const JSAPIPermissionBitSet& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(JSAPIPermissionBitSet* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "JSAPIPermissionBitSet";
+  }
+  protected:
+  explicit JSAPIPermissionBitSet(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBitValueFieldNumber = 1,
+    kBitValue2FieldNumber = 2,
+    kBitValue3FieldNumber = 3,
+    kBitValue4FieldNumber = 4,
+  };
+  // required uint32 bitValue = 1;
+  bool has_bitvalue() const;
+  private:
+  bool _internal_has_bitvalue() const;
+  public:
+  void clear_bitvalue();
+  uint32_t bitvalue() const;
+  void set_bitvalue(uint32_t value);
+  private:
+  uint32_t _internal_bitvalue() const;
+  void _internal_set_bitvalue(uint32_t value);
+  public:
+
+  // optional uint32 bitValue2 = 2;
+  bool has_bitvalue2() const;
+  private:
+  bool _internal_has_bitvalue2() const;
+  public:
+  void clear_bitvalue2();
+  uint32_t bitvalue2() const;
+  void set_bitvalue2(uint32_t value);
+  private:
+  uint32_t _internal_bitvalue2() const;
+  void _internal_set_bitvalue2(uint32_t value);
+  public:
+
+  // optional uint32 bitValue3 = 3;
+  bool has_bitvalue3() const;
+  private:
+  bool _internal_has_bitvalue3() const;
+  public:
+  void clear_bitvalue3();
+  uint32_t bitvalue3() const;
+  void set_bitvalue3(uint32_t value);
+  private:
+  uint32_t _internal_bitvalue3() const;
+  void _internal_set_bitvalue3(uint32_t value);
+  public:
+
+  // optional uint32 bitValue4 = 4;
+  bool has_bitvalue4() const;
+  private:
+  bool _internal_has_bitvalue4() const;
+  public:
+  void clear_bitvalue4();
+  uint32_t bitvalue4() const;
+  void set_bitvalue4(uint32_t value);
+  private:
+  uint32_t _internal_bitvalue4() const;
+  void _internal_set_bitvalue4(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:JSAPIPermissionBitSet)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t bitvalue_;
+    uint32_t bitvalue2_;
+    uint32_t bitvalue3_;
+    uint32_t bitvalue4_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Common_2eproto;
+};
+// -------------------------------------------------------------------
+
+class GeneralControlBitSet final :
+    public ::PROTOBUF_NAMESPACE_ID::MessageLite /* @@protoc_insertion_point(class_definition:GeneralControlBitSet) */ {
+ public:
+  inline GeneralControlBitSet() : GeneralControlBitSet(nullptr) {}
+  ~GeneralControlBitSet() override;
+  explicit PROTOBUF_CONSTEXPR GeneralControlBitSet(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  GeneralControlBitSet(const GeneralControlBitSet& from);
+  GeneralControlBitSet(GeneralControlBitSet&& from) noexcept
+    : GeneralControlBitSet() {
+    *this = ::std::move(from);
+  }
+
+  inline GeneralControlBitSet& operator=(const GeneralControlBitSet& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline GeneralControlBitSet& operator=(GeneralControlBitSet&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
+  static const GeneralControlBitSet& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const GeneralControlBitSet* internal_default_instance() {
+    return reinterpret_cast<const GeneralControlBitSet*>(
+               &_GeneralControlBitSet_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    8;
+
+  friend void swap(GeneralControlBitSet& a, GeneralControlBitSet& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(GeneralControlBitSet* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(GeneralControlBitSet* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  GeneralControlBitSet* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<GeneralControlBitSet>(arena);
+  }
+  void CheckTypeAndMergeFrom(const ::PROTOBUF_NAMESPACE_ID::MessageLite& from)  final;
+  void CopyFrom(const GeneralControlBitSet& from);
+  void MergeFrom(const GeneralControlBitSet& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  void InternalSwap(GeneralControlBitSet* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "GeneralControlBitSet";
+  }
+  protected:
+  explicit GeneralControlBitSet(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  std::string GetTypeName() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kBitValueFieldNumber = 1,
+  };
+  // required uint32 bitValue = 1;
+  bool has_bitvalue() const;
+  private:
+  bool _internal_has_bitvalue() const;
+  public:
+  void clear_bitvalue();
+  uint32_t bitvalue() const;
+  void set_bitvalue(uint32_t value);
+  private:
+  uint32_t _internal_bitvalue() const;
+  void _internal_set_bitvalue(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:GeneralControlBitSet)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    uint32_t bitvalue_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_Common_2eproto;
@@ -580,9 +1642,17 @@ inline void SKBuiltinString_t::set_allocated_string(std::string* string) {
 
 // SKBuiltinBuffer_t
 
-// uint32 iLen = 1;
+// required uint32 iLen = 1;
+inline bool SKBuiltinBuffer_t::_internal_has_ilen() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool SKBuiltinBuffer_t::has_ilen() const {
+  return _internal_has_ilen();
+}
 inline void SKBuiltinBuffer_t::clear_ilen() {
   _impl_.ilen_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t SKBuiltinBuffer_t::_internal_ilen() const {
   return _impl_.ilen_;
@@ -592,7 +1662,7 @@ inline uint32_t SKBuiltinBuffer_t::ilen() const {
   return _internal_ilen();
 }
 inline void SKBuiltinBuffer_t::_internal_set_ilen(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.ilen_ = value;
 }
 inline void SKBuiltinBuffer_t::set_ilen(uint32_t value) {
@@ -672,9 +1742,17 @@ inline void SKBuiltinBuffer_t::set_allocated_buffer(std::string* buffer) {
 
 // BaseResponse
 
-// int32 ret = 1;
+// required int32 ret = 1;
+inline bool BaseResponse::_internal_has_ret() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool BaseResponse::has_ret() const {
+  return _internal_has_ret();
+}
 inline void BaseResponse::clear_ret() {
   _impl_.ret_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline int32_t BaseResponse::_internal_ret() const {
   return _impl_.ret_;
@@ -684,7 +1762,7 @@ inline int32_t BaseResponse::ret() const {
   return _internal_ret();
 }
 inline void BaseResponse::_internal_set_ret(int32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.ret_ = value;
 }
 inline void BaseResponse::set_ret(int32_t value) {
@@ -692,18 +1770,18 @@ inline void BaseResponse::set_ret(int32_t value) {
   // @@protoc_insertion_point(field_set:BaseResponse.ret)
 }
 
-// .SKBuiltinString_t errMsg = 2;
+// required .SKBuiltinString_t errMsg = 2;
 inline bool BaseResponse::_internal_has_errmsg() const {
-  return this != internal_default_instance() && _impl_.errmsg_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.errmsg_ != nullptr);
+  return value;
 }
 inline bool BaseResponse::has_errmsg() const {
   return _internal_has_errmsg();
 }
 inline void BaseResponse::clear_errmsg() {
-  if (GetArenaForAllocation() == nullptr && _impl_.errmsg_ != nullptr) {
-    delete _impl_.errmsg_;
-  }
-  _impl_.errmsg_ = nullptr;
+  if (_impl_.errmsg_ != nullptr) _impl_.errmsg_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const ::SKBuiltinString_t& BaseResponse::_internal_errmsg() const {
   const ::SKBuiltinString_t* p = _impl_.errmsg_;
@@ -721,14 +1799,14 @@ inline void BaseResponse::unsafe_arena_set_allocated_errmsg(
   }
   _impl_.errmsg_ = errmsg;
   if (errmsg) {
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:BaseResponse.errMsg)
 }
 inline ::SKBuiltinString_t* BaseResponse::release_errmsg() {
-  
+  _impl_._has_bits_[0] &= ~0x00000001u;
   ::SKBuiltinString_t* temp = _impl_.errmsg_;
   _impl_.errmsg_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -744,13 +1822,13 @@ inline ::SKBuiltinString_t* BaseResponse::release_errmsg() {
 }
 inline ::SKBuiltinString_t* BaseResponse::unsafe_arena_release_errmsg() {
   // @@protoc_insertion_point(field_release:BaseResponse.errMsg)
-  
+  _impl_._has_bits_[0] &= ~0x00000001u;
   ::SKBuiltinString_t* temp = _impl_.errmsg_;
   _impl_.errmsg_ = nullptr;
   return temp;
 }
 inline ::SKBuiltinString_t* BaseResponse::_internal_mutable_errmsg() {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.errmsg_ == nullptr) {
     auto* p = CreateMaybeMessage<::SKBuiltinString_t>(GetArenaForAllocation());
     _impl_.errmsg_ = p;
@@ -774,17 +1852,657 @@ inline void BaseResponse::set_allocated_errmsg(::SKBuiltinString_t* errmsg) {
       errmsg = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, errmsg, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.errmsg_ = errmsg;
   // @@protoc_insertion_point(field_set_allocated:BaseResponse.errMsg)
 }
 
+// -------------------------------------------------------------------
+
+// HttpHeader
+
+// optional string key = 1;
+inline bool HttpHeader::_internal_has_key() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool HttpHeader::has_key() const {
+  return _internal_has_key();
+}
+inline void HttpHeader::clear_key() {
+  _impl_.key_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& HttpHeader::key() const {
+  // @@protoc_insertion_point(field_get:HttpHeader.key)
+  return _internal_key();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void HttpHeader::set_key(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.key_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:HttpHeader.key)
+}
+inline std::string* HttpHeader::mutable_key() {
+  std::string* _s = _internal_mutable_key();
+  // @@protoc_insertion_point(field_mutable:HttpHeader.key)
+  return _s;
+}
+inline const std::string& HttpHeader::_internal_key() const {
+  return _impl_.key_.Get();
+}
+inline void HttpHeader::_internal_set_key(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.key_.Set(value, GetArenaForAllocation());
+}
+inline std::string* HttpHeader::_internal_mutable_key() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.key_.Mutable(GetArenaForAllocation());
+}
+inline std::string* HttpHeader::release_key() {
+  // @@protoc_insertion_point(field_release:HttpHeader.key)
+  if (!_internal_has_key()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.key_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.key_.IsDefault()) {
+    _impl_.key_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void HttpHeader::set_allocated_key(std::string* key) {
+  if (key != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.key_.SetAllocated(key, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.key_.IsDefault()) {
+    _impl_.key_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:HttpHeader.key)
+}
+
+// optional string value = 2;
+inline bool HttpHeader::_internal_has_value() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool HttpHeader::has_value() const {
+  return _internal_has_value();
+}
+inline void HttpHeader::clear_value() {
+  _impl_.value_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& HttpHeader::value() const {
+  // @@protoc_insertion_point(field_get:HttpHeader.value)
+  return _internal_value();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void HttpHeader::set_value(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.value_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:HttpHeader.value)
+}
+inline std::string* HttpHeader::mutable_value() {
+  std::string* _s = _internal_mutable_value();
+  // @@protoc_insertion_point(field_mutable:HttpHeader.value)
+  return _s;
+}
+inline const std::string& HttpHeader::_internal_value() const {
+  return _impl_.value_.Get();
+}
+inline void HttpHeader::_internal_set_value(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.value_.Set(value, GetArenaForAllocation());
+}
+inline std::string* HttpHeader::_internal_mutable_value() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.value_.Mutable(GetArenaForAllocation());
+}
+inline std::string* HttpHeader::release_value() {
+  // @@protoc_insertion_point(field_release:HttpHeader.value)
+  if (!_internal_has_value()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.value_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.value_.IsDefault()) {
+    _impl_.value_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void HttpHeader::set_allocated_value(std::string* value) {
+  if (value != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.value_.SetAllocated(value, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.value_.IsDefault()) {
+    _impl_.value_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:HttpHeader.value)
+}
+
+// -------------------------------------------------------------------
+
+// BizApiInfo
+
+// optional string apiName = 1;
+inline bool BizApiInfo::_internal_has_apiname() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool BizApiInfo::has_apiname() const {
+  return _internal_has_apiname();
+}
+inline void BizApiInfo::clear_apiname() {
+  _impl_.apiname_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& BizApiInfo::apiname() const {
+  // @@protoc_insertion_point(field_get:BizApiInfo.apiName)
+  return _internal_apiname();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BizApiInfo::set_apiname(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.apiname_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:BizApiInfo.apiName)
+}
+inline std::string* BizApiInfo::mutable_apiname() {
+  std::string* _s = _internal_mutable_apiname();
+  // @@protoc_insertion_point(field_mutable:BizApiInfo.apiName)
+  return _s;
+}
+inline const std::string& BizApiInfo::_internal_apiname() const {
+  return _impl_.apiname_.Get();
+}
+inline void BizApiInfo::_internal_set_apiname(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.apiname_.Set(value, GetArenaForAllocation());
+}
+inline std::string* BizApiInfo::_internal_mutable_apiname() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.apiname_.Mutable(GetArenaForAllocation());
+}
+inline std::string* BizApiInfo::release_apiname() {
+  // @@protoc_insertion_point(field_release:BizApiInfo.apiName)
+  if (!_internal_has_apiname()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.apiname_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.apiname_.IsDefault()) {
+    _impl_.apiname_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void BizApiInfo::set_allocated_apiname(std::string* apiname) {
+  if (apiname != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.apiname_.SetAllocated(apiname, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.apiname_.IsDefault()) {
+    _impl_.apiname_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:BizApiInfo.apiName)
+}
+
+// -------------------------------------------------------------------
+
+// DeepLinkBitSet
+
+// required uint64 bitValue = 1;
+inline bool DeepLinkBitSet::_internal_has_bitvalue() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool DeepLinkBitSet::has_bitvalue() const {
+  return _internal_has_bitvalue();
+}
+inline void DeepLinkBitSet::clear_bitvalue() {
+  _impl_.bitvalue_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint64_t DeepLinkBitSet::_internal_bitvalue() const {
+  return _impl_.bitvalue_;
+}
+inline uint64_t DeepLinkBitSet::bitvalue() const {
+  // @@protoc_insertion_point(field_get:DeepLinkBitSet.bitValue)
+  return _internal_bitvalue();
+}
+inline void DeepLinkBitSet::_internal_set_bitvalue(uint64_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.bitvalue_ = value;
+}
+inline void DeepLinkBitSet::set_bitvalue(uint64_t value) {
+  _internal_set_bitvalue(value);
+  // @@protoc_insertion_point(field_set:DeepLinkBitSet.bitValue)
+}
+
+// -------------------------------------------------------------------
+
+// BizScopeInfo
+
+// optional string scope = 1;
+inline bool BizScopeInfo::_internal_has_scope() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool BizScopeInfo::has_scope() const {
+  return _internal_has_scope();
+}
+inline void BizScopeInfo::clear_scope() {
+  _impl_.scope_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& BizScopeInfo::scope() const {
+  // @@protoc_insertion_point(field_get:BizScopeInfo.scope)
+  return _internal_scope();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BizScopeInfo::set_scope(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.scope_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:BizScopeInfo.scope)
+}
+inline std::string* BizScopeInfo::mutable_scope() {
+  std::string* _s = _internal_mutable_scope();
+  // @@protoc_insertion_point(field_mutable:BizScopeInfo.scope)
+  return _s;
+}
+inline const std::string& BizScopeInfo::_internal_scope() const {
+  return _impl_.scope_.Get();
+}
+inline void BizScopeInfo::_internal_set_scope(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.scope_.Set(value, GetArenaForAllocation());
+}
+inline std::string* BizScopeInfo::_internal_mutable_scope() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.scope_.Mutable(GetArenaForAllocation());
+}
+inline std::string* BizScopeInfo::release_scope() {
+  // @@protoc_insertion_point(field_release:BizScopeInfo.scope)
+  if (!_internal_has_scope()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.scope_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.scope_.IsDefault()) {
+    _impl_.scope_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void BizScopeInfo::set_allocated_scope(std::string* scope) {
+  if (scope != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.scope_.SetAllocated(scope, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.scope_.IsDefault()) {
+    _impl_.scope_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:BizScopeInfo.scope)
+}
+
+// required uint32 scopeStatus = 2;
+inline bool BizScopeInfo::_internal_has_scopestatus() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool BizScopeInfo::has_scopestatus() const {
+  return _internal_has_scopestatus();
+}
+inline void BizScopeInfo::clear_scopestatus() {
+  _impl_.scopestatus_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t BizScopeInfo::_internal_scopestatus() const {
+  return _impl_.scopestatus_;
+}
+inline uint32_t BizScopeInfo::scopestatus() const {
+  // @@protoc_insertion_point(field_get:BizScopeInfo.scopeStatus)
+  return _internal_scopestatus();
+}
+inline void BizScopeInfo::_internal_set_scopestatus(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.scopestatus_ = value;
+}
+inline void BizScopeInfo::set_scopestatus(uint32_t value) {
+  _internal_set_scopestatus(value);
+  // @@protoc_insertion_point(field_set:BizScopeInfo.scopeStatus)
+}
+
+// optional string scopeDesc = 3;
+inline bool BizScopeInfo::_internal_has_scopedesc() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool BizScopeInfo::has_scopedesc() const {
+  return _internal_has_scopedesc();
+}
+inline void BizScopeInfo::clear_scopedesc() {
+  _impl_.scopedesc_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline const std::string& BizScopeInfo::scopedesc() const {
+  // @@protoc_insertion_point(field_get:BizScopeInfo.scopeDesc)
+  return _internal_scopedesc();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void BizScopeInfo::set_scopedesc(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000002u;
+ _impl_.scopedesc_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:BizScopeInfo.scopeDesc)
+}
+inline std::string* BizScopeInfo::mutable_scopedesc() {
+  std::string* _s = _internal_mutable_scopedesc();
+  // @@protoc_insertion_point(field_mutable:BizScopeInfo.scopeDesc)
+  return _s;
+}
+inline const std::string& BizScopeInfo::_internal_scopedesc() const {
+  return _impl_.scopedesc_.Get();
+}
+inline void BizScopeInfo::_internal_set_scopedesc(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.scopedesc_.Set(value, GetArenaForAllocation());
+}
+inline std::string* BizScopeInfo::_internal_mutable_scopedesc() {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  return _impl_.scopedesc_.Mutable(GetArenaForAllocation());
+}
+inline std::string* BizScopeInfo::release_scopedesc() {
+  // @@protoc_insertion_point(field_release:BizScopeInfo.scopeDesc)
+  if (!_internal_has_scopedesc()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000002u;
+  auto* p = _impl_.scopedesc_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.scopedesc_.IsDefault()) {
+    _impl_.scopedesc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void BizScopeInfo::set_allocated_scopedesc(std::string* scopedesc) {
+  if (scopedesc != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000002u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000002u;
+  }
+  _impl_.scopedesc_.SetAllocated(scopedesc, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.scopedesc_.IsDefault()) {
+    _impl_.scopedesc_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:BizScopeInfo.scopeDesc)
+}
+
+// required uint32 apiCount = 4;
+inline bool BizScopeInfo::_internal_has_apicount() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool BizScopeInfo::has_apicount() const {
+  return _internal_has_apicount();
+}
+inline void BizScopeInfo::clear_apicount() {
+  _impl_.apicount_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t BizScopeInfo::_internal_apicount() const {
+  return _impl_.apicount_;
+}
+inline uint32_t BizScopeInfo::apicount() const {
+  // @@protoc_insertion_point(field_get:BizScopeInfo.apiCount)
+  return _internal_apicount();
+}
+inline void BizScopeInfo::_internal_set_apicount(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.apicount_ = value;
+}
+inline void BizScopeInfo::set_apicount(uint32_t value) {
+  _internal_set_apicount(value);
+  // @@protoc_insertion_point(field_set:BizScopeInfo.apiCount)
+}
+
+// repeated .BizApiInfo apiList = 5;
+inline int BizScopeInfo::_internal_apilist_size() const {
+  return _impl_.apilist_.size();
+}
+inline int BizScopeInfo::apilist_size() const {
+  return _internal_apilist_size();
+}
+inline void BizScopeInfo::clear_apilist() {
+  _impl_.apilist_.Clear();
+}
+inline ::BizApiInfo* BizScopeInfo::mutable_apilist(int index) {
+  // @@protoc_insertion_point(field_mutable:BizScopeInfo.apiList)
+  return _impl_.apilist_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::BizApiInfo >*
+BizScopeInfo::mutable_apilist() {
+  // @@protoc_insertion_point(field_mutable_list:BizScopeInfo.apiList)
+  return &_impl_.apilist_;
+}
+inline const ::BizApiInfo& BizScopeInfo::_internal_apilist(int index) const {
+  return _impl_.apilist_.Get(index);
+}
+inline const ::BizApiInfo& BizScopeInfo::apilist(int index) const {
+  // @@protoc_insertion_point(field_get:BizScopeInfo.apiList)
+  return _internal_apilist(index);
+}
+inline ::BizApiInfo* BizScopeInfo::_internal_add_apilist() {
+  return _impl_.apilist_.Add();
+}
+inline ::BizApiInfo* BizScopeInfo::add_apilist() {
+  ::BizApiInfo* _add = _internal_add_apilist();
+  // @@protoc_insertion_point(field_add:BizScopeInfo.apiList)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::BizApiInfo >&
+BizScopeInfo::apilist() const {
+  // @@protoc_insertion_point(field_list:BizScopeInfo.apiList)
+  return _impl_.apilist_;
+}
+
+// -------------------------------------------------------------------
+
+// JSAPIPermissionBitSet
+
+// required uint32 bitValue = 1;
+inline bool JSAPIPermissionBitSet::_internal_has_bitvalue() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool JSAPIPermissionBitSet::has_bitvalue() const {
+  return _internal_has_bitvalue();
+}
+inline void JSAPIPermissionBitSet::clear_bitvalue() {
+  _impl_.bitvalue_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t JSAPIPermissionBitSet::_internal_bitvalue() const {
+  return _impl_.bitvalue_;
+}
+inline uint32_t JSAPIPermissionBitSet::bitvalue() const {
+  // @@protoc_insertion_point(field_get:JSAPIPermissionBitSet.bitValue)
+  return _internal_bitvalue();
+}
+inline void JSAPIPermissionBitSet::_internal_set_bitvalue(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.bitvalue_ = value;
+}
+inline void JSAPIPermissionBitSet::set_bitvalue(uint32_t value) {
+  _internal_set_bitvalue(value);
+  // @@protoc_insertion_point(field_set:JSAPIPermissionBitSet.bitValue)
+}
+
+// optional uint32 bitValue2 = 2;
+inline bool JSAPIPermissionBitSet::_internal_has_bitvalue2() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool JSAPIPermissionBitSet::has_bitvalue2() const {
+  return _internal_has_bitvalue2();
+}
+inline void JSAPIPermissionBitSet::clear_bitvalue2() {
+  _impl_.bitvalue2_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t JSAPIPermissionBitSet::_internal_bitvalue2() const {
+  return _impl_.bitvalue2_;
+}
+inline uint32_t JSAPIPermissionBitSet::bitvalue2() const {
+  // @@protoc_insertion_point(field_get:JSAPIPermissionBitSet.bitValue2)
+  return _internal_bitvalue2();
+}
+inline void JSAPIPermissionBitSet::_internal_set_bitvalue2(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.bitvalue2_ = value;
+}
+inline void JSAPIPermissionBitSet::set_bitvalue2(uint32_t value) {
+  _internal_set_bitvalue2(value);
+  // @@protoc_insertion_point(field_set:JSAPIPermissionBitSet.bitValue2)
+}
+
+// optional uint32 bitValue3 = 3;
+inline bool JSAPIPermissionBitSet::_internal_has_bitvalue3() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool JSAPIPermissionBitSet::has_bitvalue3() const {
+  return _internal_has_bitvalue3();
+}
+inline void JSAPIPermissionBitSet::clear_bitvalue3() {
+  _impl_.bitvalue3_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t JSAPIPermissionBitSet::_internal_bitvalue3() const {
+  return _impl_.bitvalue3_;
+}
+inline uint32_t JSAPIPermissionBitSet::bitvalue3() const {
+  // @@protoc_insertion_point(field_get:JSAPIPermissionBitSet.bitValue3)
+  return _internal_bitvalue3();
+}
+inline void JSAPIPermissionBitSet::_internal_set_bitvalue3(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.bitvalue3_ = value;
+}
+inline void JSAPIPermissionBitSet::set_bitvalue3(uint32_t value) {
+  _internal_set_bitvalue3(value);
+  // @@protoc_insertion_point(field_set:JSAPIPermissionBitSet.bitValue3)
+}
+
+// optional uint32 bitValue4 = 4;
+inline bool JSAPIPermissionBitSet::_internal_has_bitvalue4() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool JSAPIPermissionBitSet::has_bitvalue4() const {
+  return _internal_has_bitvalue4();
+}
+inline void JSAPIPermissionBitSet::clear_bitvalue4() {
+  _impl_.bitvalue4_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t JSAPIPermissionBitSet::_internal_bitvalue4() const {
+  return _impl_.bitvalue4_;
+}
+inline uint32_t JSAPIPermissionBitSet::bitvalue4() const {
+  // @@protoc_insertion_point(field_get:JSAPIPermissionBitSet.bitValue4)
+  return _internal_bitvalue4();
+}
+inline void JSAPIPermissionBitSet::_internal_set_bitvalue4(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.bitvalue4_ = value;
+}
+inline void JSAPIPermissionBitSet::set_bitvalue4(uint32_t value) {
+  _internal_set_bitvalue4(value);
+  // @@protoc_insertion_point(field_set:JSAPIPermissionBitSet.bitValue4)
+}
+
+// -------------------------------------------------------------------
+
+// GeneralControlBitSet
+
+// required uint32 bitValue = 1;
+inline bool GeneralControlBitSet::_internal_has_bitvalue() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool GeneralControlBitSet::has_bitvalue() const {
+  return _internal_has_bitvalue();
+}
+inline void GeneralControlBitSet::clear_bitvalue() {
+  _impl_.bitvalue_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t GeneralControlBitSet::_internal_bitvalue() const {
+  return _impl_.bitvalue_;
+}
+inline uint32_t GeneralControlBitSet::bitvalue() const {
+  // @@protoc_insertion_point(field_get:GeneralControlBitSet.bitValue)
+  return _internal_bitvalue();
+}
+inline void GeneralControlBitSet::_internal_set_bitvalue(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.bitvalue_ = value;
+}
+inline void GeneralControlBitSet::set_bitvalue(uint32_t value) {
+  _internal_set_bitvalue(value);
+  // @@protoc_insertion_point(field_set:GeneralControlBitSet.bitValue)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

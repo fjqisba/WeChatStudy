@@ -1,10 +1,10 @@
-syntax = "proto3";
+syntax = "proto2";
 import "Common.proto";
 
 option optimize_for = LITE_RUNTIME;
 
 message GmailList {
-    uint32  count  = 1;
+    required  uint32  count  = 1;
     repeated  GmailInfo  list  = 2;
 }
 
@@ -26,10 +26,10 @@ message NewRingBackSetting {
 }
 
 message RingBackSetting {
-    uint64  finderObjectId  = 1;
-    string  finderNonceId  = 2;
-    uint32  startTs  = 3;
-    uint32  endTs  = 4;
+    required  uint64  finderObjectId  = 1;
+    required  string  finderNonceId  = 2;
+    required  uint32  startTs  = 3;
+    required  uint32  endTs  = 4;
 }
 
 message XAgreementInfo {
@@ -53,16 +53,16 @@ message SafeDevice {
     optional  string  name  = 1;
     optional  string  uuid  = 2;
     optional  string  deviceType  = 3;
-    uint32  createTime  = 4;
+    required  uint32  createTime  = 4;
 }
 
 message SafeDeviceList {
-    uint32  count  = 1;
+    required  uint32  count  = 1;
     repeated  SafeDevice  list  = 2;
 }
 
 message SnsUserInfo {
-    uint32  snsFlag  = 1;
+    required  uint32  snsFlag  = 1;
     optional  string  snsBgimgId  = 2;
     optional  uint64  snsBgobjectId  = 3;
     optional  uint32  snsFlagEx  = 4;
@@ -71,31 +71,31 @@ message SnsUserInfo {
 
 message GmailInfo {
     optional  string  gmailAcct  = 1;
-    uint32  gmailSwitch  = 2;
-    uint32  gmailErrCode  = 3;
+    required  uint32  gmailSwitch  = 2;
+    required  uint32  gmailErrCode  = 3;
 }
 
 message DisturbTimeSpan {
-    uint32  beginTime  = 1;
-    uint32  endTime  = 2;
+    required  uint32  beginTime  = 1;
+    required  uint32  endTime  = 2;
 }
 
 message DisturbSetting {
-    uint32  nightSetting  = 1;
-    DisturbTimeSpan  nightTime  = 2;
-    uint32  allDaySetting  = 3;
-    DisturbTimeSpan  allDayTime  = 4;
+    required  uint32  nightSetting  = 1;
+    required  DisturbTimeSpan  nightTime  = 2;
+    required  uint32  allDaySetting  = 3;
+    required  DisturbTimeSpan  allDayTime  = 4;
 }
 
 message ModUserInfo {
-    uint32  bitFlag  = 1;
-    SKBuiltinString_t  userName  = 2;
-    SKBuiltinString_t  nickName  = 3;
-    uint32  bindUin  = 4;
-    SKBuiltinString_t  bindEmail  = 5;
-    SKBuiltinString_t  bindMobile  = 6;
-    uint32  status  = 7;
-    uint32  imgLen  = 8;
+    required  uint32  bitFlag  = 1;
+    required  SKBuiltinString_t  userName  = 2;
+    required  SKBuiltinString_t  nickName  = 3;
+    required  uint32  bindUin  = 4;
+    required  SKBuiltinString_t  bindEmail  = 5;
+    required  SKBuiltinString_t  bindMobile  = 6;
+    required  uint32  status  = 7;
+    required  uint32  imgLen  = 8;
     optional  bytes  imgBuf  = 9;
     optional  int32  sex  = 10;
     optional  string  province  = 11;
@@ -129,7 +129,7 @@ message ModUserInfo {
 }
 
 message UserInfoExt {
-    SnsUserInfo  snsUserInfo  = 1;
+    required  SnsUserInfo  snsUserInfo  = 1;
     optional  string  myBrandList  = 2;
     optional  string  msgPushSound  = 3;
     optional  string  voipPushSound  = 4;
@@ -181,7 +181,7 @@ message UserInfoExt {
 }
 
 message GetProfileResponse {
-    BaseResponse  baseResponse  = 1;
-    ModUserInfo  userInfo  = 2;
-    UserInfoExt  userInfoExt  = 3;
+    required  BaseResponse  baseResponse  = 1;
+    required  ModUserInfo  userInfo  = 2;
+    required  UserInfoExt  userInfoExt  = 3;
 }

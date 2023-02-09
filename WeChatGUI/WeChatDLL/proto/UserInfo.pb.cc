@@ -19,9 +19,10 @@ namespace _pbi = _pb::internal;
 
 PROTOBUF_CONSTEXPR GmailList::GmailList(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.list_)*/{}
-  , /*decltype(_impl_.count_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.list_)*/{}
+  , /*decltype(_impl_.count_)*/0u} {}
 struct GmailListDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GmailListDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -80,11 +81,12 @@ struct NewRingBackSettingDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NewRingBackSettingDefaultTypeInternal _NewRingBackSetting_default_instance_;
 PROTOBUF_CONSTEXPR RingBackSetting::RingBackSetting(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.findernonceid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.findernonceid_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.finderobjectid_)*/uint64_t{0u}
   , /*decltype(_impl_.startts_)*/0u
-  , /*decltype(_impl_.endts_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+  , /*decltype(_impl_.endts_)*/0u} {}
 struct RingBackSettingDefaultTypeInternal {
   PROTOBUF_CONSTEXPR RingBackSettingDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -160,9 +162,10 @@ struct SafeDeviceDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SafeDeviceDefaultTypeInternal _SafeDevice_default_instance_;
 PROTOBUF_CONSTEXPR SafeDeviceList::SafeDeviceList(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.list_)*/{}
-  , /*decltype(_impl_.count_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.list_)*/{}
+  , /*decltype(_impl_.count_)*/0u} {}
 struct SafeDeviceListDefaultTypeInternal {
   PROTOBUF_CONSTEXPR SafeDeviceListDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -208,9 +211,10 @@ struct GmailInfoDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GmailInfoDefaultTypeInternal _GmailInfo_default_instance_;
 PROTOBUF_CONSTEXPR DisturbTimeSpan::DisturbTimeSpan(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.begintime_)*/0u
-  , /*decltype(_impl_.endtime_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.begintime_)*/0u
+  , /*decltype(_impl_.endtime_)*/0u} {}
 struct DisturbTimeSpanDefaultTypeInternal {
   PROTOBUF_CONSTEXPR DisturbTimeSpanDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -222,11 +226,12 @@ struct DisturbTimeSpanDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DisturbTimeSpanDefaultTypeInternal _DisturbTimeSpan_default_instance_;
 PROTOBUF_CONSTEXPR DisturbSetting::DisturbSetting(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.nighttime_)*/nullptr
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.nighttime_)*/nullptr
   , /*decltype(_impl_.alldaytime_)*/nullptr
   , /*decltype(_impl_.nightsetting_)*/0u
-  , /*decltype(_impl_.alldaysetting_)*/0u
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+  , /*decltype(_impl_.alldaysetting_)*/0u} {}
 struct DisturbSettingDefaultTypeInternal {
   PROTOBUF_CONSTEXPR DisturbSettingDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -351,10 +356,11 @@ struct UserInfoExtDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserInfoExtDefaultTypeInternal _UserInfoExt_default_instance_;
 PROTOBUF_CONSTEXPR GetProfileResponse::GetProfileResponse(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.baseresponse_)*/nullptr
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.baseresponse_)*/nullptr
   , /*decltype(_impl_.userinfo_)*/nullptr
-  , /*decltype(_impl_.userinfoext_)*/nullptr
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+  , /*decltype(_impl_.userinfoext_)*/nullptr} {}
 struct GetProfileResponseDefaultTypeInternal {
   PROTOBUF_CONSTEXPR GetProfileResponseDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -369,6 +375,13 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 
 class GmailList::_Internal {
  public:
+  using HasBits = decltype(std::declval<GmailList>()._impl_._has_bits_);
+  static void set_has_count(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
 };
 
 GmailList::GmailList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -381,9 +394,10 @@ GmailList::GmailList(const GmailList& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   GmailList* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.list_){from._impl_.list_}
-    , decltype(_impl_.count_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.list_){from._impl_.list_}
+    , decltype(_impl_.count_){}};
 
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   _this->_impl_.count_ = from._impl_.count_;
@@ -395,9 +409,10 @@ inline void GmailList::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.list_){arena}
-    , decltype(_impl_.count_){0u}
+      decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.list_){arena}
+    , decltype(_impl_.count_){0u}
   };
 }
 
@@ -427,18 +442,21 @@ void GmailList::Clear() {
 
   _impl_.list_.Clear();
   _impl_.count_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
 const char* GmailList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 count = 1;
+      // required uint32 count = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_count(&has_bits);
           _impl_.count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -473,6 +491,7 @@ const char* GmailList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -486,8 +505,9 @@ uint8_t* GmailList::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 count = 1;
-  if (this->_internal_count() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 count = 1;
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_count(), target);
   }
@@ -512,6 +532,10 @@ size_t GmailList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:GmailList)
   size_t total_size = 0;
 
+  // required uint32 count = 1;
+  if (_internal_has_count()) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_count());
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -521,11 +545,6 @@ size_t GmailList::ByteSizeLong() const {
   for (const auto& msg : this->_impl_.list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // uint32 count = 1;
-  if (this->_internal_count() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_count());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -550,7 +569,7 @@ void GmailList::MergeFrom(const GmailList& from) {
   (void) cached_has_bits;
 
   _this->_impl_.list_.MergeFrom(from._impl_.list_);
-  if (from._internal_count() != 0) {
+  if (from._internal_has_count()) {
     _this->_internal_set_count(from._internal_count());
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
@@ -564,12 +583,16 @@ void GmailList::CopyFrom(const GmailList& from) {
 }
 
 bool GmailList::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(_impl_.list_))
+    return false;
   return true;
 }
 
 void GmailList::InternalSwap(GmailList* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.list_.InternalSwap(&other->_impl_.list_);
   swap(_impl_.count_, other->_impl_.count_);
 }
@@ -693,8 +716,9 @@ uint8_t* MusicRingBackSetting::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional uint32 sid = 1;
-  if (_internal_has_sid()) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_sid(), target);
   }
@@ -883,7 +907,6 @@ const char* FinderRingBackSetting::_InternalParse(const char* ptr, ::_pbi::Parse
           auto str = _internal_mutable_findernonceid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -917,18 +940,15 @@ uint8_t* FinderRingBackSetting::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional uint64 finderObjectId = 1;
-  if (_internal_has_finderobjectid()) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_finderobjectid(), target);
   }
 
   // optional string finderNonceId = 2;
-  if (_internal_has_findernonceid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_findernonceid().data(), static_cast<int>(this->_internal_findernonceid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "FinderRingBackSetting.finderNonceId");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_findernonceid(), target);
   }
@@ -1230,33 +1250,34 @@ uint8_t* NewRingBackSetting::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional uint32 type = 1;
-  if (_internal_has_type()) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_type(), target);
   }
 
   // optional uint32 startTime = 2;
-  if (_internal_has_starttime()) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_starttime(), target);
   }
 
   // optional uint32 endTime = 3;
-  if (_internal_has_endtime()) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_endtime(), target);
   }
 
   // optional .MusicRingBackSetting music = 4;
-  if (_internal_has_music()) {
+  if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::music(this),
         _Internal::music(this).GetCachedSize(), target, stream);
   }
 
   // optional .FinderRingBackSetting finder = 5;
-  if (_internal_has_finder()) {
+  if (cached_has_bits & 0x00000002u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(5, _Internal::finder(this),
         _Internal::finder(this).GetCachedSize(), target, stream);
@@ -1387,6 +1408,22 @@ std::string NewRingBackSetting::GetTypeName() const {
 
 class RingBackSetting::_Internal {
  public:
+  using HasBits = decltype(std::declval<RingBackSetting>()._impl_._has_bits_);
+  static void set_has_finderobjectid(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_findernonceid(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_startts(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_endts(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
 };
 
 RingBackSetting::RingBackSetting(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1399,18 +1436,19 @@ RingBackSetting::RingBackSetting(const RingBackSetting& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   RingBackSetting* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.findernonceid_){}
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.findernonceid_){}
     , decltype(_impl_.finderobjectid_){}
     , decltype(_impl_.startts_){}
-    , decltype(_impl_.endts_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+    , decltype(_impl_.endts_){}};
 
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   _impl_.findernonceid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.findernonceid_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_findernonceid().empty()) {
+  if (from._internal_has_findernonceid()) {
     _this->_impl_.findernonceid_.Set(from._internal_findernonceid(), 
       _this->GetArenaForAllocation());
   }
@@ -1425,11 +1463,12 @@ inline void RingBackSetting::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.findernonceid_){}
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.findernonceid_){}
     , decltype(_impl_.finderobjectid_){uint64_t{0u}}
     , decltype(_impl_.startts_){0u}
     , decltype(_impl_.endts_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.findernonceid_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -1461,48 +1500,57 @@ void RingBackSetting::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.findernonceid_.ClearToEmpty();
-  ::memset(&_impl_.finderobjectid_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.endts_) -
-      reinterpret_cast<char*>(&_impl_.finderobjectid_)) + sizeof(_impl_.endts_));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.findernonceid_.ClearNonDefaultToEmpty();
+  }
+  if (cached_has_bits & 0x0000000eu) {
+    ::memset(&_impl_.finderobjectid_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.endts_) -
+        reinterpret_cast<char*>(&_impl_.finderobjectid_)) + sizeof(_impl_.endts_));
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
 const char* RingBackSetting::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint64 finderObjectId = 1;
+      // required uint64 finderObjectId = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_finderobjectid(&has_bits);
           _impl_.finderobjectid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string finderNonceId = 2;
+      // required string finderNonceId = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           auto str = _internal_mutable_findernonceid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
-      // uint32 startTs = 3;
+      // required uint32 startTs = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_startts(&has_bits);
           _impl_.startts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 endTs = 4;
+      // required uint32 endTs = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_endts(&has_bits);
           _impl_.endts_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -1524,6 +1572,7 @@ const char* RingBackSetting::_InternalParse(const char* ptr, ::_pbi::ParseContex
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -1537,30 +1586,27 @@ uint8_t* RingBackSetting::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint64 finderObjectId = 1;
-  if (this->_internal_finderobjectid() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint64 finderObjectId = 1;
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_finderobjectid(), target);
   }
 
-  // string finderNonceId = 2;
-  if (!this->_internal_findernonceid().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_findernonceid().data(), static_cast<int>(this->_internal_findernonceid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "RingBackSetting.finderNonceId");
+  // required string finderNonceId = 2;
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_findernonceid(), target);
   }
 
-  // uint32 startTs = 3;
-  if (this->_internal_startts() != 0) {
+  // required uint32 startTs = 3;
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_startts(), target);
   }
 
-  // uint32 endTs = 4;
-  if (this->_internal_endts() != 0) {
+  // required uint32 endTs = 4;
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_endts(), target);
   }
@@ -1573,35 +1619,59 @@ uint8_t* RingBackSetting::_InternalSerialize(
   return target;
 }
 
-size_t RingBackSetting::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:RingBackSetting)
+size_t RingBackSetting::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:RingBackSetting)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string finderNonceId = 2;
-  if (!this->_internal_findernonceid().empty()) {
+  if (_internal_has_findernonceid()) {
+    // required string finderNonceId = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_findernonceid());
   }
 
-  // uint64 finderObjectId = 1;
-  if (this->_internal_finderobjectid() != 0) {
+  if (_internal_has_finderobjectid()) {
+    // required uint64 finderObjectId = 1;
     total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_finderobjectid());
   }
 
-  // uint32 startTs = 3;
-  if (this->_internal_startts() != 0) {
+  if (_internal_has_startts()) {
+    // required uint32 startTs = 3;
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_startts());
   }
 
-  // uint32 endTs = 4;
-  if (this->_internal_endts() != 0) {
+  if (_internal_has_endts()) {
+    // required uint32 endTs = 4;
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_endts());
   }
+
+  return total_size;
+}
+size_t RingBackSetting::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:RingBackSetting)
+  size_t total_size = 0;
+
+  if (((_impl_._has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required string finderNonceId = 2;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_findernonceid());
+
+    // required uint64 finderObjectId = 1;
+    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_finderobjectid());
+
+    // required uint32 startTs = 3;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_startts());
+
+    // required uint32 endTs = 4;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_endts());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
@@ -1624,17 +1694,21 @@ void RingBackSetting::MergeFrom(const RingBackSetting& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_findernonceid().empty()) {
-    _this->_internal_set_findernonceid(from._internal_findernonceid());
-  }
-  if (from._internal_finderobjectid() != 0) {
-    _this->_internal_set_finderobjectid(from._internal_finderobjectid());
-  }
-  if (from._internal_startts() != 0) {
-    _this->_internal_set_startts(from._internal_startts());
-  }
-  if (from._internal_endts() != 0) {
-    _this->_internal_set_endts(from._internal_endts());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_findernonceid(from._internal_findernonceid());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.finderobjectid_ = from._impl_.finderobjectid_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.startts_ = from._impl_.startts_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.endts_ = from._impl_.endts_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -1647,6 +1721,7 @@ void RingBackSetting::CopyFrom(const RingBackSetting& from) {
 }
 
 bool RingBackSetting::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
@@ -1655,6 +1730,7 @@ void RingBackSetting::InternalSwap(RingBackSetting* other) {
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.findernonceid_, lhs_arena,
       &other->_impl_.findernonceid_, rhs_arena
@@ -1807,14 +1883,15 @@ uint8_t* XAgreementInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional uint64 funcsSwitch = 1;
-  if (_internal_has_funcsswitch()) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_funcsswitch(), target);
   }
 
   // optional uint64 funcsUserChoiceSwitch = 2;
-  if (_internal_has_funcsuserchoiceswitch()) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(2, this->_internal_funcsuserchoiceswitch(), target);
   }
@@ -2050,7 +2127,6 @@ const char* LinkedinContactItem::_InternalParse(const char* ptr, ::_pbi::ParseCo
           auto str = _internal_mutable_linkedinname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -2060,7 +2136,6 @@ const char* LinkedinContactItem::_InternalParse(const char* ptr, ::_pbi::ParseCo
           auto str = _internal_mutable_linkedinmemberid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -2070,7 +2145,6 @@ const char* LinkedinContactItem::_InternalParse(const char* ptr, ::_pbi::ParseCo
           auto str = _internal_mutable_linkedinpublicurl();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -2104,32 +2178,21 @@ uint8_t* LinkedinContactItem::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string linkedinName = 1;
-  if (_internal_has_linkedinname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_linkedinname().data(), static_cast<int>(this->_internal_linkedinname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "LinkedinContactItem.linkedinName");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_linkedinname(), target);
   }
 
   // optional string linkedinMemberId = 2;
-  if (_internal_has_linkedinmemberid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_linkedinmemberid().data(), static_cast<int>(this->_internal_linkedinmemberid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "LinkedinContactItem.linkedinMemberId");
+  if (cached_has_bits & 0x00000002u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_linkedinmemberid(), target);
   }
 
   // optional string linkedinPublicUrl = 3;
-  if (_internal_has_linkedinpublicurl()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_linkedinpublicurl().data(), static_cast<int>(this->_internal_linkedinpublicurl().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "LinkedinContactItem.linkedinPublicUrl");
+  if (cached_has_bits & 0x00000004u) {
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_linkedinpublicurl(), target);
   }
@@ -2411,21 +2474,22 @@ uint8_t* PatternLockInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional uint32 patternVersion = 1;
-  if (_internal_has_patternversion()) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_patternversion(), target);
   }
 
   // optional .SKBuiltinBuffer_t sign = 2;
-  if (_internal_has_sign()) {
+  if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::sign(this),
         _Internal::sign(this).GetCachedSize(), target, stream);
   }
 
   // optional uint32 lockStatus = 3;
-  if (_internal_has_lockstatus()) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_lockstatus(), target);
   }
@@ -2512,6 +2576,9 @@ void PatternLockInfo::CopyFrom(const PatternLockInfo& from) {
 }
 
 bool PatternLockInfo::IsInitialized() const {
+  if (_internal_has_sign()) {
+    if (!_impl_.sign_->IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -2545,6 +2612,12 @@ class SafeDevice::_Internal {
   }
   static void set_has_devicetype(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
+  }
+  static void set_has_createtime(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000008) ^ 0x00000008) != 0;
   }
 };
 
@@ -2676,7 +2749,6 @@ const char* SafeDevice::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
           auto str = _internal_mutable_name();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -2686,7 +2758,6 @@ const char* SafeDevice::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
           auto str = _internal_mutable_uuid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -2696,13 +2767,13 @@ const char* SafeDevice::_InternalParse(const char* ptr, ::_pbi::ParseContext* ct
           auto str = _internal_mutable_devicetype();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
-      // uint32 createTime = 4;
+      // required uint32 createTime = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_createtime(&has_bits);
           _impl_.createtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -2738,38 +2809,27 @@ uint8_t* SafeDevice::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string name = 1;
-  if (_internal_has_name()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "SafeDevice.name");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_name(), target);
   }
 
   // optional string uuid = 2;
-  if (_internal_has_uuid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_uuid().data(), static_cast<int>(this->_internal_uuid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "SafeDevice.uuid");
+  if (cached_has_bits & 0x00000002u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_uuid(), target);
   }
 
   // optional string deviceType = 3;
-  if (_internal_has_devicetype()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_devicetype().data(), static_cast<int>(this->_internal_devicetype().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "SafeDevice.deviceType");
+  if (cached_has_bits & 0x00000004u) {
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_devicetype(), target);
   }
 
-  // uint32 createTime = 4;
-  if (this->_internal_createtime() != 0) {
+  // required uint32 createTime = 4;
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_createtime(), target);
   }
@@ -2786,6 +2846,10 @@ size_t SafeDevice::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:SafeDevice)
   size_t total_size = 0;
 
+  // required uint32 createTime = 4;
+  if (_internal_has_createtime()) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_createtime());
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -2814,11 +2878,6 @@ size_t SafeDevice::ByteSizeLong() const {
     }
 
   }
-  // uint32 createTime = 4;
-  if (this->_internal_createtime() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_createtime());
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
@@ -2841,7 +2900,7 @@ void SafeDevice::MergeFrom(const SafeDevice& from) {
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000007u) {
+  if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
       _this->_internal_set_name(from._internal_name());
     }
@@ -2851,9 +2910,10 @@ void SafeDevice::MergeFrom(const SafeDevice& from) {
     if (cached_has_bits & 0x00000004u) {
       _this->_internal_set_devicetype(from._internal_devicetype());
     }
-  }
-  if (from._internal_createtime() != 0) {
-    _this->_internal_set_createtime(from._internal_createtime());
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.createtime_ = from._impl_.createtime_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -2866,6 +2926,7 @@ void SafeDevice::CopyFrom(const SafeDevice& from) {
 }
 
 bool SafeDevice::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
@@ -2899,6 +2960,13 @@ std::string SafeDevice::GetTypeName() const {
 
 class SafeDeviceList::_Internal {
  public:
+  using HasBits = decltype(std::declval<SafeDeviceList>()._impl_._has_bits_);
+  static void set_has_count(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
+  }
 };
 
 SafeDeviceList::SafeDeviceList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -2911,9 +2979,10 @@ SafeDeviceList::SafeDeviceList(const SafeDeviceList& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   SafeDeviceList* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.list_){from._impl_.list_}
-    , decltype(_impl_.count_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.list_){from._impl_.list_}
+    , decltype(_impl_.count_){}};
 
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   _this->_impl_.count_ = from._impl_.count_;
@@ -2925,9 +2994,10 @@ inline void SafeDeviceList::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.list_){arena}
-    , decltype(_impl_.count_){0u}
+      decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.list_){arena}
+    , decltype(_impl_.count_){0u}
   };
 }
 
@@ -2957,18 +3027,21 @@ void SafeDeviceList::Clear() {
 
   _impl_.list_.Clear();
   _impl_.count_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
 const char* SafeDeviceList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 count = 1;
+      // required uint32 count = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_count(&has_bits);
           _impl_.count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -3003,6 +3076,7 @@ const char* SafeDeviceList::_InternalParse(const char* ptr, ::_pbi::ParseContext
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -3016,8 +3090,9 @@ uint8_t* SafeDeviceList::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 count = 1;
-  if (this->_internal_count() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 count = 1;
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_count(), target);
   }
@@ -3042,6 +3117,10 @@ size_t SafeDeviceList::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:SafeDeviceList)
   size_t total_size = 0;
 
+  // required uint32 count = 1;
+  if (_internal_has_count()) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_count());
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3051,11 +3130,6 @@ size_t SafeDeviceList::ByteSizeLong() const {
   for (const auto& msg : this->_impl_.list_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  // uint32 count = 1;
-  if (this->_internal_count() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_count());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3080,7 +3154,7 @@ void SafeDeviceList::MergeFrom(const SafeDeviceList& from) {
   (void) cached_has_bits;
 
   _this->_impl_.list_.MergeFrom(from._impl_.list_);
-  if (from._internal_count() != 0) {
+  if (from._internal_has_count()) {
     _this->_internal_set_count(from._internal_count());
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
@@ -3094,12 +3168,16 @@ void SafeDeviceList::CopyFrom(const SafeDeviceList& from) {
 }
 
 bool SafeDeviceList::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(_impl_.list_))
+    return false;
   return true;
 }
 
 void SafeDeviceList::InternalSwap(SafeDeviceList* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.list_.InternalSwap(&other->_impl_.list_);
   swap(_impl_.count_, other->_impl_.count_);
 }
@@ -3114,17 +3192,23 @@ std::string SafeDeviceList::GetTypeName() const {
 class SnsUserInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<SnsUserInfo>()._impl_._has_bits_);
+  static void set_has_snsflag(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
   static void set_has_snsbgimgid(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_snsbgobjectid(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+    (*has_bits)[0] |= 8u;
   }
   static void set_has_snsflagex(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
+    (*has_bits)[0] |= 4u;
   }
   static void set_has_snsprivacyrecent(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
+    (*has_bits)[0] |= 16u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000002) ^ 0x00000002) != 0;
   }
 };
 
@@ -3208,11 +3292,10 @@ void SnsUserInfo::Clear() {
   if (cached_has_bits & 0x00000001u) {
     _impl_.snsbgimgid_.ClearNonDefaultToEmpty();
   }
-  _impl_.snsflag_ = 0u;
-  if (cached_has_bits & 0x0000000eu) {
-    ::memset(&_impl_.snsflagex_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x0000001eu) {
+    ::memset(&_impl_.snsflag_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.snsprivacyrecent_) -
-        reinterpret_cast<char*>(&_impl_.snsflagex_)) + sizeof(_impl_.snsprivacyrecent_));
+        reinterpret_cast<char*>(&_impl_.snsflag_)) + sizeof(_impl_.snsprivacyrecent_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
@@ -3225,9 +3308,10 @@ const char* SnsUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 snsFlag = 1;
+      // required uint32 snsFlag = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_snsflag(&has_bits);
           _impl_.snsflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -3239,7 +3323,6 @@ const char* SnsUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_snsbgimgid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -3300,36 +3383,33 @@ uint8_t* SnsUserInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 snsFlag = 1;
-  if (this->_internal_snsflag() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 snsFlag = 1;
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_snsflag(), target);
   }
 
   // optional string snsBgimgId = 2;
-  if (_internal_has_snsbgimgid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_snsbgimgid().data(), static_cast<int>(this->_internal_snsbgimgid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "SnsUserInfo.snsBgimgId");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_snsbgimgid(), target);
   }
 
   // optional uint64 snsBgobjectId = 3;
-  if (_internal_has_snsbgobjectid()) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(3, this->_internal_snsbgobjectid(), target);
   }
 
   // optional uint32 snsFlagEx = 4;
-  if (_internal_has_snsflagex()) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_snsflagex(), target);
   }
 
   // optional uint32 snsPrivacyRecent = 5;
-  if (_internal_has_snsprivacyrecent()) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_snsprivacyrecent(), target);
   }
@@ -3346,6 +3426,10 @@ size_t SnsUserInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:SnsUserInfo)
   size_t total_size = 0;
 
+  // required uint32 snsFlag = 1;
+  if (_internal_has_snsflag()) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_snsflag());
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3358,24 +3442,19 @@ size_t SnsUserInfo::ByteSizeLong() const {
         this->_internal_snsbgimgid());
   }
 
-  // uint32 snsFlag = 1;
-  if (this->_internal_snsflag() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_snsflag());
-  }
-
-  if (cached_has_bits & 0x0000000eu) {
+  if (cached_has_bits & 0x0000001cu) {
     // optional uint32 snsFlagEx = 4;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_snsflagex());
     }
 
     // optional uint64 snsBgobjectId = 3;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_snsbgobjectid());
     }
 
     // optional uint32 snsPrivacyRecent = 5;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_snsprivacyrecent());
     }
 
@@ -3401,21 +3480,21 @@ void SnsUserInfo::MergeFrom(const SnsUserInfo& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_snsbgimgid()) {
-    _this->_internal_set_snsbgimgid(from._internal_snsbgimgid());
-  }
-  if (from._internal_snsflag() != 0) {
-    _this->_internal_set_snsflag(from._internal_snsflag());
-  }
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000000eu) {
+  if (cached_has_bits & 0x0000001fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_snsbgimgid(from._internal_snsbgimgid());
+    }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.snsflagex_ = from._impl_.snsflagex_;
+      _this->_impl_.snsflag_ = from._impl_.snsflag_;
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.snsbgobjectid_ = from._impl_.snsbgobjectid_;
+      _this->_impl_.snsflagex_ = from._impl_.snsflagex_;
     }
     if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.snsbgobjectid_ = from._impl_.snsbgobjectid_;
+    }
+    if (cached_has_bits & 0x00000010u) {
       _this->_impl_.snsprivacyrecent_ = from._impl_.snsprivacyrecent_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -3431,6 +3510,7 @@ void SnsUserInfo::CopyFrom(const SnsUserInfo& from) {
 }
 
 bool SnsUserInfo::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
@@ -3464,6 +3544,15 @@ class GmailInfo::_Internal {
   using HasBits = decltype(std::declval<GmailInfo>()._impl_._has_bits_);
   static void set_has_gmailacct(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
+  }
+  static void set_has_gmailswitch(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_gmailerrcode(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000006) ^ 0x00000006) != 0;
   }
 };
 
@@ -3543,9 +3632,11 @@ void GmailInfo::Clear() {
   if (cached_has_bits & 0x00000001u) {
     _impl_.gmailacct_.ClearNonDefaultToEmpty();
   }
-  ::memset(&_impl_.gmailswitch_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.gmailerrcode_) -
-      reinterpret_cast<char*>(&_impl_.gmailswitch_)) + sizeof(_impl_.gmailerrcode_));
+  if (cached_has_bits & 0x00000006u) {
+    ::memset(&_impl_.gmailswitch_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.gmailerrcode_) -
+        reinterpret_cast<char*>(&_impl_.gmailswitch_)) + sizeof(_impl_.gmailerrcode_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
@@ -3563,21 +3654,22 @@ const char* GmailInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
           auto str = _internal_mutable_gmailacct();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
-      // uint32 gmailSwitch = 2;
+      // required uint32 gmailSwitch = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_gmailswitch(&has_bits);
           _impl_.gmailswitch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 gmailErrCode = 3;
+      // required uint32 gmailErrCode = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_gmailerrcode(&has_bits);
           _impl_.gmailerrcode_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -3613,24 +3705,21 @@ uint8_t* GmailInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string gmailAcct = 1;
-  if (_internal_has_gmailacct()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_gmailacct().data(), static_cast<int>(this->_internal_gmailacct().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "GmailInfo.gmailAcct");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_gmailacct(), target);
   }
 
-  // uint32 gmailSwitch = 2;
-  if (this->_internal_gmailswitch() != 0) {
+  // required uint32 gmailSwitch = 2;
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_gmailswitch(), target);
   }
 
-  // uint32 gmailErrCode = 3;
-  if (this->_internal_gmailerrcode() != 0) {
+  // required uint32 gmailErrCode = 3;
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_gmailerrcode(), target);
   }
@@ -3643,10 +3732,36 @@ uint8_t* GmailInfo::_InternalSerialize(
   return target;
 }
 
+size_t GmailInfo::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:GmailInfo)
+  size_t total_size = 0;
+
+  if (_internal_has_gmailswitch()) {
+    // required uint32 gmailSwitch = 2;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_gmailswitch());
+  }
+
+  if (_internal_has_gmailerrcode()) {
+    // required uint32 gmailErrCode = 3;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_gmailerrcode());
+  }
+
+  return total_size;
+}
 size_t GmailInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:GmailInfo)
   size_t total_size = 0;
 
+  if (((_impl_._has_bits_[0] & 0x00000006) ^ 0x00000006) == 0) {  // All required fields are present.
+    // required uint32 gmailSwitch = 2;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_gmailswitch());
+
+    // required uint32 gmailErrCode = 3;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_gmailerrcode());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3657,16 +3772,6 @@ size_t GmailInfo::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_gmailacct());
-  }
-
-  // uint32 gmailSwitch = 2;
-  if (this->_internal_gmailswitch() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_gmailswitch());
-  }
-
-  // uint32 gmailErrCode = 3;
-  if (this->_internal_gmailerrcode() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_gmailerrcode());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -3690,14 +3795,18 @@ void GmailInfo::MergeFrom(const GmailInfo& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_gmailacct()) {
-    _this->_internal_set_gmailacct(from._internal_gmailacct());
-  }
-  if (from._internal_gmailswitch() != 0) {
-    _this->_internal_set_gmailswitch(from._internal_gmailswitch());
-  }
-  if (from._internal_gmailerrcode() != 0) {
-    _this->_internal_set_gmailerrcode(from._internal_gmailerrcode());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_gmailacct(from._internal_gmailacct());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.gmailswitch_ = from._impl_.gmailswitch_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.gmailerrcode_ = from._impl_.gmailerrcode_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -3710,6 +3819,7 @@ void GmailInfo::CopyFrom(const GmailInfo& from) {
 }
 
 bool GmailInfo::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
@@ -3740,6 +3850,16 @@ std::string GmailInfo::GetTypeName() const {
 
 class DisturbTimeSpan::_Internal {
  public:
+  using HasBits = decltype(std::declval<DisturbTimeSpan>()._impl_._has_bits_);
+  static void set_has_begintime(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_endtime(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
+  }
 };
 
 DisturbTimeSpan::DisturbTimeSpan(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -3752,9 +3872,10 @@ DisturbTimeSpan::DisturbTimeSpan(const DisturbTimeSpan& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   DisturbTimeSpan* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.begintime_){}
-    , decltype(_impl_.endtime_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.begintime_){}
+    , decltype(_impl_.endtime_){}};
 
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   ::memcpy(&_impl_.begintime_, &from._impl_.begintime_,
@@ -3768,9 +3889,10 @@ inline void DisturbTimeSpan::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.begintime_){0u}
-    , decltype(_impl_.endtime_){0u}
+      decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.begintime_){0u}
+    , decltype(_impl_.endtime_){0u}
   };
 }
 
@@ -3797,29 +3919,36 @@ void DisturbTimeSpan::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.begintime_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.endtime_) -
-      reinterpret_cast<char*>(&_impl_.begintime_)) + sizeof(_impl_.endtime_));
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.begintime_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.endtime_) -
+        reinterpret_cast<char*>(&_impl_.begintime_)) + sizeof(_impl_.endtime_));
+  }
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
 const char* DisturbTimeSpan::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 beginTime = 1;
+      // required uint32 beginTime = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_begintime(&has_bits);
           _impl_.begintime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 endTime = 2;
+      // required uint32 endTime = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_endtime(&has_bits);
           _impl_.endtime_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -3841,6 +3970,7 @@ const char* DisturbTimeSpan::_InternalParse(const char* ptr, ::_pbi::ParseContex
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -3854,14 +3984,15 @@ uint8_t* DisturbTimeSpan::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 beginTime = 1;
-  if (this->_internal_begintime() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 beginTime = 1;
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_begintime(), target);
   }
 
-  // uint32 endTime = 2;
-  if (this->_internal_endtime() != 0) {
+  // required uint32 endTime = 2;
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_endtime(), target);
   }
@@ -3874,23 +4005,39 @@ uint8_t* DisturbTimeSpan::_InternalSerialize(
   return target;
 }
 
+size_t DisturbTimeSpan::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:DisturbTimeSpan)
+  size_t total_size = 0;
+
+  if (_internal_has_begintime()) {
+    // required uint32 beginTime = 1;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_begintime());
+  }
+
+  if (_internal_has_endtime()) {
+    // required uint32 endTime = 2;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_endtime());
+  }
+
+  return total_size;
+}
 size_t DisturbTimeSpan::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:DisturbTimeSpan)
   size_t total_size = 0;
 
+  if (((_impl_._has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
+    // required uint32 beginTime = 1;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_begintime());
+
+    // required uint32 endTime = 2;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_endtime());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // uint32 beginTime = 1;
-  if (this->_internal_begintime() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_begintime());
-  }
-
-  // uint32 endTime = 2;
-  if (this->_internal_endtime() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_endtime());
-  }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
@@ -3913,11 +4060,15 @@ void DisturbTimeSpan::MergeFrom(const DisturbTimeSpan& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_begintime() != 0) {
-    _this->_internal_set_begintime(from._internal_begintime());
-  }
-  if (from._internal_endtime() != 0) {
-    _this->_internal_set_endtime(from._internal_endtime());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.begintime_ = from._impl_.begintime_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.endtime_ = from._impl_.endtime_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -3930,12 +4081,14 @@ void DisturbTimeSpan::CopyFrom(const DisturbTimeSpan& from) {
 }
 
 bool DisturbTimeSpan::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
 void DisturbTimeSpan::InternalSwap(DisturbTimeSpan* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DisturbTimeSpan, _impl_.endtime_)
       + sizeof(DisturbTimeSpan::_impl_.endtime_)
@@ -3953,8 +4106,24 @@ std::string DisturbTimeSpan::GetTypeName() const {
 
 class DisturbSetting::_Internal {
  public:
+  using HasBits = decltype(std::declval<DisturbSetting>()._impl_._has_bits_);
+  static void set_has_nightsetting(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
   static const ::DisturbTimeSpan& nighttime(const DisturbSetting* msg);
+  static void set_has_nighttime(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_alldaysetting(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
   static const ::DisturbTimeSpan& alldaytime(const DisturbSetting* msg);
+  static void set_has_alldaytime(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000f) ^ 0x0000000f) != 0;
+  }
 };
 
 const ::DisturbTimeSpan&
@@ -3975,11 +4144,12 @@ DisturbSetting::DisturbSetting(const DisturbSetting& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   DisturbSetting* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.nighttime_){nullptr}
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.nighttime_){nullptr}
     , decltype(_impl_.alldaytime_){nullptr}
     , decltype(_impl_.nightsetting_){}
-    , decltype(_impl_.alldaysetting_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
+    , decltype(_impl_.alldaysetting_){}};
 
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_nighttime()) {
@@ -3999,11 +4169,12 @@ inline void DisturbSetting::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.nighttime_){nullptr}
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.nighttime_){nullptr}
     , decltype(_impl_.alldaytime_){nullptr}
     , decltype(_impl_.nightsetting_){0u}
     , decltype(_impl_.alldaysetting_){0u}
-    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
 
@@ -4032,35 +4203,43 @@ void DisturbSetting::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.nighttime_ != nullptr) {
-    delete _impl_.nighttime_;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(_impl_.nighttime_ != nullptr);
+      _impl_.nighttime_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(_impl_.alldaytime_ != nullptr);
+      _impl_.alldaytime_->Clear();
+    }
   }
-  _impl_.nighttime_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.alldaytime_ != nullptr) {
-    delete _impl_.alldaytime_;
+  if (cached_has_bits & 0x0000000cu) {
+    ::memset(&_impl_.nightsetting_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.alldaysetting_) -
+        reinterpret_cast<char*>(&_impl_.nightsetting_)) + sizeof(_impl_.alldaysetting_));
   }
-  _impl_.alldaytime_ = nullptr;
-  ::memset(&_impl_.nightsetting_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.alldaysetting_) -
-      reinterpret_cast<char*>(&_impl_.nightsetting_)) + sizeof(_impl_.alldaysetting_));
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
 const char* DisturbSetting::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 nightSetting = 1;
+      // required uint32 nightSetting = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_nightsetting(&has_bits);
           _impl_.nightsetting_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .DisturbTimeSpan nightTime = 2;
+      // required .DisturbTimeSpan nightTime = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_nighttime(), ptr);
@@ -4068,15 +4247,16 @@ const char* DisturbSetting::_InternalParse(const char* ptr, ::_pbi::ParseContext
         } else
           goto handle_unusual;
         continue;
-      // uint32 allDaySetting = 3;
+      // required uint32 allDaySetting = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_alldaysetting(&has_bits);
           _impl_.alldaysetting_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .DisturbTimeSpan allDayTime = 4;
+      // required .DisturbTimeSpan allDayTime = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_alldaytime(), ptr);
@@ -4100,6 +4280,7 @@ const char* DisturbSetting::_InternalParse(const char* ptr, ::_pbi::ParseContext
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -4113,27 +4294,28 @@ uint8_t* DisturbSetting::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 nightSetting = 1;
-  if (this->_internal_nightsetting() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 nightSetting = 1;
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_nightsetting(), target);
   }
 
-  // .DisturbTimeSpan nightTime = 2;
-  if (this->_internal_has_nighttime()) {
+  // required .DisturbTimeSpan nightTime = 2;
+  if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::nighttime(this),
         _Internal::nighttime(this).GetCachedSize(), target, stream);
   }
 
-  // uint32 allDaySetting = 3;
-  if (this->_internal_alldaysetting() != 0) {
+  // required uint32 allDaySetting = 3;
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_alldaysetting(), target);
   }
 
-  // .DisturbTimeSpan allDayTime = 4;
-  if (this->_internal_has_alldaytime()) {
+  // required .DisturbTimeSpan allDayTime = 4;
+  if (cached_has_bits & 0x00000002u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::alldaytime(this),
         _Internal::alldaytime(this).GetCachedSize(), target, stream);
@@ -4147,37 +4329,63 @@ uint8_t* DisturbSetting::_InternalSerialize(
   return target;
 }
 
-size_t DisturbSetting::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:DisturbSetting)
+size_t DisturbSetting::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:DisturbSetting)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .DisturbTimeSpan nightTime = 2;
-  if (this->_internal_has_nighttime()) {
+  if (_internal_has_nighttime()) {
+    // required .DisturbTimeSpan nightTime = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.nighttime_);
   }
 
-  // .DisturbTimeSpan allDayTime = 4;
-  if (this->_internal_has_alldaytime()) {
+  if (_internal_has_alldaytime()) {
+    // required .DisturbTimeSpan allDayTime = 4;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.alldaytime_);
   }
 
-  // uint32 nightSetting = 1;
-  if (this->_internal_nightsetting() != 0) {
+  if (_internal_has_nightsetting()) {
+    // required uint32 nightSetting = 1;
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_nightsetting());
   }
 
-  // uint32 allDaySetting = 3;
-  if (this->_internal_alldaysetting() != 0) {
+  if (_internal_has_alldaysetting()) {
+    // required uint32 allDaySetting = 3;
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_alldaysetting());
   }
+
+  return total_size;
+}
+size_t DisturbSetting::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:DisturbSetting)
+  size_t total_size = 0;
+
+  if (((_impl_._has_bits_[0] & 0x0000000f) ^ 0x0000000f) == 0) {  // All required fields are present.
+    // required .DisturbTimeSpan nightTime = 2;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.nighttime_);
+
+    // required .DisturbTimeSpan allDayTime = 4;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.alldaytime_);
+
+    // required uint32 nightSetting = 1;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_nightsetting());
+
+    // required uint32 allDaySetting = 3;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_alldaysetting());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
@@ -4200,19 +4408,23 @@ void DisturbSetting::MergeFrom(const DisturbSetting& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_nighttime()) {
-    _this->_internal_mutable_nighttime()->::DisturbTimeSpan::MergeFrom(
-        from._internal_nighttime());
-  }
-  if (from._internal_has_alldaytime()) {
-    _this->_internal_mutable_alldaytime()->::DisturbTimeSpan::MergeFrom(
-        from._internal_alldaytime());
-  }
-  if (from._internal_nightsetting() != 0) {
-    _this->_internal_set_nightsetting(from._internal_nightsetting());
-  }
-  if (from._internal_alldaysetting() != 0) {
-    _this->_internal_set_alldaysetting(from._internal_alldaysetting());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_nighttime()->::DisturbTimeSpan::MergeFrom(
+          from._internal_nighttime());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_alldaytime()->::DisturbTimeSpan::MergeFrom(
+          from._internal_alldaytime());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.nightsetting_ = from._impl_.nightsetting_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.alldaysetting_ = from._impl_.alldaysetting_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -4225,12 +4437,20 @@ void DisturbSetting::CopyFrom(const DisturbSetting& from) {
 }
 
 bool DisturbSetting::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (_internal_has_nighttime()) {
+    if (!_impl_.nighttime_->IsInitialized()) return false;
+  }
+  if (_internal_has_alldaytime()) {
+    if (!_impl_.alldaytime_->IsInitialized()) return false;
+  }
   return true;
 }
 
 void DisturbSetting::InternalSwap(DisturbSetting* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(DisturbSetting, _impl_.alldaysetting_)
       + sizeof(DisturbSetting::_impl_.alldaysetting_)
@@ -4249,15 +4469,39 @@ std::string DisturbSetting::GetTypeName() const {
 class ModUserInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<ModUserInfo>()._impl_._has_bits_);
+  static void set_has_bitflag(HasBits* has_bits) {
+    (*has_bits)[0] |= 262144u;
+  }
   static const ::SKBuiltinString_t& username(const ModUserInfo* msg);
+  static void set_has_username(HasBits* has_bits) {
+    (*has_bits)[0] |= 4096u;
+  }
   static const ::SKBuiltinString_t& nickname(const ModUserInfo* msg);
+  static void set_has_nickname(HasBits* has_bits) {
+    (*has_bits)[0] |= 8192u;
+  }
+  static void set_has_binduin(HasBits* has_bits) {
+    (*has_bits)[0] |= 524288u;
+  }
   static const ::SKBuiltinString_t& bindemail(const ModUserInfo* msg);
+  static void set_has_bindemail(HasBits* has_bits) {
+    (*has_bits)[0] |= 16384u;
+  }
   static const ::SKBuiltinString_t& bindmobile(const ModUserInfo* msg);
+  static void set_has_bindmobile(HasBits* has_bits) {
+    (*has_bits)[0] |= 32768u;
+  }
+  static void set_has_status(HasBits* has_bits) {
+    (*has_bits)[0] |= 1048576u;
+  }
+  static void set_has_imglen(HasBits* has_bits) {
+    (*has_bits)[0] |= 2097152u;
+  }
   static void set_has_imgbuf(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_sex(HasBits* has_bits) {
-    (*has_bits)[0] |= 16384u;
+    (*has_bits)[0] |= 4194304u;
   }
   static void set_has_province(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
@@ -4269,45 +4513,45 @@ class ModUserInfo::_Internal {
     (*has_bits)[0] |= 8u;
   }
   static void set_has_personalcard(HasBits* has_bits) {
-    (*has_bits)[0] |= 32768u;
+    (*has_bits)[0] |= 8388608u;
   }
   static const ::DisturbSetting& disturbsetting(const ModUserInfo* msg);
   static void set_has_disturbsetting(HasBits* has_bits) {
-    (*has_bits)[0] |= 4096u;
-  }
-  static void set_has_pluginflag(HasBits* has_bits) {
     (*has_bits)[0] |= 65536u;
   }
+  static void set_has_pluginflag(HasBits* has_bits) {
+    (*has_bits)[0] |= 16777216u;
+  }
   static void set_has_verifyflag(HasBits* has_bits) {
-    (*has_bits)[0] |= 131072u;
+    (*has_bits)[0] |= 33554432u;
   }
   static void set_has_verifyinfo(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
   static void set_has_point(HasBits* has_bits) {
-    (*has_bits)[0] |= 262144u;
+    (*has_bits)[0] |= 67108864u;
   }
   static void set_has_experience(HasBits* has_bits) {
-    (*has_bits)[0] |= 524288u;
+    (*has_bits)[0] |= 134217728u;
   }
   static void set_has_level(HasBits* has_bits) {
-    (*has_bits)[0] |= 1048576u;
+    (*has_bits)[0] |= 268435456u;
   }
   static void set_has_levellowexp(HasBits* has_bits) {
-    (*has_bits)[0] |= 2097152u;
+    (*has_bits)[0] |= 536870912u;
   }
   static void set_has_levelhighexp(HasBits* has_bits) {
-    (*has_bits)[0] |= 4194304u;
+    (*has_bits)[0] |= 1073741824u;
   }
   static void set_has_weibo(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
   }
   static void set_has_pluginswitch(HasBits* has_bits) {
-    (*has_bits)[0] |= 8388608u;
+    (*has_bits)[0] |= 2147483648u;
   }
   static const ::GmailList& gmaillist(const ModUserInfo* msg);
   static void set_has_gmaillist(HasBits* has_bits) {
-    (*has_bits)[0] |= 8192u;
+    (*has_bits)[0] |= 131072u;
   }
   static void set_has_alias(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
@@ -4316,34 +4560,37 @@ class ModUserInfo::_Internal {
     (*has_bits)[0] |= 128u;
   }
   static void set_has_weiboflag(HasBits* has_bits) {
-    (*has_bits)[0] |= 16777216u;
+    (*has_bits)[1] |= 1u;
   }
   static void set_has_facebookflag(HasBits* has_bits) {
-    (*has_bits)[0] |= 33554432u;
+    (*has_bits)[1] |= 2u;
   }
   static void set_has_fbuserid(HasBits* has_bits) {
-    (*has_bits)[0] |= 67108864u;
+    (*has_bits)[1] |= 4u;
   }
   static void set_has_fbusername(HasBits* has_bits) {
     (*has_bits)[0] |= 256u;
   }
   static void set_has_albumstyle(HasBits* has_bits) {
-    (*has_bits)[0] |= 134217728u;
+    (*has_bits)[1] |= 8u;
   }
   static void set_has_albumflag(HasBits* has_bits) {
-    (*has_bits)[0] |= 268435456u;
+    (*has_bits)[1] |= 16u;
   }
   static void set_has_albumbgimgid(HasBits* has_bits) {
     (*has_bits)[0] |= 512u;
   }
   static void set_has_txnewscategory(HasBits* has_bits) {
-    (*has_bits)[0] |= 536870912u;
+    (*has_bits)[1] |= 32u;
   }
   static void set_has_fbtoken(HasBits* has_bits) {
     (*has_bits)[0] |= 1024u;
   }
   static void set_has_country(HasBits* has_bits) {
     (*has_bits)[0] |= 2048u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x003cf000) ^ 0x003cf000) != 0;
   }
 };
 
@@ -4372,28 +4619,20 @@ ModUserInfo::_Internal::gmaillist(const ModUserInfo* msg) {
   return *msg->_impl_.gmaillist_;
 }
 void ModUserInfo::clear_username() {
-  if (GetArenaForAllocation() == nullptr && _impl_.username_ != nullptr) {
-    delete _impl_.username_;
-  }
-  _impl_.username_ = nullptr;
+  if (_impl_.username_ != nullptr) _impl_.username_->Clear();
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 void ModUserInfo::clear_nickname() {
-  if (GetArenaForAllocation() == nullptr && _impl_.nickname_ != nullptr) {
-    delete _impl_.nickname_;
-  }
-  _impl_.nickname_ = nullptr;
+  if (_impl_.nickname_ != nullptr) _impl_.nickname_->Clear();
+  _impl_._has_bits_[0] &= ~0x00002000u;
 }
 void ModUserInfo::clear_bindemail() {
-  if (GetArenaForAllocation() == nullptr && _impl_.bindemail_ != nullptr) {
-    delete _impl_.bindemail_;
-  }
-  _impl_.bindemail_ = nullptr;
+  if (_impl_.bindemail_ != nullptr) _impl_.bindemail_->Clear();
+  _impl_._has_bits_[0] &= ~0x00004000u;
 }
 void ModUserInfo::clear_bindmobile() {
-  if (GetArenaForAllocation() == nullptr && _impl_.bindmobile_ != nullptr) {
-    delete _impl_.bindmobile_;
-  }
-  _impl_.bindmobile_ = nullptr;
+  if (_impl_.bindmobile_ != nullptr) _impl_.bindmobile_->Clear();
+  _impl_._has_bits_[0] &= ~0x00008000u;
 }
 ModUserInfo::ModUserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -4731,7 +4970,7 @@ void ModUserInfo::Clear() {
       _impl_.weibonickname_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x00000f00u) {
+  if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
       _impl_.fbusername_.ClearNonDefaultToEmpty();
     }
@@ -4744,47 +4983,45 @@ void ModUserInfo::Clear() {
     if (cached_has_bits & 0x00000800u) {
       _impl_.country_.ClearNonDefaultToEmpty();
     }
-  }
-  if (GetArenaForAllocation() == nullptr && _impl_.username_ != nullptr) {
-    delete _impl_.username_;
-  }
-  _impl_.username_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.nickname_ != nullptr) {
-    delete _impl_.nickname_;
-  }
-  _impl_.nickname_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.bindemail_ != nullptr) {
-    delete _impl_.bindemail_;
-  }
-  _impl_.bindemail_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.bindmobile_ != nullptr) {
-    delete _impl_.bindmobile_;
-  }
-  _impl_.bindmobile_ = nullptr;
-  if (cached_has_bits & 0x00003000u) {
     if (cached_has_bits & 0x00001000u) {
+      GOOGLE_DCHECK(_impl_.username_ != nullptr);
+      _impl_.username_->Clear();
+    }
+    if (cached_has_bits & 0x00002000u) {
+      GOOGLE_DCHECK(_impl_.nickname_ != nullptr);
+      _impl_.nickname_->Clear();
+    }
+    if (cached_has_bits & 0x00004000u) {
+      GOOGLE_DCHECK(_impl_.bindemail_ != nullptr);
+      _impl_.bindemail_->Clear();
+    }
+    if (cached_has_bits & 0x00008000u) {
+      GOOGLE_DCHECK(_impl_.bindmobile_ != nullptr);
+      _impl_.bindmobile_->Clear();
+    }
+  }
+  if (cached_has_bits & 0x00030000u) {
+    if (cached_has_bits & 0x00010000u) {
       GOOGLE_DCHECK(_impl_.disturbsetting_ != nullptr);
       _impl_.disturbsetting_->Clear();
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00020000u) {
       GOOGLE_DCHECK(_impl_.gmaillist_ != nullptr);
       _impl_.gmaillist_->Clear();
     }
   }
-  ::memset(&_impl_.bitflag_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.imglen_) -
-      reinterpret_cast<char*>(&_impl_.bitflag_)) + sizeof(_impl_.imglen_));
-  if (cached_has_bits & 0x0000c000u) {
-    ::memset(&_impl_.sex_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x00fc0000u) {
+    ::memset(&_impl_.bitflag_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.personalcard_) -
-        reinterpret_cast<char*>(&_impl_.sex_)) + sizeof(_impl_.personalcard_));
+        reinterpret_cast<char*>(&_impl_.bitflag_)) + sizeof(_impl_.personalcard_));
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 0xff000000u) {
     ::memset(&_impl_.pluginflag_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.pluginswitch_) -
         reinterpret_cast<char*>(&_impl_.pluginflag_)) + sizeof(_impl_.pluginswitch_));
   }
-  if (cached_has_bits & 0x3f000000u) {
+  cached_has_bits = _impl_._has_bits_[1];
+  if (cached_has_bits & 0x0000003fu) {
     ::memset(&_impl_.weiboflag_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.txnewscategory_) -
         reinterpret_cast<char*>(&_impl_.weiboflag_)) + sizeof(_impl_.txnewscategory_));
@@ -4795,20 +5032,20 @@ void ModUserInfo::Clear() {
 
 const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 bitFlag = 1;
+      // required uint32 bitFlag = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_bitflag(&_impl_._has_bits_);
           _impl_.bitflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .SKBuiltinString_t userName = 2;
+      // required .SKBuiltinString_t userName = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_username(), ptr);
@@ -4816,7 +5053,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         } else
           goto handle_unusual;
         continue;
-      // .SKBuiltinString_t nickName = 3;
+      // required .SKBuiltinString_t nickName = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_nickname(), ptr);
@@ -4824,15 +5061,16 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         } else
           goto handle_unusual;
         continue;
-      // uint32 bindUin = 4;
+      // required uint32 bindUin = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_binduin(&_impl_._has_bits_);
           _impl_.binduin_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .SKBuiltinString_t bindEmail = 5;
+      // required .SKBuiltinString_t bindEmail = 5;
       case 5:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           ptr = ctx->ParseMessage(_internal_mutable_bindemail(), ptr);
@@ -4840,7 +5078,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         } else
           goto handle_unusual;
         continue;
-      // .SKBuiltinString_t bindMobile = 6;
+      // required .SKBuiltinString_t bindMobile = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
           ptr = ctx->ParseMessage(_internal_mutable_bindmobile(), ptr);
@@ -4848,17 +5086,19 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
         } else
           goto handle_unusual;
         continue;
-      // uint32 status = 7;
+      // required uint32 status = 7;
       case 7:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _Internal::set_has_status(&_impl_._has_bits_);
           _impl_.status_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // uint32 imgLen = 8;
+      // required uint32 imgLen = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _Internal::set_has_imglen(&_impl_._has_bits_);
           _impl_.imglen_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4876,7 +5116,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional int32 sex = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
-          _Internal::set_has_sex(&has_bits);
+          _Internal::set_has_sex(&_impl_._has_bits_);
           _impl_.sex_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4888,7 +5128,6 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_province();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -4898,7 +5137,6 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_city();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -4908,14 +5146,13 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_signature();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
       // optional uint32 personalCard = 14;
       case 14:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          _Internal::set_has_personalcard(&has_bits);
+          _Internal::set_has_personalcard(&_impl_._has_bits_);
           _impl_.personalcard_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4932,7 +5169,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional uint32 pluginFlag = 16;
       case 16:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          _Internal::set_has_pluginflag(&has_bits);
+          _Internal::set_has_pluginflag(&_impl_._has_bits_);
           _impl_.pluginflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4941,7 +5178,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional uint32 verifyFlag = 17;
       case 17:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 136)) {
-          _Internal::set_has_verifyflag(&has_bits);
+          _Internal::set_has_verifyflag(&_impl_._has_bits_);
           _impl_.verifyflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4953,14 +5190,13 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_verifyinfo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
       // optional int32 point = 19;
       case 19:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 152)) {
-          _Internal::set_has_point(&has_bits);
+          _Internal::set_has_point(&_impl_._has_bits_);
           _impl_.point_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4969,7 +5205,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional int32 experience = 20;
       case 20:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 160)) {
-          _Internal::set_has_experience(&has_bits);
+          _Internal::set_has_experience(&_impl_._has_bits_);
           _impl_.experience_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4978,7 +5214,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional int32 level = 21;
       case 21:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 168)) {
-          _Internal::set_has_level(&has_bits);
+          _Internal::set_has_level(&_impl_._has_bits_);
           _impl_.level_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4987,7 +5223,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional int32 levelLowExp = 22;
       case 22:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 176)) {
-          _Internal::set_has_levellowexp(&has_bits);
+          _Internal::set_has_levellowexp(&_impl_._has_bits_);
           _impl_.levellowexp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -4996,7 +5232,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional int32 levelHighExp = 23;
       case 23:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 184)) {
-          _Internal::set_has_levelhighexp(&has_bits);
+          _Internal::set_has_levelhighexp(&_impl_._has_bits_);
           _impl_.levelhighexp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5008,14 +5244,13 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_weibo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
       // optional uint32 pluginSwitch = 25;
       case 25:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 200)) {
-          _Internal::set_has_pluginswitch(&has_bits);
+          _Internal::set_has_pluginswitch(&_impl_._has_bits_);
           _impl_.pluginswitch_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5035,7 +5270,6 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_alias();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -5045,14 +5279,13 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_weibonickname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
       // optional uint32 weiboFlag = 29;
       case 29:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 232)) {
-          _Internal::set_has_weiboflag(&has_bits);
+          _Internal::set_has_weiboflag(&_impl_._has_bits_);
           _impl_.weiboflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5061,7 +5294,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional uint32 faceBookFlag = 30;
       case 30:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 240)) {
-          _Internal::set_has_facebookflag(&has_bits);
+          _Internal::set_has_facebookflag(&_impl_._has_bits_);
           _impl_.facebookflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5070,7 +5303,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional uint64 fbuserId = 31;
       case 31:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 248)) {
-          _Internal::set_has_fbuserid(&has_bits);
+          _Internal::set_has_fbuserid(&_impl_._has_bits_);
           _impl_.fbuserid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
@@ -5082,14 +5315,13 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_fbusername();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
       // optional int32 albumStyle = 33;
       case 33:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _Internal::set_has_albumstyle(&has_bits);
+          _Internal::set_has_albumstyle(&_impl_._has_bits_);
           _impl_.albumstyle_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5098,7 +5330,7 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
       // optional int32 albumFlag = 34;
       case 34:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          _Internal::set_has_albumflag(&has_bits);
+          _Internal::set_has_albumflag(&_impl_._has_bits_);
           _impl_.albumflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5110,14 +5342,13 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_albumbgimgid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
       // optional uint32 txnewsCategory = 36;
       case 36:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
-          _Internal::set_has_txnewscategory(&has_bits);
+          _Internal::set_has_txnewscategory(&_impl_._has_bits_);
           _impl_.txnewscategory_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -5129,7 +5360,6 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_fbtoken();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -5139,7 +5369,6 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_country();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -5159,7 +5388,6 @@ const char* ModUserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
     CHK_(ptr != nullptr);
   }  // while
 message_done:
-  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -5173,280 +5401,243 @@ uint8_t* ModUserInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 bitFlag = 1;
-  if (this->_internal_bitflag() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 bitFlag = 1;
+  if (cached_has_bits & 0x00040000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_bitflag(), target);
   }
 
-  // .SKBuiltinString_t userName = 2;
-  if (this->_internal_has_username()) {
+  // required .SKBuiltinString_t userName = 2;
+  if (cached_has_bits & 0x00001000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::username(this),
         _Internal::username(this).GetCachedSize(), target, stream);
   }
 
-  // .SKBuiltinString_t nickName = 3;
-  if (this->_internal_has_nickname()) {
+  // required .SKBuiltinString_t nickName = 3;
+  if (cached_has_bits & 0x00002000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::nickname(this),
         _Internal::nickname(this).GetCachedSize(), target, stream);
   }
 
-  // uint32 bindUin = 4;
-  if (this->_internal_binduin() != 0) {
+  // required uint32 bindUin = 4;
+  if (cached_has_bits & 0x00080000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_binduin(), target);
   }
 
-  // .SKBuiltinString_t bindEmail = 5;
-  if (this->_internal_has_bindemail()) {
+  // required .SKBuiltinString_t bindEmail = 5;
+  if (cached_has_bits & 0x00004000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(5, _Internal::bindemail(this),
         _Internal::bindemail(this).GetCachedSize(), target, stream);
   }
 
-  // .SKBuiltinString_t bindMobile = 6;
-  if (this->_internal_has_bindmobile()) {
+  // required .SKBuiltinString_t bindMobile = 6;
+  if (cached_has_bits & 0x00008000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(6, _Internal::bindmobile(this),
         _Internal::bindmobile(this).GetCachedSize(), target, stream);
   }
 
-  // uint32 status = 7;
-  if (this->_internal_status() != 0) {
+  // required uint32 status = 7;
+  if (cached_has_bits & 0x00100000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(7, this->_internal_status(), target);
   }
 
-  // uint32 imgLen = 8;
-  if (this->_internal_imglen() != 0) {
+  // required uint32 imgLen = 8;
+  if (cached_has_bits & 0x00200000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(8, this->_internal_imglen(), target);
   }
 
   // optional bytes imgBuf = 9;
-  if (_internal_has_imgbuf()) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteBytesMaybeAliased(
         9, this->_internal_imgbuf(), target);
   }
 
   // optional int32 sex = 10;
-  if (_internal_has_sex()) {
+  if (cached_has_bits & 0x00400000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_sex(), target);
   }
 
   // optional string province = 11;
-  if (_internal_has_province()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_province().data(), static_cast<int>(this->_internal_province().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.province");
+  if (cached_has_bits & 0x00000002u) {
     target = stream->WriteStringMaybeAliased(
         11, this->_internal_province(), target);
   }
 
   // optional string city = 12;
-  if (_internal_has_city()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_city().data(), static_cast<int>(this->_internal_city().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.city");
+  if (cached_has_bits & 0x00000004u) {
     target = stream->WriteStringMaybeAliased(
         12, this->_internal_city(), target);
   }
 
   // optional string signature = 13;
-  if (_internal_has_signature()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_signature().data(), static_cast<int>(this->_internal_signature().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.signature");
+  if (cached_has_bits & 0x00000008u) {
     target = stream->WriteStringMaybeAliased(
         13, this->_internal_signature(), target);
   }
 
   // optional uint32 personalCard = 14;
-  if (_internal_has_personalcard()) {
+  if (cached_has_bits & 0x00800000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_personalcard(), target);
   }
 
   // optional .DisturbSetting disturbSetting = 15;
-  if (_internal_has_disturbsetting()) {
+  if (cached_has_bits & 0x00010000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(15, _Internal::disturbsetting(this),
         _Internal::disturbsetting(this).GetCachedSize(), target, stream);
   }
 
   // optional uint32 pluginFlag = 16;
-  if (_internal_has_pluginflag()) {
+  if (cached_has_bits & 0x01000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(16, this->_internal_pluginflag(), target);
   }
 
   // optional uint32 verifyFlag = 17;
-  if (_internal_has_verifyflag()) {
+  if (cached_has_bits & 0x02000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(17, this->_internal_verifyflag(), target);
   }
 
   // optional string verifyInfo = 18;
-  if (_internal_has_verifyinfo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_verifyinfo().data(), static_cast<int>(this->_internal_verifyinfo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.verifyInfo");
+  if (cached_has_bits & 0x00000010u) {
     target = stream->WriteStringMaybeAliased(
         18, this->_internal_verifyinfo(), target);
   }
 
   // optional int32 point = 19;
-  if (_internal_has_point()) {
+  if (cached_has_bits & 0x04000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(19, this->_internal_point(), target);
   }
 
   // optional int32 experience = 20;
-  if (_internal_has_experience()) {
+  if (cached_has_bits & 0x08000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(20, this->_internal_experience(), target);
   }
 
   // optional int32 level = 21;
-  if (_internal_has_level()) {
+  if (cached_has_bits & 0x10000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(21, this->_internal_level(), target);
   }
 
   // optional int32 levelLowExp = 22;
-  if (_internal_has_levellowexp()) {
+  if (cached_has_bits & 0x20000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(22, this->_internal_levellowexp(), target);
   }
 
   // optional int32 levelHighExp = 23;
-  if (_internal_has_levelhighexp()) {
+  if (cached_has_bits & 0x40000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(23, this->_internal_levelhighexp(), target);
   }
 
   // optional string weibo = 24;
-  if (_internal_has_weibo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_weibo().data(), static_cast<int>(this->_internal_weibo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.weibo");
+  if (cached_has_bits & 0x00000020u) {
     target = stream->WriteStringMaybeAliased(
         24, this->_internal_weibo(), target);
   }
 
   // optional uint32 pluginSwitch = 25;
-  if (_internal_has_pluginswitch()) {
+  if (cached_has_bits & 0x80000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(25, this->_internal_pluginswitch(), target);
   }
 
   // optional .GmailList gmailList = 26;
-  if (_internal_has_gmaillist()) {
+  if (cached_has_bits & 0x00020000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(26, _Internal::gmaillist(this),
         _Internal::gmaillist(this).GetCachedSize(), target, stream);
   }
 
   // optional string alias = 27;
-  if (_internal_has_alias()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_alias().data(), static_cast<int>(this->_internal_alias().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.alias");
+  if (cached_has_bits & 0x00000040u) {
     target = stream->WriteStringMaybeAliased(
         27, this->_internal_alias(), target);
   }
 
   // optional string weiboNickname = 28;
-  if (_internal_has_weibonickname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_weibonickname().data(), static_cast<int>(this->_internal_weibonickname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.weiboNickname");
+  if (cached_has_bits & 0x00000080u) {
     target = stream->WriteStringMaybeAliased(
         28, this->_internal_weibonickname(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 weiboFlag = 29;
-  if (_internal_has_weiboflag()) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(29, this->_internal_weiboflag(), target);
   }
 
   // optional uint32 faceBookFlag = 30;
-  if (_internal_has_facebookflag()) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(30, this->_internal_facebookflag(), target);
   }
 
   // optional uint64 fbuserId = 31;
-  if (_internal_has_fbuserid()) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(31, this->_internal_fbuserid(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string fbuserName = 32;
-  if (_internal_has_fbusername()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_fbusername().data(), static_cast<int>(this->_internal_fbusername().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.fbuserName");
+  if (cached_has_bits & 0x00000100u) {
     target = stream->WriteStringMaybeAliased(
         32, this->_internal_fbusername(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional int32 albumStyle = 33;
-  if (_internal_has_albumstyle()) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(33, this->_internal_albumstyle(), target);
   }
 
   // optional int32 albumFlag = 34;
-  if (_internal_has_albumflag()) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(34, this->_internal_albumflag(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string albumBgimgId = 35;
-  if (_internal_has_albumbgimgid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_albumbgimgid().data(), static_cast<int>(this->_internal_albumbgimgid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.albumBgimgId");
+  if (cached_has_bits & 0x00000200u) {
     target = stream->WriteStringMaybeAliased(
         35, this->_internal_albumbgimgid(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 txnewsCategory = 36;
-  if (_internal_has_txnewscategory()) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(36, this->_internal_txnewscategory(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string fbtoken = 37;
-  if (_internal_has_fbtoken()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_fbtoken().data(), static_cast<int>(this->_internal_fbtoken().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.fbtoken");
+  if (cached_has_bits & 0x00000400u) {
     target = stream->WriteStringMaybeAliased(
         37, this->_internal_fbtoken(), target);
   }
 
   // optional string country = 38;
-  if (_internal_has_country()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_country().data(), static_cast<int>(this->_internal_country().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ModUserInfo.country");
+  if (cached_has_bits & 0x00000800u) {
     target = stream->WriteStringMaybeAliased(
         38, this->_internal_country(), target);
   }
@@ -5459,10 +5650,100 @@ uint8_t* ModUserInfo::_InternalSerialize(
   return target;
 }
 
+size_t ModUserInfo::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:ModUserInfo)
+  size_t total_size = 0;
+
+  if (_internal_has_username()) {
+    // required .SKBuiltinString_t userName = 2;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.username_);
+  }
+
+  if (_internal_has_nickname()) {
+    // required .SKBuiltinString_t nickName = 3;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.nickname_);
+  }
+
+  if (_internal_has_bindemail()) {
+    // required .SKBuiltinString_t bindEmail = 5;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.bindemail_);
+  }
+
+  if (_internal_has_bindmobile()) {
+    // required .SKBuiltinString_t bindMobile = 6;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.bindmobile_);
+  }
+
+  if (_internal_has_bitflag()) {
+    // required uint32 bitFlag = 1;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bitflag());
+  }
+
+  if (_internal_has_binduin()) {
+    // required uint32 bindUin = 4;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_binduin());
+  }
+
+  if (_internal_has_status()) {
+    // required uint32 status = 7;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_status());
+  }
+
+  if (_internal_has_imglen()) {
+    // required uint32 imgLen = 8;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_imglen());
+  }
+
+  return total_size;
+}
 size_t ModUserInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ModUserInfo)
   size_t total_size = 0;
 
+  if (((_impl_._has_bits_[0] & 0x003cf000) ^ 0x003cf000) == 0) {  // All required fields are present.
+    // required .SKBuiltinString_t userName = 2;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.username_);
+
+    // required .SKBuiltinString_t nickName = 3;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.nickname_);
+
+    // required .SKBuiltinString_t bindEmail = 5;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.bindemail_);
+
+    // required .SKBuiltinString_t bindMobile = 6;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.bindmobile_);
+
+    // required uint32 bitFlag = 1;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bitflag());
+
+    // required uint32 bindUin = 4;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_binduin());
+
+    // required uint32 status = 7;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_status());
+
+    // required uint32 imgLen = 8;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_imglen());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -5556,178 +5837,131 @@ size_t ModUserInfo::ByteSizeLong() const {
     }
 
   }
-  // .SKBuiltinString_t userName = 2;
-  if (this->_internal_has_username()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.username_);
-  }
-
-  // .SKBuiltinString_t nickName = 3;
-  if (this->_internal_has_nickname()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.nickname_);
-  }
-
-  // .SKBuiltinString_t bindEmail = 5;
-  if (this->_internal_has_bindemail()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.bindemail_);
-  }
-
-  // .SKBuiltinString_t bindMobile = 6;
-  if (this->_internal_has_bindmobile()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.bindmobile_);
-  }
-
-  if (cached_has_bits & 0x00003000u) {
+  if (cached_has_bits & 0x00030000u) {
     // optional .DisturbSetting disturbSetting = 15;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00010000u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.disturbsetting_);
     }
 
     // optional .GmailList gmailList = 26;
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00020000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.gmaillist_);
     }
 
   }
-  // uint32 bitFlag = 1;
-  if (this->_internal_bitflag() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bitflag());
-  }
-
-  // uint32 bindUin = 4;
-  if (this->_internal_binduin() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_binduin());
-  }
-
-  // uint32 status = 7;
-  if (this->_internal_status() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_status());
-  }
-
-  // uint32 imgLen = 8;
-  if (this->_internal_imglen() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_imglen());
-  }
-
-  if (cached_has_bits & 0x0000c000u) {
+  if (cached_has_bits & 0x00c00000u) {
     // optional int32 sex = 10;
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00400000u) {
       total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_sex());
     }
 
     // optional uint32 personalCard = 14;
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00800000u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_personalcard());
     }
 
   }
-  if (cached_has_bits & 0x00ff0000u) {
+  if (cached_has_bits & 0xff000000u) {
     // optional uint32 pluginFlag = 16;
-    if (cached_has_bits & 0x00010000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_pluginflag());
     }
 
     // optional uint32 verifyFlag = 17;
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_verifyflag());
     }
 
     // optional int32 point = 19;
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x04000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_point());
     }
 
     // optional int32 experience = 20;
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x08000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_experience());
     }
 
     // optional int32 level = 21;
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x10000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_level());
     }
 
     // optional int32 levelLowExp = 22;
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x20000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_levellowexp());
     }
 
     // optional int32 levelHighExp = 23;
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x40000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_levelhighexp());
     }
 
     // optional uint32 pluginSwitch = 25;
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x80000000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_pluginswitch());
     }
 
   }
-  if (cached_has_bits & 0x3f000000u) {
+  cached_has_bits = _impl_._has_bits_[1];
+  if (cached_has_bits & 0x0000003fu) {
     // optional uint32 weiboFlag = 29;
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x00000001u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_weiboflag());
     }
 
     // optional uint32 faceBookFlag = 30;
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_facebookflag());
     }
 
     // optional uint64 fbuserId = 31;
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt64Size(
           this->_internal_fbuserid());
     }
 
     // optional int32 albumStyle = 33;
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_albumstyle());
     }
 
     // optional int32 albumFlag = 34;
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::Int32Size(
           this->_internal_albumflag());
     }
 
     // optional uint32 txnewsCategory = 36;
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_txnewscategory());
@@ -5782,7 +6016,7 @@ void ModUserInfo::MergeFrom(const ModUserInfo& from) {
       _this->_internal_set_weibonickname(from._internal_weibonickname());
     }
   }
-  if (cached_has_bits & 0x00000f00u) {
+  if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
       _this->_internal_set_fbusername(from._internal_fbusername());
     }
@@ -5795,101 +6029,100 @@ void ModUserInfo::MergeFrom(const ModUserInfo& from) {
     if (cached_has_bits & 0x00000800u) {
       _this->_internal_set_country(from._internal_country());
     }
-  }
-  if (from._internal_has_username()) {
-    _this->_internal_mutable_username()->::SKBuiltinString_t::MergeFrom(
-        from._internal_username());
-  }
-  if (from._internal_has_nickname()) {
-    _this->_internal_mutable_nickname()->::SKBuiltinString_t::MergeFrom(
-        from._internal_nickname());
-  }
-  if (from._internal_has_bindemail()) {
-    _this->_internal_mutable_bindemail()->::SKBuiltinString_t::MergeFrom(
-        from._internal_bindemail());
-  }
-  if (from._internal_has_bindmobile()) {
-    _this->_internal_mutable_bindmobile()->::SKBuiltinString_t::MergeFrom(
-        from._internal_bindmobile());
-  }
-  if (cached_has_bits & 0x00003000u) {
     if (cached_has_bits & 0x00001000u) {
+      _this->_internal_mutable_username()->::SKBuiltinString_t::MergeFrom(
+          from._internal_username());
+    }
+    if (cached_has_bits & 0x00002000u) {
+      _this->_internal_mutable_nickname()->::SKBuiltinString_t::MergeFrom(
+          from._internal_nickname());
+    }
+    if (cached_has_bits & 0x00004000u) {
+      _this->_internal_mutable_bindemail()->::SKBuiltinString_t::MergeFrom(
+          from._internal_bindemail());
+    }
+    if (cached_has_bits & 0x00008000u) {
+      _this->_internal_mutable_bindmobile()->::SKBuiltinString_t::MergeFrom(
+          from._internal_bindmobile());
+    }
+  }
+  if (cached_has_bits & 0x00ff0000u) {
+    if (cached_has_bits & 0x00010000u) {
       _this->_internal_mutable_disturbsetting()->::DisturbSetting::MergeFrom(
           from._internal_disturbsetting());
     }
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00020000u) {
       _this->_internal_mutable_gmaillist()->::GmailList::MergeFrom(
           from._internal_gmaillist());
     }
-  }
-  if (from._internal_bitflag() != 0) {
-    _this->_internal_set_bitflag(from._internal_bitflag());
-  }
-  if (from._internal_binduin() != 0) {
-    _this->_internal_set_binduin(from._internal_binduin());
-  }
-  if (from._internal_status() != 0) {
-    _this->_internal_set_status(from._internal_status());
-  }
-  if (from._internal_imglen() != 0) {
-    _this->_internal_set_imglen(from._internal_imglen());
-  }
-  if (cached_has_bits & 0x0000c000u) {
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00040000u) {
+      _this->_impl_.bitflag_ = from._impl_.bitflag_;
+    }
+    if (cached_has_bits & 0x00080000u) {
+      _this->_impl_.binduin_ = from._impl_.binduin_;
+    }
+    if (cached_has_bits & 0x00100000u) {
+      _this->_impl_.status_ = from._impl_.status_;
+    }
+    if (cached_has_bits & 0x00200000u) {
+      _this->_impl_.imglen_ = from._impl_.imglen_;
+    }
+    if (cached_has_bits & 0x00400000u) {
       _this->_impl_.sex_ = from._impl_.sex_;
     }
-    if (cached_has_bits & 0x00008000u) {
+    if (cached_has_bits & 0x00800000u) {
       _this->_impl_.personalcard_ = from._impl_.personalcard_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00ff0000u) {
-    if (cached_has_bits & 0x00010000u) {
+  if (cached_has_bits & 0xff000000u) {
+    if (cached_has_bits & 0x01000000u) {
       _this->_impl_.pluginflag_ = from._impl_.pluginflag_;
     }
-    if (cached_has_bits & 0x00020000u) {
+    if (cached_has_bits & 0x02000000u) {
       _this->_impl_.verifyflag_ = from._impl_.verifyflag_;
     }
-    if (cached_has_bits & 0x00040000u) {
+    if (cached_has_bits & 0x04000000u) {
       _this->_impl_.point_ = from._impl_.point_;
     }
-    if (cached_has_bits & 0x00080000u) {
+    if (cached_has_bits & 0x08000000u) {
       _this->_impl_.experience_ = from._impl_.experience_;
     }
-    if (cached_has_bits & 0x00100000u) {
+    if (cached_has_bits & 0x10000000u) {
       _this->_impl_.level_ = from._impl_.level_;
     }
-    if (cached_has_bits & 0x00200000u) {
+    if (cached_has_bits & 0x20000000u) {
       _this->_impl_.levellowexp_ = from._impl_.levellowexp_;
     }
-    if (cached_has_bits & 0x00400000u) {
+    if (cached_has_bits & 0x40000000u) {
       _this->_impl_.levelhighexp_ = from._impl_.levelhighexp_;
     }
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x80000000u) {
       _this->_impl_.pluginswitch_ = from._impl_.pluginswitch_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x3f000000u) {
-    if (cached_has_bits & 0x01000000u) {
+  cached_has_bits = from._impl_._has_bits_[1];
+  if (cached_has_bits & 0x0000003fu) {
+    if (cached_has_bits & 0x00000001u) {
       _this->_impl_.weiboflag_ = from._impl_.weiboflag_;
     }
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x00000002u) {
       _this->_impl_.facebookflag_ = from._impl_.facebookflag_;
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x00000004u) {
       _this->_impl_.fbuserid_ = from._impl_.fbuserid_;
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x00000008u) {
       _this->_impl_.albumstyle_ = from._impl_.albumstyle_;
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x00000010u) {
       _this->_impl_.albumflag_ = from._impl_.albumflag_;
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x00000020u) {
       _this->_impl_.txnewscategory_ = from._impl_.txnewscategory_;
     }
-    _this->_impl_._has_bits_[0] |= cached_has_bits;
+    _this->_impl_._has_bits_[1] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -5902,6 +6135,13 @@ void ModUserInfo::CopyFrom(const ModUserInfo& from) {
 }
 
 bool ModUserInfo::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (_internal_has_disturbsetting()) {
+    if (!_impl_.disturbsetting_->IsInitialized()) return false;
+  }
+  if (_internal_has_gmaillist()) {
+    if (!_impl_.gmaillist_->IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -5911,6 +6151,7 @@ void ModUserInfo::InternalSwap(ModUserInfo* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_._has_bits_[1], other->_impl_._has_bits_[1]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.imgbuf_, lhs_arena,
       &other->_impl_.imgbuf_, rhs_arena
@@ -5978,6 +6219,9 @@ class UserInfoExt::_Internal {
  public:
   using HasBits = decltype(std::declval<UserInfoExt>()._impl_._has_bits_);
   static const ::SnsUserInfo& snsuserinfo(const UserInfoExt* msg);
+  static void set_has_snsuserinfo(HasBits* has_bits) {
+    (*has_bits)[0] |= 4194304u;
+  }
   static void set_has_mybrandlist(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
@@ -5988,13 +6232,13 @@ class UserInfoExt::_Internal {
     (*has_bits)[0] |= 4u;
   }
   static void set_has_bigchatroomsize(HasBits* has_bits) {
-    (*has_bits)[0] |= 536870912u;
-  }
-  static void set_has_bigchatroomquota(HasBits* has_bits) {
     (*has_bits)[0] |= 1073741824u;
   }
-  static void set_has_bigchatroominvite(HasBits* has_bits) {
+  static void set_has_bigchatroomquota(HasBits* has_bits) {
     (*has_bits)[0] |= 2147483648u;
+  }
+  static void set_has_bigchatroominvite(HasBits* has_bits) {
+    (*has_bits)[1] |= 1u;
   }
   static void set_has_safemobile(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
@@ -6006,21 +6250,21 @@ class UserInfoExt::_Internal {
     (*has_bits)[0] |= 32u;
   }
   static void set_has_mainaccttype(HasBits* has_bits) {
-    (*has_bits)[1] |= 1u;
+    (*has_bits)[1] |= 2u;
   }
   static const ::SKBuiltinString_t& extxml(const UserInfoExt* msg);
   static void set_has_extxml(HasBits* has_bits) {
-    (*has_bits)[0] |= 4194304u;
+    (*has_bits)[0] |= 8388608u;
   }
   static const ::SafeDeviceList& safedevicelist(const UserInfoExt* msg);
   static void set_has_safedevicelist(HasBits* has_bits) {
-    (*has_bits)[0] |= 8388608u;
+    (*has_bits)[0] |= 16777216u;
   }
   static void set_has_safedevice(HasBits* has_bits) {
-    (*has_bits)[1] |= 2u;
+    (*has_bits)[1] |= 4u;
   }
   static void set_has_grayscaleflag(HasBits* has_bits) {
-    (*has_bits)[1] |= 4u;
+    (*has_bits)[1] |= 8u;
   }
   static void set_has_googlecontactname(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
@@ -6045,38 +6289,38 @@ class UserInfoExt::_Internal {
   }
   static const ::LinkedinContactItem& linkedincontactitem(const UserInfoExt* msg);
   static void set_has_linkedincontactitem(HasBits* has_bits) {
-    (*has_bits)[0] |= 16777216u;
+    (*has_bits)[0] |= 33554432u;
   }
   static void set_has_kfinfo(HasBits* has_bits) {
     (*has_bits)[0] |= 8192u;
   }
   static const ::PatternLockInfo& patternlockinfo(const UserInfoExt* msg);
   static void set_has_patternlockinfo(HasBits* has_bits) {
-    (*has_bits)[0] |= 33554432u;
+    (*has_bits)[0] |= 67108864u;
   }
   static void set_has_securitydeviceid(HasBits* has_bits) {
     (*has_bits)[0] |= 16384u;
   }
   static void set_has_paywallettype(HasBits* has_bits) {
-    (*has_bits)[1] |= 8u;
+    (*has_bits)[1] |= 16u;
   }
   static void set_has_weidianinfo(HasBits* has_bits) {
     (*has_bits)[0] |= 32768u;
   }
   static void set_has_walletregion(HasBits* has_bits) {
-    (*has_bits)[1] |= 16u;
+    (*has_bits)[1] |= 32u;
   }
   static void set_has_extstatus(HasBits* has_bits) {
-    (*has_bits)[1] |= 32u;
+    (*has_bits)[1] |= 64u;
   }
   static void set_has_f2fpushsound(HasBits* has_bits) {
     (*has_bits)[0] |= 65536u;
   }
   static void set_has_userstatus(HasBits* has_bits) {
-    (*has_bits)[1] |= 128u;
+    (*has_bits)[1] |= 256u;
   }
   static void set_has_paysetting(HasBits* has_bits) {
-    (*has_bits)[1] |= 64u;
+    (*has_bits)[1] |= 128u;
   }
   static void set_has_bindxmail(HasBits* has_bits) {
     (*has_bits)[0] |= 131072u;
@@ -6085,20 +6329,20 @@ class UserInfoExt::_Internal {
     (*has_bits)[0] |= 262144u;
   }
   static void set_has_patsuffixversion(HasBits* has_bits) {
-    (*has_bits)[1] |= 256u;
-  }
-  static void set_has_teenagermodefindersetting(HasBits* has_bits) {
     (*has_bits)[1] |= 512u;
   }
-  static void set_has_teenagermodebizacctsetting(HasBits* has_bits) {
+  static void set_has_teenagermodefindersetting(HasBits* has_bits) {
     (*has_bits)[1] |= 1024u;
   }
-  static void set_has_teenagermodeminiprogramsetting(HasBits* has_bits) {
+  static void set_has_teenagermodebizacctsetting(HasBits* has_bits) {
     (*has_bits)[1] |= 2048u;
+  }
+  static void set_has_teenagermodeminiprogramsetting(HasBits* has_bits) {
+    (*has_bits)[1] |= 4096u;
   }
   static const ::XAgreementInfo& xagreementinfo(const UserInfoExt* msg);
   static void set_has_xagreementinfo(HasBits* has_bits) {
-    (*has_bits)[0] |= 67108864u;
+    (*has_bits)[0] |= 134217728u;
   }
   static void set_has_textstatusid(HasBits* has_bits) {
     (*has_bits)[0] |= 524288u;
@@ -6110,24 +6354,27 @@ class UserInfoExt::_Internal {
     (*has_bits)[0] |= 2097152u;
   }
   static void set_has_findersetting(HasBits* has_bits) {
-    (*has_bits)[1] |= 8192u;
+    (*has_bits)[1] |= 16384u;
   }
   static const ::RingBackSetting& ringbacksetting(const UserInfoExt* msg);
   static void set_has_ringbacksetting(HasBits* has_bits) {
-    (*has_bits)[0] |= 134217728u;
+    (*has_bits)[0] |= 268435456u;
   }
   static void set_has_smcryptoflag(HasBits* has_bits) {
-    (*has_bits)[1] |= 4096u;
+    (*has_bits)[1] |= 8192u;
   }
   static const ::NewRingBackSetting& globalringbacksetting(const UserInfoExt* msg);
   static void set_has_globalringbacksetting(HasBits* has_bits) {
-    (*has_bits)[0] |= 268435456u;
+    (*has_bits)[0] |= 536870912u;
   }
   static void set_has_newcomemsgdefaultvoicenumber(HasBits* has_bits) {
-    (*has_bits)[1] |= 32768u;
+    (*has_bits)[1] |= 65536u;
   }
   static void set_has_discoverypagectrlflag(HasBits* has_bits) {
-    (*has_bits)[1] |= 16384u;
+    (*has_bits)[1] |= 32768u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00400000) ^ 0x00400000) != 0;
   }
 };
 
@@ -6165,7 +6412,7 @@ UserInfoExt::_Internal::globalringbacksetting(const UserInfoExt* msg) {
 }
 void UserInfoExt::clear_extxml() {
   if (_impl_.extxml_ != nullptr) _impl_.extxml_->Clear();
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
 }
 UserInfoExt::UserInfoExt(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -6689,7 +6936,7 @@ void UserInfoExt::Clear() {
       _impl_.weidianinfo_.ClearNonDefaultToEmpty();
     }
   }
-  if (cached_has_bits & 0x003f0000u) {
+  if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
       _impl_.f2fpushsound_.ClearNonDefaultToEmpty();
     }
@@ -6708,59 +6955,58 @@ void UserInfoExt::Clear() {
     if (cached_has_bits & 0x00200000u) {
       _impl_.salt_.ClearNonDefaultToEmpty();
     }
-  }
-  if (GetArenaForAllocation() == nullptr && _impl_.snsuserinfo_ != nullptr) {
-    delete _impl_.snsuserinfo_;
-  }
-  _impl_.snsuserinfo_ = nullptr;
-  if (cached_has_bits & 0x00c00000u) {
     if (cached_has_bits & 0x00400000u) {
+      GOOGLE_DCHECK(_impl_.snsuserinfo_ != nullptr);
+      _impl_.snsuserinfo_->Clear();
+    }
+    if (cached_has_bits & 0x00800000u) {
       GOOGLE_DCHECK(_impl_.extxml_ != nullptr);
       _impl_.extxml_->Clear();
     }
-    if (cached_has_bits & 0x00800000u) {
+  }
+  if (cached_has_bits & 0x3f000000u) {
+    if (cached_has_bits & 0x01000000u) {
       GOOGLE_DCHECK(_impl_.safedevicelist_ != nullptr);
       _impl_.safedevicelist_->Clear();
     }
-  }
-  if (cached_has_bits & 0x1f000000u) {
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x02000000u) {
       GOOGLE_DCHECK(_impl_.linkedincontactitem_ != nullptr);
       _impl_.linkedincontactitem_->Clear();
     }
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x04000000u) {
       GOOGLE_DCHECK(_impl_.patternlockinfo_ != nullptr);
       _impl_.patternlockinfo_->Clear();
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x08000000u) {
       GOOGLE_DCHECK(_impl_.xagreementinfo_ != nullptr);
       _impl_.xagreementinfo_->Clear();
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x10000000u) {
       GOOGLE_DCHECK(_impl_.ringbacksetting_ != nullptr);
       _impl_.ringbacksetting_->Clear();
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x20000000u) {
       GOOGLE_DCHECK(_impl_.globalringbacksetting_ != nullptr);
       _impl_.globalringbacksetting_->Clear();
     }
   }
-  if (cached_has_bits & 0xe0000000u) {
+  if (cached_has_bits & 0xc0000000u) {
     ::memset(&_impl_.bigchatroomsize_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.bigchatroominvite_) -
-        reinterpret_cast<char*>(&_impl_.bigchatroomsize_)) + sizeof(_impl_.bigchatroominvite_));
+        reinterpret_cast<char*>(&_impl_.bigchatroomquota_) -
+        reinterpret_cast<char*>(&_impl_.bigchatroomsize_)) + sizeof(_impl_.bigchatroomquota_));
   }
   cached_has_bits = _impl_._has_bits_[1];
   if (cached_has_bits & 0x000000ffu) {
-    ::memset(&_impl_.mainaccttype_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.userstatus_) -
-        reinterpret_cast<char*>(&_impl_.mainaccttype_)) + sizeof(_impl_.userstatus_));
+    ::memset(&_impl_.bigchatroominvite_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.paysetting_) -
+        reinterpret_cast<char*>(&_impl_.bigchatroominvite_)) + sizeof(_impl_.paysetting_));
   }
   if (cached_has_bits & 0x0000ff00u) {
-    ::memset(&_impl_.patsuffixversion_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.newcomemsgdefaultvoicenumber_) -
-        reinterpret_cast<char*>(&_impl_.patsuffixversion_)) + sizeof(_impl_.newcomemsgdefaultvoicenumber_));
+    ::memset(&_impl_.userstatus_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.discoverypagectrlflag_) -
+        reinterpret_cast<char*>(&_impl_.userstatus_)) + sizeof(_impl_.discoverypagectrlflag_));
   }
+  _impl_.newcomemsgdefaultvoicenumber_ = 0u;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
@@ -6771,7 +7017,7 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .SnsUserInfo snsUserInfo = 1;
+      // required .SnsUserInfo snsUserInfo = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_snsuserinfo(), ptr);
@@ -6785,7 +7031,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_mybrandlist();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6795,7 +7040,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_msgpushsound();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6805,7 +7049,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_voippushsound();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6842,7 +7085,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_safemobile();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6852,7 +7094,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_bigheadimgurl();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6862,7 +7103,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_smallheadimgurl();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6915,7 +7155,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_googlecontactname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6925,7 +7164,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_idcardnum();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6935,7 +7173,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_realname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6945,7 +7182,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_regcountry();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6955,7 +7191,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_bbppid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6965,7 +7200,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_bbpin();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6975,7 +7209,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_bbmnickname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -6993,7 +7226,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_kfinfo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7011,7 +7243,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_securitydeviceid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7030,7 +7261,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_weidianinfo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7058,7 +7288,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_f2fpushsound();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7086,7 +7315,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_bindxmail();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7096,7 +7324,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_patsuffix();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7150,7 +7377,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_textstatusid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7160,7 +7386,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_textstatusextinfo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7170,7 +7395,6 @@ const char* UserInfoExt::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_salt();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -7255,392 +7479,324 @@ uint8_t* UserInfoExt::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .SnsUserInfo snsUserInfo = 1;
-  if (this->_internal_has_snsuserinfo()) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required .SnsUserInfo snsUserInfo = 1;
+  if (cached_has_bits & 0x00400000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::snsuserinfo(this),
         _Internal::snsuserinfo(this).GetCachedSize(), target, stream);
   }
 
   // optional string myBrandList = 2;
-  if (_internal_has_mybrandlist()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_mybrandlist().data(), static_cast<int>(this->_internal_mybrandlist().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.myBrandList");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_mybrandlist(), target);
   }
 
   // optional string msgPushSound = 3;
-  if (_internal_has_msgpushsound()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_msgpushsound().data(), static_cast<int>(this->_internal_msgpushsound().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.msgPushSound");
+  if (cached_has_bits & 0x00000002u) {
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_msgpushsound(), target);
   }
 
   // optional string voipPushSound = 4;
-  if (_internal_has_voippushsound()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_voippushsound().data(), static_cast<int>(this->_internal_voippushsound().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.voipPushSound");
+  if (cached_has_bits & 0x00000004u) {
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_voippushsound(), target);
   }
 
   // optional uint32 bigChatRoomSize = 5;
-  if (_internal_has_bigchatroomsize()) {
+  if (cached_has_bits & 0x40000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_bigchatroomsize(), target);
   }
 
   // optional uint32 bigChatRoomQuota = 6;
-  if (_internal_has_bigchatroomquota()) {
+  if (cached_has_bits & 0x80000000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_bigchatroomquota(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 bigChatRoomInvite = 7;
-  if (_internal_has_bigchatroominvite()) {
+  if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(7, this->_internal_bigchatroominvite(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string safeMobile = 8;
-  if (_internal_has_safemobile()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_safemobile().data(), static_cast<int>(this->_internal_safemobile().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.safeMobile");
+  if (cached_has_bits & 0x00000008u) {
     target = stream->WriteStringMaybeAliased(
         8, this->_internal_safemobile(), target);
   }
 
   // optional string bigHeadImgUrl = 9;
-  if (_internal_has_bigheadimgurl()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_bigheadimgurl().data(), static_cast<int>(this->_internal_bigheadimgurl().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.bigHeadImgUrl");
+  if (cached_has_bits & 0x00000010u) {
     target = stream->WriteStringMaybeAliased(
         9, this->_internal_bigheadimgurl(), target);
   }
 
   // optional string smallHeadImgUrl = 10;
-  if (_internal_has_smallheadimgurl()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_smallheadimgurl().data(), static_cast<int>(this->_internal_smallheadimgurl().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.smallHeadImgUrl");
+  if (cached_has_bits & 0x00000020u) {
     target = stream->WriteStringMaybeAliased(
         10, this->_internal_smallheadimgurl(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 mainAcctType = 11;
-  if (_internal_has_mainaccttype()) {
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(11, this->_internal_mainaccttype(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .SKBuiltinString_t extXml = 12;
-  if (_internal_has_extxml()) {
+  if (cached_has_bits & 0x00800000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(12, _Internal::extxml(this),
         _Internal::extxml(this).GetCachedSize(), target, stream);
   }
 
   // optional .SafeDeviceList safeDeviceList = 13;
-  if (_internal_has_safedevicelist()) {
+  if (cached_has_bits & 0x01000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(13, _Internal::safedevicelist(this),
         _Internal::safedevicelist(this).GetCachedSize(), target, stream);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 safeDevice = 14;
-  if (_internal_has_safedevice()) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(14, this->_internal_safedevice(), target);
   }
 
   // optional uint32 grayscaleFlag = 15;
-  if (_internal_has_grayscaleflag()) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(15, this->_internal_grayscaleflag(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string googleContactName = 16;
-  if (_internal_has_googlecontactname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_googlecontactname().data(), static_cast<int>(this->_internal_googlecontactname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.googleContactName");
+  if (cached_has_bits & 0x00000040u) {
     target = stream->WriteStringMaybeAliased(
         16, this->_internal_googlecontactname(), target);
   }
 
   // optional string idcardNum = 17;
-  if (_internal_has_idcardnum()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_idcardnum().data(), static_cast<int>(this->_internal_idcardnum().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.idcardNum");
+  if (cached_has_bits & 0x00000080u) {
     target = stream->WriteStringMaybeAliased(
         17, this->_internal_idcardnum(), target);
   }
 
   // optional string realName = 18;
-  if (_internal_has_realname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_realname().data(), static_cast<int>(this->_internal_realname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.realName");
+  if (cached_has_bits & 0x00000100u) {
     target = stream->WriteStringMaybeAliased(
         18, this->_internal_realname(), target);
   }
 
   // optional string regCountry = 19;
-  if (_internal_has_regcountry()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_regcountry().data(), static_cast<int>(this->_internal_regcountry().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.regCountry");
+  if (cached_has_bits & 0x00000200u) {
     target = stream->WriteStringMaybeAliased(
         19, this->_internal_regcountry(), target);
   }
 
   // optional string bbppid = 20;
-  if (_internal_has_bbppid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_bbppid().data(), static_cast<int>(this->_internal_bbppid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.bbppid");
+  if (cached_has_bits & 0x00000400u) {
     target = stream->WriteStringMaybeAliased(
         20, this->_internal_bbppid(), target);
   }
 
   // optional string bbpin = 21;
-  if (_internal_has_bbpin()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_bbpin().data(), static_cast<int>(this->_internal_bbpin().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.bbpin");
+  if (cached_has_bits & 0x00000800u) {
     target = stream->WriteStringMaybeAliased(
         21, this->_internal_bbpin(), target);
   }
 
   // optional string bbmnickName = 22;
-  if (_internal_has_bbmnickname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_bbmnickname().data(), static_cast<int>(this->_internal_bbmnickname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.bbmnickName");
+  if (cached_has_bits & 0x00001000u) {
     target = stream->WriteStringMaybeAliased(
         22, this->_internal_bbmnickname(), target);
   }
 
   // optional .LinkedinContactItem linkedinContactItem = 23;
-  if (_internal_has_linkedincontactitem()) {
+  if (cached_has_bits & 0x02000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(23, _Internal::linkedincontactitem(this),
         _Internal::linkedincontactitem(this).GetCachedSize(), target, stream);
   }
 
   // optional string kfinfo = 24;
-  if (_internal_has_kfinfo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_kfinfo().data(), static_cast<int>(this->_internal_kfinfo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.kfinfo");
+  if (cached_has_bits & 0x00002000u) {
     target = stream->WriteStringMaybeAliased(
         24, this->_internal_kfinfo(), target);
   }
 
   // optional .PatternLockInfo patternLockInfo = 25;
-  if (_internal_has_patternlockinfo()) {
+  if (cached_has_bits & 0x04000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(25, _Internal::patternlockinfo(this),
         _Internal::patternlockinfo(this).GetCachedSize(), target, stream);
   }
 
   // optional string securityDeviceId = 26;
-  if (_internal_has_securitydeviceid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_securitydeviceid().data(), static_cast<int>(this->_internal_securitydeviceid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.securityDeviceId");
+  if (cached_has_bits & 0x00004000u) {
     target = stream->WriteStringMaybeAliased(
         26, this->_internal_securitydeviceid(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 payWalletType = 27;
-  if (_internal_has_paywallettype()) {
+  if (cached_has_bits & 0x00000010u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(27, this->_internal_paywallettype(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string weiDianInfo = 28;
-  if (_internal_has_weidianinfo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_weidianinfo().data(), static_cast<int>(this->_internal_weidianinfo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.weiDianInfo");
+  if (cached_has_bits & 0x00008000u) {
     target = stream->WriteStringMaybeAliased(
         28, this->_internal_weidianinfo(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 walletRegion = 29;
-  if (_internal_has_walletregion()) {
+  if (cached_has_bits & 0x00000020u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(29, this->_internal_walletregion(), target);
   }
 
   // optional uint64 extStatus = 30;
-  if (_internal_has_extstatus()) {
+  if (cached_has_bits & 0x00000040u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(30, this->_internal_extstatus(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string f2FpushSound = 31;
-  if (_internal_has_f2fpushsound()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_f2fpushsound().data(), static_cast<int>(this->_internal_f2fpushsound().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.f2FpushSound");
+  if (cached_has_bits & 0x00010000u) {
     target = stream->WriteStringMaybeAliased(
         31, this->_internal_f2fpushsound(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 userStatus = 32;
-  if (_internal_has_userstatus()) {
+  if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(32, this->_internal_userstatus(), target);
   }
 
   // optional uint64 paySetting = 34;
-  if (_internal_has_paysetting()) {
+  if (cached_has_bits & 0x00000080u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(34, this->_internal_paysetting(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string bindXmail = 37;
-  if (_internal_has_bindxmail()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_bindxmail().data(), static_cast<int>(this->_internal_bindxmail().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.bindXmail");
+  if (cached_has_bits & 0x00020000u) {
     target = stream->WriteStringMaybeAliased(
         37, this->_internal_bindxmail(), target);
   }
 
   // optional string patSuffix = 38;
-  if (_internal_has_patsuffix()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_patsuffix().data(), static_cast<int>(this->_internal_patsuffix().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.patSuffix");
+  if (cached_has_bits & 0x00040000u) {
     target = stream->WriteStringMaybeAliased(
         38, this->_internal_patsuffix(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 patSuffixVersion = 39;
-  if (_internal_has_patsuffixversion()) {
+  if (cached_has_bits & 0x00000200u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(39, this->_internal_patsuffixversion(), target);
   }
 
   // optional uint32 teenagerModeFinderSetting = 44;
-  if (_internal_has_teenagermodefindersetting()) {
+  if (cached_has_bits & 0x00000400u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(44, this->_internal_teenagermodefindersetting(), target);
   }
 
   // optional uint32 teenagerModeBizAcctSetting = 45;
-  if (_internal_has_teenagermodebizacctsetting()) {
+  if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(45, this->_internal_teenagermodebizacctsetting(), target);
   }
 
   // optional uint32 teenagerModeMiniProgramSetting = 46;
-  if (_internal_has_teenagermodeminiprogramsetting()) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(46, this->_internal_teenagermodeminiprogramsetting(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .XAgreementInfo xagreementInfo = 47;
-  if (_internal_has_xagreementinfo()) {
+  if (cached_has_bits & 0x08000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(47, _Internal::xagreementinfo(this),
         _Internal::xagreementinfo(this).GetCachedSize(), target, stream);
   }
 
   // optional string textStatusId = 49;
-  if (_internal_has_textstatusid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_textstatusid().data(), static_cast<int>(this->_internal_textstatusid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.textStatusId");
+  if (cached_has_bits & 0x00080000u) {
     target = stream->WriteStringMaybeAliased(
         49, this->_internal_textstatusid(), target);
   }
 
   // optional string textStatusExtInfo = 51;
-  if (_internal_has_textstatusextinfo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_textstatusextinfo().data(), static_cast<int>(this->_internal_textstatusextinfo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.textStatusExtInfo");
+  if (cached_has_bits & 0x00100000u) {
     target = stream->WriteStringMaybeAliased(
         51, this->_internal_textstatusextinfo(), target);
   }
 
   // optional string salt = 52;
-  if (_internal_has_salt()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_salt().data(), static_cast<int>(this->_internal_salt().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "UserInfoExt.salt");
+  if (cached_has_bits & 0x00200000u) {
     target = stream->WriteStringMaybeAliased(
         52, this->_internal_salt(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint64 finderSetting = 53;
-  if (_internal_has_findersetting()) {
+  if (cached_has_bits & 0x00004000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(53, this->_internal_findersetting(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .RingBackSetting ringBackSetting = 55;
-  if (_internal_has_ringbacksetting()) {
+  if (cached_has_bits & 0x10000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(55, _Internal::ringbacksetting(this),
         _Internal::ringbacksetting(this).GetCachedSize(), target, stream);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 smcryptoFlag = 56;
-  if (_internal_has_smcryptoflag()) {
+  if (cached_has_bits & 0x00002000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(56, this->_internal_smcryptoflag(), target);
   }
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional .NewRingBackSetting globalRingBackSetting = 57;
-  if (_internal_has_globalringbacksetting()) {
+  if (cached_has_bits & 0x20000000u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(57, _Internal::globalringbacksetting(this),
         _Internal::globalringbacksetting(this).GetCachedSize(), target, stream);
   }
 
+  cached_has_bits = _impl_._has_bits_[1];
   // optional uint32 newcomeMsgDefaultVoiceNumber = 58;
-  if (_internal_has_newcomemsgdefaultvoicenumber()) {
+  if (cached_has_bits & 0x00010000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(58, this->_internal_newcomemsgdefaultvoicenumber(), target);
   }
 
   // optional uint64 discoveryPageCtrlFlag = 59;
-  if (_internal_has_discoverypagectrlflag()) {
+  if (cached_has_bits & 0x00008000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(59, this->_internal_discoverypagectrlflag(), target);
   }
@@ -7657,6 +7813,12 @@ size_t UserInfoExt::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:UserInfoExt)
   size_t total_size = 0;
 
+  // required .SnsUserInfo snsUserInfo = 1;
+  if (_internal_has_snsuserinfo()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.snsuserinfo_);
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -7822,192 +7984,183 @@ size_t UserInfoExt::ByteSizeLong() const {
     }
 
   }
-  // .SnsUserInfo snsUserInfo = 1;
-  if (this->_internal_has_snsuserinfo()) {
+  // optional .SKBuiltinString_t extXml = 12;
+  if (cached_has_bits & 0x00800000u) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.snsuserinfo_);
+        *_impl_.extxml_);
   }
 
-  if (cached_has_bits & 0x00c00000u) {
-    // optional .SKBuiltinString_t extXml = 12;
-    if (cached_has_bits & 0x00400000u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.extxml_);
-    }
-
+  if (cached_has_bits & 0xff000000u) {
     // optional .SafeDeviceList safeDeviceList = 13;
-    if (cached_has_bits & 0x00800000u) {
+    if (cached_has_bits & 0x01000000u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.safedevicelist_);
     }
 
-  }
-  if (cached_has_bits & 0xff000000u) {
     // optional .LinkedinContactItem linkedinContactItem = 23;
-    if (cached_has_bits & 0x01000000u) {
+    if (cached_has_bits & 0x02000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.linkedincontactitem_);
     }
 
     // optional .PatternLockInfo patternLockInfo = 25;
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x04000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.patternlockinfo_);
     }
 
     // optional .XAgreementInfo xagreementInfo = 47;
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x08000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.xagreementinfo_);
     }
 
     // optional .RingBackSetting ringBackSetting = 55;
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x10000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.ringbacksetting_);
     }
 
     // optional .NewRingBackSetting globalRingBackSetting = 57;
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x20000000u) {
       total_size += 2 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.globalringbacksetting_);
     }
 
     // optional uint32 bigChatRoomSize = 5;
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x40000000u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bigchatroomsize());
     }
 
     // optional uint32 bigChatRoomQuota = 6;
-    if (cached_has_bits & 0x40000000u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bigchatroomquota());
-    }
-
-    // optional uint32 bigChatRoomInvite = 7;
     if (cached_has_bits & 0x80000000u) {
-      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bigchatroominvite());
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bigchatroomquota());
     }
 
   }
   cached_has_bits = _impl_._has_bits_[1];
   if (cached_has_bits & 0x000000ffu) {
-    // optional uint32 mainAcctType = 11;
+    // optional uint32 bigChatRoomInvite = 7;
     if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_bigchatroominvite());
+    }
+
+    // optional uint32 mainAcctType = 11;
+    if (cached_has_bits & 0x00000002u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_mainaccttype());
     }
 
     // optional uint32 safeDevice = 14;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_safedevice());
     }
 
     // optional uint32 grayscaleFlag = 15;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_grayscaleflag());
     }
 
     // optional uint32 payWalletType = 27;
-    if (cached_has_bits & 0x00000008u) {
+    if (cached_has_bits & 0x00000010u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_paywallettype());
     }
 
     // optional uint32 walletRegion = 29;
-    if (cached_has_bits & 0x00000010u) {
+    if (cached_has_bits & 0x00000020u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_walletregion());
     }
 
     // optional uint64 extStatus = 30;
-    if (cached_has_bits & 0x00000020u) {
+    if (cached_has_bits & 0x00000040u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt64Size(
           this->_internal_extstatus());
     }
 
     // optional uint64 paySetting = 34;
-    if (cached_has_bits & 0x00000040u) {
+    if (cached_has_bits & 0x00000080u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt64Size(
           this->_internal_paysetting());
     }
 
+  }
+  if (cached_has_bits & 0x0000ff00u) {
     // optional uint32 userStatus = 32;
-    if (cached_has_bits & 0x00000080u) {
+    if (cached_has_bits & 0x00000100u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_userstatus());
     }
 
-  }
-  if (cached_has_bits & 0x0000ff00u) {
     // optional uint32 patSuffixVersion = 39;
-    if (cached_has_bits & 0x00000100u) {
+    if (cached_has_bits & 0x00000200u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_patsuffixversion());
     }
 
     // optional uint32 teenagerModeFinderSetting = 44;
-    if (cached_has_bits & 0x00000200u) {
+    if (cached_has_bits & 0x00000400u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_teenagermodefindersetting());
     }
 
     // optional uint32 teenagerModeBizAcctSetting = 45;
-    if (cached_has_bits & 0x00000400u) {
+    if (cached_has_bits & 0x00000800u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_teenagermodebizacctsetting());
     }
 
     // optional uint32 teenagerModeMiniProgramSetting = 46;
-    if (cached_has_bits & 0x00000800u) {
+    if (cached_has_bits & 0x00001000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_teenagermodeminiprogramsetting());
     }
 
     // optional uint32 smcryptoFlag = 56;
-    if (cached_has_bits & 0x00001000u) {
+    if (cached_has_bits & 0x00002000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt32Size(
           this->_internal_smcryptoflag());
     }
 
     // optional uint64 finderSetting = 53;
-    if (cached_has_bits & 0x00002000u) {
+    if (cached_has_bits & 0x00004000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt64Size(
           this->_internal_findersetting());
     }
 
     // optional uint64 discoveryPageCtrlFlag = 59;
-    if (cached_has_bits & 0x00004000u) {
+    if (cached_has_bits & 0x00008000u) {
       total_size += 2 +
         ::_pbi::WireFormatLite::UInt64Size(
           this->_internal_discoverypagectrlflag());
     }
 
-    // optional uint32 newcomeMsgDefaultVoiceNumber = 58;
-    if (cached_has_bits & 0x00008000u) {
-      total_size += 2 +
-        ::_pbi::WireFormatLite::UInt32Size(
-          this->_internal_newcomemsgdefaultvoicenumber());
-    }
-
   }
+  // optional uint32 newcomeMsgDefaultVoiceNumber = 58;
+  if (cached_has_bits & 0x00010000u) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::UInt32Size(
+        this->_internal_newcomemsgdefaultvoicenumber());
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
   }
@@ -8082,7 +8235,7 @@ void UserInfoExt::MergeFrom(const UserInfoExt& from) {
       _this->_internal_set_weidianinfo(from._internal_weidianinfo());
     }
   }
-  if (cached_has_bits & 0x003f0000u) {
+  if (cached_has_bits & 0x00ff0000u) {
     if (cached_has_bits & 0x00010000u) {
       _this->_internal_set_f2fpushsound(from._internal_f2fpushsound());
     }
@@ -8101,107 +8254,105 @@ void UserInfoExt::MergeFrom(const UserInfoExt& from) {
     if (cached_has_bits & 0x00200000u) {
       _this->_internal_set_salt(from._internal_salt());
     }
-  }
-  if (from._internal_has_snsuserinfo()) {
-    _this->_internal_mutable_snsuserinfo()->::SnsUserInfo::MergeFrom(
-        from._internal_snsuserinfo());
-  }
-  if (cached_has_bits & 0x00c00000u) {
     if (cached_has_bits & 0x00400000u) {
-      _this->_internal_mutable_extxml()->::SKBuiltinString_t::MergeFrom(
-          from._internal_extxml());
+      _this->_internal_mutable_snsuserinfo()->::SnsUserInfo::MergeFrom(
+          from._internal_snsuserinfo());
     }
     if (cached_has_bits & 0x00800000u) {
-      _this->_internal_mutable_safedevicelist()->::SafeDeviceList::MergeFrom(
-          from._internal_safedevicelist());
+      _this->_internal_mutable_extxml()->::SKBuiltinString_t::MergeFrom(
+          from._internal_extxml());
     }
   }
   if (cached_has_bits & 0xff000000u) {
     if (cached_has_bits & 0x01000000u) {
+      _this->_internal_mutable_safedevicelist()->::SafeDeviceList::MergeFrom(
+          from._internal_safedevicelist());
+    }
+    if (cached_has_bits & 0x02000000u) {
       _this->_internal_mutable_linkedincontactitem()->::LinkedinContactItem::MergeFrom(
           from._internal_linkedincontactitem());
     }
-    if (cached_has_bits & 0x02000000u) {
+    if (cached_has_bits & 0x04000000u) {
       _this->_internal_mutable_patternlockinfo()->::PatternLockInfo::MergeFrom(
           from._internal_patternlockinfo());
     }
-    if (cached_has_bits & 0x04000000u) {
+    if (cached_has_bits & 0x08000000u) {
       _this->_internal_mutable_xagreementinfo()->::XAgreementInfo::MergeFrom(
           from._internal_xagreementinfo());
     }
-    if (cached_has_bits & 0x08000000u) {
+    if (cached_has_bits & 0x10000000u) {
       _this->_internal_mutable_ringbacksetting()->::RingBackSetting::MergeFrom(
           from._internal_ringbacksetting());
     }
-    if (cached_has_bits & 0x10000000u) {
+    if (cached_has_bits & 0x20000000u) {
       _this->_internal_mutable_globalringbacksetting()->::NewRingBackSetting::MergeFrom(
           from._internal_globalringbacksetting());
     }
-    if (cached_has_bits & 0x20000000u) {
+    if (cached_has_bits & 0x40000000u) {
       _this->_impl_.bigchatroomsize_ = from._impl_.bigchatroomsize_;
     }
-    if (cached_has_bits & 0x40000000u) {
-      _this->_impl_.bigchatroomquota_ = from._impl_.bigchatroomquota_;
-    }
     if (cached_has_bits & 0x80000000u) {
-      _this->_impl_.bigchatroominvite_ = from._impl_.bigchatroominvite_;
+      _this->_impl_.bigchatroomquota_ = from._impl_.bigchatroomquota_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   cached_has_bits = from._impl_._has_bits_[1];
   if (cached_has_bits & 0x000000ffu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_impl_.mainaccttype_ = from._impl_.mainaccttype_;
+      _this->_impl_.bigchatroominvite_ = from._impl_.bigchatroominvite_;
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.safedevice_ = from._impl_.safedevice_;
+      _this->_impl_.mainaccttype_ = from._impl_.mainaccttype_;
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.grayscaleflag_ = from._impl_.grayscaleflag_;
+      _this->_impl_.safedevice_ = from._impl_.safedevice_;
     }
     if (cached_has_bits & 0x00000008u) {
-      _this->_impl_.paywallettype_ = from._impl_.paywallettype_;
+      _this->_impl_.grayscaleflag_ = from._impl_.grayscaleflag_;
     }
     if (cached_has_bits & 0x00000010u) {
-      _this->_impl_.walletregion_ = from._impl_.walletregion_;
+      _this->_impl_.paywallettype_ = from._impl_.paywallettype_;
     }
     if (cached_has_bits & 0x00000020u) {
-      _this->_impl_.extstatus_ = from._impl_.extstatus_;
+      _this->_impl_.walletregion_ = from._impl_.walletregion_;
     }
     if (cached_has_bits & 0x00000040u) {
-      _this->_impl_.paysetting_ = from._impl_.paysetting_;
+      _this->_impl_.extstatus_ = from._impl_.extstatus_;
     }
     if (cached_has_bits & 0x00000080u) {
-      _this->_impl_.userstatus_ = from._impl_.userstatus_;
+      _this->_impl_.paysetting_ = from._impl_.paysetting_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
   }
   if (cached_has_bits & 0x0000ff00u) {
     if (cached_has_bits & 0x00000100u) {
-      _this->_impl_.patsuffixversion_ = from._impl_.patsuffixversion_;
+      _this->_impl_.userstatus_ = from._impl_.userstatus_;
     }
     if (cached_has_bits & 0x00000200u) {
-      _this->_impl_.teenagermodefindersetting_ = from._impl_.teenagermodefindersetting_;
+      _this->_impl_.patsuffixversion_ = from._impl_.patsuffixversion_;
     }
     if (cached_has_bits & 0x00000400u) {
-      _this->_impl_.teenagermodebizacctsetting_ = from._impl_.teenagermodebizacctsetting_;
+      _this->_impl_.teenagermodefindersetting_ = from._impl_.teenagermodefindersetting_;
     }
     if (cached_has_bits & 0x00000800u) {
-      _this->_impl_.teenagermodeminiprogramsetting_ = from._impl_.teenagermodeminiprogramsetting_;
+      _this->_impl_.teenagermodebizacctsetting_ = from._impl_.teenagermodebizacctsetting_;
     }
     if (cached_has_bits & 0x00001000u) {
-      _this->_impl_.smcryptoflag_ = from._impl_.smcryptoflag_;
+      _this->_impl_.teenagermodeminiprogramsetting_ = from._impl_.teenagermodeminiprogramsetting_;
     }
     if (cached_has_bits & 0x00002000u) {
-      _this->_impl_.findersetting_ = from._impl_.findersetting_;
+      _this->_impl_.smcryptoflag_ = from._impl_.smcryptoflag_;
     }
     if (cached_has_bits & 0x00004000u) {
-      _this->_impl_.discoverypagectrlflag_ = from._impl_.discoverypagectrlflag_;
+      _this->_impl_.findersetting_ = from._impl_.findersetting_;
     }
     if (cached_has_bits & 0x00008000u) {
-      _this->_impl_.newcomemsgdefaultvoicenumber_ = from._impl_.newcomemsgdefaultvoicenumber_;
+      _this->_impl_.discoverypagectrlflag_ = from._impl_.discoverypagectrlflag_;
     }
     _this->_impl_._has_bits_[1] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0x00010000u) {
+    _this->_internal_set_newcomemsgdefaultvoicenumber(from._internal_newcomemsgdefaultvoicenumber());
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -8214,6 +8365,19 @@ void UserInfoExt::CopyFrom(const UserInfoExt& from) {
 }
 
 bool UserInfoExt::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (_internal_has_snsuserinfo()) {
+    if (!_impl_.snsuserinfo_->IsInitialized()) return false;
+  }
+  if (_internal_has_safedevicelist()) {
+    if (!_impl_.safedevicelist_->IsInitialized()) return false;
+  }
+  if (_internal_has_patternlockinfo()) {
+    if (!_impl_.patternlockinfo_->IsInitialized()) return false;
+  }
+  if (_internal_has_ringbacksetting()) {
+    if (!_impl_.ringbacksetting_->IsInitialized()) return false;
+  }
   return true;
 }
 
@@ -8329,9 +8493,22 @@ std::string UserInfoExt::GetTypeName() const {
 
 class GetProfileResponse::_Internal {
  public:
+  using HasBits = decltype(std::declval<GetProfileResponse>()._impl_._has_bits_);
   static const ::BaseResponse& baseresponse(const GetProfileResponse* msg);
+  static void set_has_baseresponse(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
   static const ::ModUserInfo& userinfo(const GetProfileResponse* msg);
+  static void set_has_userinfo(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
   static const ::UserInfoExt& userinfoext(const GetProfileResponse* msg);
+  static void set_has_userinfoext(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000007) ^ 0x00000007) != 0;
+  }
 };
 
 const ::BaseResponse&
@@ -8347,10 +8524,8 @@ GetProfileResponse::_Internal::userinfoext(const GetProfileResponse* msg) {
   return *msg->_impl_.userinfoext_;
 }
 void GetProfileResponse::clear_baseresponse() {
-  if (GetArenaForAllocation() == nullptr && _impl_.baseresponse_ != nullptr) {
-    delete _impl_.baseresponse_;
-  }
-  _impl_.baseresponse_ = nullptr;
+  if (_impl_.baseresponse_ != nullptr) _impl_.baseresponse_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 GetProfileResponse::GetProfileResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -8362,10 +8537,11 @@ GetProfileResponse::GetProfileResponse(const GetProfileResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::MessageLite() {
   GetProfileResponse* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.baseresponse_){nullptr}
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.baseresponse_){nullptr}
     , decltype(_impl_.userinfo_){nullptr}
-    , decltype(_impl_.userinfoext_){nullptr}
-    , /*decltype(_impl_._cached_size_)*/{}};
+    , decltype(_impl_.userinfoext_){nullptr}};
 
   _internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
   if (from._internal_has_baseresponse()) {
@@ -8385,10 +8561,11 @@ inline void GetProfileResponse::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.baseresponse_){nullptr}
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.baseresponse_){nullptr}
     , decltype(_impl_.userinfo_){nullptr}
     , decltype(_impl_.userinfoext_){nullptr}
-    , /*decltype(_impl_._cached_size_)*/{}
   };
 }
 
@@ -8418,28 +8595,33 @@ void GetProfileResponse::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  if (GetArenaForAllocation() == nullptr && _impl_.baseresponse_ != nullptr) {
-    delete _impl_.baseresponse_;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(_impl_.baseresponse_ != nullptr);
+      _impl_.baseresponse_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(_impl_.userinfo_ != nullptr);
+      _impl_.userinfo_->Clear();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(_impl_.userinfoext_ != nullptr);
+      _impl_.userinfoext_->Clear();
+    }
   }
-  _impl_.baseresponse_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.userinfo_ != nullptr) {
-    delete _impl_.userinfo_;
-  }
-  _impl_.userinfo_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.userinfoext_ != nullptr) {
-    delete _impl_.userinfoext_;
-  }
-  _impl_.userinfoext_ = nullptr;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
 
 const char* GetProfileResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .BaseResponse baseResponse = 1;
+      // required .BaseResponse baseResponse = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_baseresponse(), ptr);
@@ -8447,7 +8629,7 @@ const char* GetProfileResponse::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // .ModUserInfo userInfo = 2;
+      // required .ModUserInfo userInfo = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr = ctx->ParseMessage(_internal_mutable_userinfo(), ptr);
@@ -8455,7 +8637,7 @@ const char* GetProfileResponse::_InternalParse(const char* ptr, ::_pbi::ParseCon
         } else
           goto handle_unusual;
         continue;
-      // .UserInfoExt userInfoExt = 3;
+      // required .UserInfoExt userInfoExt = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
           ptr = ctx->ParseMessage(_internal_mutable_userinfoext(), ptr);
@@ -8479,6 +8661,7 @@ const char* GetProfileResponse::_InternalParse(const char* ptr, ::_pbi::ParseCon
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -8492,22 +8675,23 @@ uint8_t* GetProfileResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .BaseResponse baseResponse = 1;
-  if (this->_internal_has_baseresponse()) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required .BaseResponse baseResponse = 1;
+  if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::baseresponse(this),
         _Internal::baseresponse(this).GetCachedSize(), target, stream);
   }
 
-  // .ModUserInfo userInfo = 2;
-  if (this->_internal_has_userinfo()) {
+  // required .ModUserInfo userInfo = 2;
+  if (cached_has_bits & 0x00000002u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(2, _Internal::userinfo(this),
         _Internal::userinfo(this).GetCachedSize(), target, stream);
   }
 
-  // .UserInfoExt userInfoExt = 3;
-  if (this->_internal_has_userinfoext()) {
+  // required .UserInfoExt userInfoExt = 3;
+  if (cached_has_bits & 0x00000004u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(3, _Internal::userinfoext(this),
         _Internal::userinfoext(this).GetCachedSize(), target, stream);
@@ -8521,34 +8705,59 @@ uint8_t* GetProfileResponse::_InternalSerialize(
   return target;
 }
 
-size_t GetProfileResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:GetProfileResponse)
+size_t GetProfileResponse::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:GetProfileResponse)
   size_t total_size = 0;
 
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // .BaseResponse baseResponse = 1;
-  if (this->_internal_has_baseresponse()) {
+  if (_internal_has_baseresponse()) {
+    // required .BaseResponse baseResponse = 1;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.baseresponse_);
   }
 
-  // .ModUserInfo userInfo = 2;
-  if (this->_internal_has_userinfo()) {
+  if (_internal_has_userinfo()) {
+    // required .ModUserInfo userInfo = 2;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.userinfo_);
   }
 
-  // .UserInfoExt userInfoExt = 3;
-  if (this->_internal_has_userinfoext()) {
+  if (_internal_has_userinfoext()) {
+    // required .UserInfoExt userInfoExt = 3;
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
         *_impl_.userinfoext_);
   }
+
+  return total_size;
+}
+size_t GetProfileResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:GetProfileResponse)
+  size_t total_size = 0;
+
+  if (((_impl_._has_bits_[0] & 0x00000007) ^ 0x00000007) == 0) {  // All required fields are present.
+    // required .BaseResponse baseResponse = 1;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.baseresponse_);
+
+    // required .ModUserInfo userInfo = 2;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.userinfo_);
+
+    // required .UserInfoExt userInfoExt = 3;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.userinfoext_);
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     total_size += _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString).size();
@@ -8571,17 +8780,20 @@ void GetProfileResponse::MergeFrom(const GetProfileResponse& from) {
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_baseresponse()) {
-    _this->_internal_mutable_baseresponse()->::BaseResponse::MergeFrom(
-        from._internal_baseresponse());
-  }
-  if (from._internal_has_userinfo()) {
-    _this->_internal_mutable_userinfo()->::ModUserInfo::MergeFrom(
-        from._internal_userinfo());
-  }
-  if (from._internal_has_userinfoext()) {
-    _this->_internal_mutable_userinfoext()->::UserInfoExt::MergeFrom(
-        from._internal_userinfoext());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_baseresponse()->::BaseResponse::MergeFrom(
+          from._internal_baseresponse());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_userinfo()->::ModUserInfo::MergeFrom(
+          from._internal_userinfo());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_mutable_userinfoext()->::UserInfoExt::MergeFrom(
+          from._internal_userinfoext());
+    }
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -8594,12 +8806,23 @@ void GetProfileResponse::CopyFrom(const GetProfileResponse& from) {
 }
 
 bool GetProfileResponse::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (_internal_has_baseresponse()) {
+    if (!_impl_.baseresponse_->IsInitialized()) return false;
+  }
+  if (_internal_has_userinfo()) {
+    if (!_impl_.userinfo_->IsInitialized()) return false;
+  }
+  if (_internal_has_userinfoext()) {
+    if (!_impl_.userinfoext_->IsInitialized()) return false;
+  }
   return true;
 }
 
 void GetProfileResponse::InternalSwap(GetProfileResponse* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(GetProfileResponse, _impl_.userinfoext_)
       + sizeof(GetProfileResponse::_impl_.userinfoext_)

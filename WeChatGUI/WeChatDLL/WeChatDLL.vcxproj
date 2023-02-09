@@ -96,6 +96,7 @@
     <ClCompile Include="BeaEngine\BeaEngine.c" />
     <ClCompile Include="Function\AccountFunction.cpp" />
     <ClCompile Include="Function\ContactFunction.cpp" />
+    <ClCompile Include="Function\GetA8Key.cpp" />
     <ClCompile Include="Function\LogFunction.cpp" />
     <ClCompile Include="Function\MsgMonitor.cpp" />
     <ClCompile Include="Function\SnsFunction.cpp" />
@@ -109,6 +110,7 @@
     <ClCompile Include="MinHook\hde\hde64.c" />
     <ClCompile Include="MinHook\hook.c" />
     <ClCompile Include="MinHook\trampoline.c" />
+    <ClCompile Include="proto\A8Key.pb.cc" />
     <ClCompile Include="proto\ChatRoom.pb.cc" />
     <ClCompile Include="proto\Common.pb.cc" />
     <ClCompile Include="proto\UserInfo.pb.cc" />
@@ -128,6 +130,7 @@
     <ClInclude Include="ApiServer.h" />
     <ClInclude Include="Function\AccountFunction.h" />
     <ClInclude Include="Function\ContactFunction.h" />
+    <ClInclude Include="Function\GetA8Key.h" />
     <ClInclude Include="Function\LogFunction.h" />
     <ClInclude Include="Function\MsgMonitor.h" />
     <ClInclude Include="Function\SnsFunction.h" />
@@ -171,6 +174,7 @@
     <ClInclude Include="MinHook\hde\table64.h" />
     <ClInclude Include="MinHook\MinHook.h" />
     <ClInclude Include="MinHook\trampoline.h" />
+    <ClInclude Include="proto\A8Key.pb.h" />
     <ClInclude Include="proto\ChatRoom.pb.h" />
     <ClInclude Include="proto\Common.pb.h" />
     <ClInclude Include="proto\UserInfo.pb.h" />

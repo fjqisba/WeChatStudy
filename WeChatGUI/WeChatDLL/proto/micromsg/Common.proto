@@ -1,4 +1,4 @@
-syntax = "proto3";
+syntax = "proto2";
 option optimize_for = LITE_RUNTIME;
 
 message SKBuiltinString_t {
@@ -6,11 +6,44 @@ message SKBuiltinString_t {
 }
 
 message SKBuiltinBuffer_t {
-    uint32  iLen  = 1;
+    required  uint32  iLen  = 1;
     optional  bytes  buffer  = 2;
 }
 
 message BaseResponse {
-    int32  ret  = 1;
-    SKBuiltinString_t  errMsg  = 2;
+    required  int32  ret  = 1;
+    required  SKBuiltinString_t  errMsg  = 2;
 }
+
+message HttpHeader {
+    optional  string  key  = 1;
+    optional  string  value  = 2;
+}
+
+message BizApiInfo {
+    optional  string  apiName  = 1;
+}
+
+message DeepLinkBitSet {
+    required  uint64  bitValue  = 1;
+}
+
+message BizScopeInfo {
+    optional  string  scope  = 1;
+    required  uint32  scopeStatus  = 2;
+    optional  string  scopeDesc  = 3;
+    required  uint32  apiCount  = 4;
+    repeated  BizApiInfo  apiList  = 5;
+}
+
+message JSAPIPermissionBitSet {
+    required  uint32  bitValue  = 1;
+    optional  uint32  bitValue2  = 2;
+    optional  uint32  bitValue3  = 3;
+    optional  uint32  bitValue4  = 4;
+}
+
+message GeneralControlBitSet {
+    required  uint32  bitValue  = 1;
+}
+

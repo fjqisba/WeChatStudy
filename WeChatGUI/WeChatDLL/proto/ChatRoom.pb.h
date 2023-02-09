@@ -94,6 +94,13 @@ class ChatRoomWatchMember final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const ChatRoomWatchMember& default_instance() {
     return *internal_default_instance();
   }
@@ -232,6 +239,13 @@ class ChatRoomMemberInfo final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const ChatRoomMemberInfo& default_instance() {
@@ -518,7 +532,11 @@ class ChatRoomMemberInfo final :
   std::string* _internal_mutable_textstatusextinfo();
   public:
 
-  // uint32 chatroomMemberFlag = 6;
+  // required uint32 chatroomMemberFlag = 6;
+  bool has_chatroommemberflag() const;
+  private:
+  bool _internal_has_chatroommemberflag() const;
+  public:
   void clear_chatroommemberflag();
   uint32_t chatroommemberflag() const;
   void set_chatroommemberflag(uint32_t value);
@@ -598,6 +616,13 @@ class ChatRoomMemberData final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const ChatRoomMemberData& default_instance() {
@@ -733,7 +758,11 @@ class ChatRoomMemberData final :
       ::SKBuiltinString_t* chatroomusername);
   ::SKBuiltinString_t* unsafe_arena_release_chatroomusername();
 
-  // uint32 memberCount = 1;
+  // required uint32 memberCount = 1;
+  bool has_membercount() const;
+  private:
+  bool _internal_has_membercount() const;
+  public:
   void clear_membercount();
   uint32_t membercount() const;
   void set_membercount(uint32_t value);
@@ -819,6 +848,13 @@ class GetChatroomMemberDetailResponse final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const GetChatroomMemberDetailResponse& default_instance() {
@@ -916,7 +952,7 @@ class GetChatroomMemberDetailResponse final :
   std::string* _internal_mutable_chatroomusername();
   public:
 
-  // .BaseResponse baseResponse = 1;
+  // required .BaseResponse baseResponse = 1;
   bool has_baseresponse() const;
   private:
   bool _internal_has_baseresponse() const;
@@ -934,7 +970,7 @@ class GetChatroomMemberDetailResponse final :
       ::BaseResponse* baseresponse);
   ::BaseResponse* unsafe_arena_release_baseresponse();
 
-  // .ChatRoomMemberData newChatroomData = 4;
+  // required .ChatRoomMemberData newChatroomData = 4;
   bool has_newchatroomdata() const;
   private:
   bool _internal_has_newchatroomdata() const;
@@ -952,7 +988,11 @@ class GetChatroomMemberDetailResponse final :
       ::ChatRoomMemberData* newchatroomdata);
   ::ChatRoomMemberData* unsafe_arena_release_newchatroomdata();
 
-  // uint32 serverVersion = 3;
+  // required uint32 serverVersion = 3;
+  bool has_serverversion() const;
+  private:
+  bool _internal_has_serverversion() const;
+  public:
   void clear_serverversion();
   uint32_t serverversion() const;
   void set_serverversion(uint32_t value);
@@ -964,6 +1004,9 @@ class GetChatroomMemberDetailResponse final :
   // @@protoc_insertion_point(class_scope:GetChatroomMemberDetailResponse)
  private:
   class _Internal;
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -1402,9 +1445,17 @@ inline void ChatRoomMemberInfo::set_allocated_smallheadimgurl(std::string* small
   // @@protoc_insertion_point(field_set_allocated:ChatRoomMemberInfo.smallHeadImgUrl)
 }
 
-// uint32 chatroomMemberFlag = 6;
+// required uint32 chatroomMemberFlag = 6;
+inline bool ChatRoomMemberInfo::_internal_has_chatroommemberflag() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  return value;
+}
+inline bool ChatRoomMemberInfo::has_chatroommemberflag() const {
+  return _internal_has_chatroommemberflag();
+}
 inline void ChatRoomMemberInfo::clear_chatroommemberflag() {
   _impl_.chatroommemberflag_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000800u;
 }
 inline uint32_t ChatRoomMemberInfo::_internal_chatroommemberflag() const {
   return _impl_.chatroommemberflag_;
@@ -1414,7 +1465,7 @@ inline uint32_t ChatRoomMemberInfo::chatroommemberflag() const {
   return _internal_chatroommemberflag();
 }
 inline void ChatRoomMemberInfo::_internal_set_chatroommemberflag(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000800u;
   _impl_.chatroommemberflag_ = value;
 }
 inline void ChatRoomMemberInfo::set_chatroommemberflag(uint32_t value) {
@@ -1492,7 +1543,7 @@ inline void ChatRoomMemberInfo::set_allocated_inviterusername(std::string* invit
 
 // optional uint32 status = 8;
 inline bool ChatRoomMemberInfo::_internal_has_status() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
   return value;
 }
 inline bool ChatRoomMemberInfo::has_status() const {
@@ -1500,7 +1551,7 @@ inline bool ChatRoomMemberInfo::has_status() const {
 }
 inline void ChatRoomMemberInfo::clear_status() {
   _impl_.status_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000800u;
+  _impl_._has_bits_[0] &= ~0x00001000u;
 }
 inline uint32_t ChatRoomMemberInfo::_internal_status() const {
   return _impl_.status_;
@@ -1510,7 +1561,7 @@ inline uint32_t ChatRoomMemberInfo::status() const {
   return _internal_status();
 }
 inline void ChatRoomMemberInfo::_internal_set_status(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000800u;
+  _impl_._has_bits_[0] |= 0x00001000u;
   _impl_.status_ = value;
 }
 inline void ChatRoomMemberInfo::set_status(uint32_t value) {
@@ -1862,9 +1913,17 @@ inline void ChatRoomMemberInfo::set_allocated_textstatusextinfo(std::string* tex
 
 // ChatRoomMemberData
 
-// uint32 memberCount = 1;
+// required uint32 memberCount = 1;
+inline bool ChatRoomMemberData::_internal_has_membercount() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool ChatRoomMemberData::has_membercount() const {
+  return _internal_has_membercount();
+}
 inline void ChatRoomMemberData::clear_membercount() {
   _impl_.membercount_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t ChatRoomMemberData::_internal_membercount() const {
   return _impl_.membercount_;
@@ -1874,7 +1933,7 @@ inline uint32_t ChatRoomMemberData::membercount() const {
   return _internal_membercount();
 }
 inline void ChatRoomMemberData::_internal_set_membercount(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.membercount_ = value;
 }
 inline void ChatRoomMemberData::set_membercount(uint32_t value) {
@@ -1924,7 +1983,7 @@ ChatRoomMemberData::chatroommember() const {
 
 // optional uint32 infoMask = 3;
 inline bool ChatRoomMemberData::_internal_has_infomask() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool ChatRoomMemberData::has_infomask() const {
@@ -1932,7 +1991,7 @@ inline bool ChatRoomMemberData::has_infomask() const {
 }
 inline void ChatRoomMemberData::clear_infomask() {
   _impl_.infomask_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t ChatRoomMemberData::_internal_infomask() const {
   return _impl_.infomask_;
@@ -1942,7 +2001,7 @@ inline uint32_t ChatRoomMemberData::infomask() const {
   return _internal_infomask();
 }
 inline void ChatRoomMemberData::_internal_set_infomask(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.infomask_ = value;
 }
 inline void ChatRoomMemberData::set_infomask(uint32_t value) {
@@ -2039,7 +2098,7 @@ inline void ChatRoomMemberData::set_allocated_chatroomusername(::SKBuiltinString
 
 // optional uint32 watchMemberCount = 5;
 inline bool ChatRoomMemberData::_internal_has_watchmembercount() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool ChatRoomMemberData::has_watchmembercount() const {
@@ -2047,7 +2106,7 @@ inline bool ChatRoomMemberData::has_watchmembercount() const {
 }
 inline void ChatRoomMemberData::clear_watchmembercount() {
   _impl_.watchmembercount_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t ChatRoomMemberData::_internal_watchmembercount() const {
   return _impl_.watchmembercount_;
@@ -2057,7 +2116,7 @@ inline uint32_t ChatRoomMemberData::watchmembercount() const {
   return _internal_watchmembercount();
 }
 inline void ChatRoomMemberData::_internal_set_watchmembercount(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.watchmembercount_ = value;
 }
 inline void ChatRoomMemberData::set_watchmembercount(uint32_t value) {
@@ -2109,9 +2168,11 @@ ChatRoomMemberData::watchmembers() const {
 
 // GetChatroomMemberDetailResponse
 
-// .BaseResponse baseResponse = 1;
+// required .BaseResponse baseResponse = 1;
 inline bool GetChatroomMemberDetailResponse::_internal_has_baseresponse() const {
-  return this != internal_default_instance() && _impl_.baseresponse_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.baseresponse_ != nullptr);
+  return value;
 }
 inline bool GetChatroomMemberDetailResponse::has_baseresponse() const {
   return _internal_has_baseresponse();
@@ -2132,14 +2193,14 @@ inline void GetChatroomMemberDetailResponse::unsafe_arena_set_allocated_baseresp
   }
   _impl_.baseresponse_ = baseresponse;
   if (baseresponse) {
-    
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:GetChatroomMemberDetailResponse.baseResponse)
 }
 inline ::BaseResponse* GetChatroomMemberDetailResponse::release_baseresponse() {
-  
+  _impl_._has_bits_[0] &= ~0x00000002u;
   ::BaseResponse* temp = _impl_.baseresponse_;
   _impl_.baseresponse_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -2155,13 +2216,13 @@ inline ::BaseResponse* GetChatroomMemberDetailResponse::release_baseresponse() {
 }
 inline ::BaseResponse* GetChatroomMemberDetailResponse::unsafe_arena_release_baseresponse() {
   // @@protoc_insertion_point(field_release:GetChatroomMemberDetailResponse.baseResponse)
-  
+  _impl_._has_bits_[0] &= ~0x00000002u;
   ::BaseResponse* temp = _impl_.baseresponse_;
   _impl_.baseresponse_ = nullptr;
   return temp;
 }
 inline ::BaseResponse* GetChatroomMemberDetailResponse::_internal_mutable_baseresponse() {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   if (_impl_.baseresponse_ == nullptr) {
     auto* p = CreateMaybeMessage<::BaseResponse>(GetArenaForAllocation());
     _impl_.baseresponse_ = p;
@@ -2186,9 +2247,9 @@ inline void GetChatroomMemberDetailResponse::set_allocated_baseresponse(::BaseRe
       baseresponse = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, baseresponse, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.baseresponse_ = baseresponse;
   // @@protoc_insertion_point(field_set_allocated:GetChatroomMemberDetailResponse.baseResponse)
@@ -2262,9 +2323,17 @@ inline void GetChatroomMemberDetailResponse::set_allocated_chatroomusername(std:
   // @@protoc_insertion_point(field_set_allocated:GetChatroomMemberDetailResponse.chatroomUserName)
 }
 
-// uint32 serverVersion = 3;
+// required uint32 serverVersion = 3;
+inline bool GetChatroomMemberDetailResponse::_internal_has_serverversion() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool GetChatroomMemberDetailResponse::has_serverversion() const {
+  return _internal_has_serverversion();
+}
 inline void GetChatroomMemberDetailResponse::clear_serverversion() {
   _impl_.serverversion_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t GetChatroomMemberDetailResponse::_internal_serverversion() const {
   return _impl_.serverversion_;
@@ -2274,7 +2343,7 @@ inline uint32_t GetChatroomMemberDetailResponse::serverversion() const {
   return _internal_serverversion();
 }
 inline void GetChatroomMemberDetailResponse::_internal_set_serverversion(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.serverversion_ = value;
 }
 inline void GetChatroomMemberDetailResponse::set_serverversion(uint32_t value) {
@@ -2282,18 +2351,18 @@ inline void GetChatroomMemberDetailResponse::set_serverversion(uint32_t value) {
   // @@protoc_insertion_point(field_set:GetChatroomMemberDetailResponse.serverVersion)
 }
 
-// .ChatRoomMemberData newChatroomData = 4;
+// required .ChatRoomMemberData newChatroomData = 4;
 inline bool GetChatroomMemberDetailResponse::_internal_has_newchatroomdata() const {
-  return this != internal_default_instance() && _impl_.newchatroomdata_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.newchatroomdata_ != nullptr);
+  return value;
 }
 inline bool GetChatroomMemberDetailResponse::has_newchatroomdata() const {
   return _internal_has_newchatroomdata();
 }
 inline void GetChatroomMemberDetailResponse::clear_newchatroomdata() {
-  if (GetArenaForAllocation() == nullptr && _impl_.newchatroomdata_ != nullptr) {
-    delete _impl_.newchatroomdata_;
-  }
-  _impl_.newchatroomdata_ = nullptr;
+  if (_impl_.newchatroomdata_ != nullptr) _impl_.newchatroomdata_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const ::ChatRoomMemberData& GetChatroomMemberDetailResponse::_internal_newchatroomdata() const {
   const ::ChatRoomMemberData* p = _impl_.newchatroomdata_;
@@ -2311,14 +2380,14 @@ inline void GetChatroomMemberDetailResponse::unsafe_arena_set_allocated_newchatr
   }
   _impl_.newchatroomdata_ = newchatroomdata;
   if (newchatroomdata) {
-    
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:GetChatroomMemberDetailResponse.newChatroomData)
 }
 inline ::ChatRoomMemberData* GetChatroomMemberDetailResponse::release_newchatroomdata() {
-  
+  _impl_._has_bits_[0] &= ~0x00000004u;
   ::ChatRoomMemberData* temp = _impl_.newchatroomdata_;
   _impl_.newchatroomdata_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -2334,13 +2403,13 @@ inline ::ChatRoomMemberData* GetChatroomMemberDetailResponse::release_newchatroo
 }
 inline ::ChatRoomMemberData* GetChatroomMemberDetailResponse::unsafe_arena_release_newchatroomdata() {
   // @@protoc_insertion_point(field_release:GetChatroomMemberDetailResponse.newChatroomData)
-  
+  _impl_._has_bits_[0] &= ~0x00000004u;
   ::ChatRoomMemberData* temp = _impl_.newchatroomdata_;
   _impl_.newchatroomdata_ = nullptr;
   return temp;
 }
 inline ::ChatRoomMemberData* GetChatroomMemberDetailResponse::_internal_mutable_newchatroomdata() {
-  
+  _impl_._has_bits_[0] |= 0x00000004u;
   if (_impl_.newchatroomdata_ == nullptr) {
     auto* p = CreateMaybeMessage<::ChatRoomMemberData>(GetArenaForAllocation());
     _impl_.newchatroomdata_ = p;
@@ -2364,9 +2433,9 @@ inline void GetChatroomMemberDetailResponse::set_allocated_newchatroomdata(::Cha
       newchatroomdata = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, newchatroomdata, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.newchatroomdata_ = newchatroomdata;
   // @@protoc_insertion_point(field_set_allocated:GetChatroomMemberDetailResponse.newChatroomData)

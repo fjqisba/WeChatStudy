@@ -1,0 +1,32 @@
+syntax = "proto2";
+import "Common.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+message GetA8KeyResp {
+    required  BaseResponse  baseResponse  = 1;
+    optional  string  fullUrl  = 2;
+    optional  string  a8Key  = 3;
+    optional  uint32  actionCode  = 4;
+    optional  string  title  = 5;
+    optional  string  content  = 6;
+    optional  JSAPIPermissionBitSet  jsapipermission  = 7;
+    optional  GeneralControlBitSet  generalControlBitSet  = 8;
+    optional  string  userName  = 9;
+    optional  string  shareUrl  = 15;
+    optional  uint32  scopeCount  = 16;
+    repeated  BizScopeInfo  scopeList  = 17;
+    optional  string  antispamTicket  = 18;
+    optional  string  ssid  = 20;
+    optional  string  mid  = 21;
+    optional  DeepLinkBitSet  deepLinkBitSet  = 22;
+    optional  SKBuiltinBuffer_t  jsapicontrolBytes  = 23;
+    optional  uint32  httpHeaderCount  = 24;
+    repeated  HttpHeader  httpHeader  = 25;
+    optional  string  wording  = 26;
+    optional  string  headImg  = 27;
+    optional  SKBuiltinBuffer_t  cookie  = 28;
+    optional  string  menuWording  = 29;
+    optional  SKBuiltinBuffer_t  verifyPrefetchInfo  = 30;
+    optional  SKBuiltinBuffer_t  webComponentInfo  = 31;
+}

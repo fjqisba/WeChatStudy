@@ -144,6 +144,12 @@
     <ClCompile Include="proto\UserInfo.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
+    <ClCompile Include="Function\GetA8Key.cpp">
+      <Filter>Function</Filter>
+    </ClCompile>
+    <ClCompile Include="proto\A8Key.pb.cc">
+      <Filter>proto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="微信偏移.h">
@@ -330,6 +336,12 @@
       <Filter>public</Filter>
     </ClInclude>
     <ClInclude Include="proto\UserInfo.pb.h">
+      <Filter>proto</Filter>
+    </ClInclude>
+    <ClInclude Include="Function\GetA8Key.h">
+      <Filter>Function</Filter>
+    </ClInclude>
+    <ClInclude Include="proto\A8Key.pb.h">
       <Filter>proto</Filter>
     </ClInclude>
   </ItemGroup>

@@ -152,6 +152,14 @@ CefBrowserCore::OnGetA8KeySuccess -> CefBrowserCore::NavigateToUrl
 
 
 
+## 关于A8Key
+
+A8Key的作用是让链接带上exportkey和passticket这些参数，使之能够正常访问。
+
+核心类是NetSceneGetA8Key
+
+
+
 ## 结构体逆向
 
 1、原生结构体非必要不定义析构函数

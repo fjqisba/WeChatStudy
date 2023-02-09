@@ -190,7 +190,6 @@ const char* ChatRoomWatchMember::_InternalParse(const char* ptr, ::_pbi::ParseCo
           auto str = _internal_mutable_username();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -224,12 +223,9 @@ uint8_t* ChatRoomWatchMember::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string userName = 1;
-  if (_internal_has_username()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomWatchMember.userName");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_username(), target);
   }
@@ -333,11 +329,14 @@ class ChatRoomMemberInfo::_Internal {
   static void set_has_smallheadimgurl(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
+  static void set_has_chatroommemberflag(HasBits* has_bits) {
+    (*has_bits)[0] |= 2048u;
+  }
   static void set_has_inviterusername(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
   }
   static void set_has_status(HasBits* has_bits) {
-    (*has_bits)[0] |= 2048u;
+    (*has_bits)[0] |= 4096u;
   }
   static void set_has_textstatus(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
@@ -353,6 +352,9 @@ class ChatRoomMemberInfo::_Internal {
   }
   static void set_has_textstatusextinfo(HasBits* has_bits) {
     (*has_bits)[0] |= 1024u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000800) ^ 0x00000800) != 0;
   }
 };
 
@@ -616,8 +618,11 @@ void ChatRoomMemberInfo::Clear() {
       _impl_.textstatusextinfo_.ClearNonDefaultToEmpty();
     }
   }
-  _impl_.chatroommemberflag_ = 0u;
-  _impl_.status_ = 0u;
+  if (cached_has_bits & 0x00001800u) {
+    ::memset(&_impl_.chatroommemberflag_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.status_) -
+        reinterpret_cast<char*>(&_impl_.chatroommemberflag_)) + sizeof(_impl_.status_));
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
 }
@@ -635,7 +640,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_username();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -645,7 +649,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_nickname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -655,7 +658,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_displayname();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -665,7 +667,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_bigheadimgurl();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -675,13 +676,13 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_smallheadimgurl();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
-      // uint32 chatroomMemberFlag = 6;
+      // required uint32 chatroomMemberFlag = 6;
       case 6:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _Internal::set_has_chatroommemberflag(&has_bits);
           _impl_.chatroommemberflag_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -693,7 +694,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_inviterusername();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -712,7 +712,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_textstatus();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -722,7 +721,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_associateopenimappid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -732,7 +730,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_associateopenimdescid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -742,7 +739,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_textstatusid();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -752,7 +748,6 @@ const char* ChatRoomMemberInfo::_InternalParse(const char* ptr, ::_pbi::ParseCon
           auto str = _internal_mutable_textstatusextinfo();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
@@ -786,124 +781,81 @@ uint8_t* ChatRoomMemberInfo::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
   // optional string userName = 1;
-  if (_internal_has_username()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_username().data(), static_cast<int>(this->_internal_username().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.userName");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         1, this->_internal_username(), target);
   }
 
   // optional string nickName = 2;
-  if (_internal_has_nickname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_nickname().data(), static_cast<int>(this->_internal_nickname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.nickName");
+  if (cached_has_bits & 0x00000002u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_nickname(), target);
   }
 
   // optional string displayName = 3;
-  if (_internal_has_displayname()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_displayname().data(), static_cast<int>(this->_internal_displayname().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.displayName");
+  if (cached_has_bits & 0x00000004u) {
     target = stream->WriteStringMaybeAliased(
         3, this->_internal_displayname(), target);
   }
 
   // optional string bigHeadImgUrl = 4;
-  if (_internal_has_bigheadimgurl()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_bigheadimgurl().data(), static_cast<int>(this->_internal_bigheadimgurl().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.bigHeadImgUrl");
+  if (cached_has_bits & 0x00000008u) {
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_bigheadimgurl(), target);
   }
 
   // optional string smallHeadImgUrl = 5;
-  if (_internal_has_smallheadimgurl()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_smallheadimgurl().data(), static_cast<int>(this->_internal_smallheadimgurl().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.smallHeadImgUrl");
+  if (cached_has_bits & 0x00000010u) {
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_smallheadimgurl(), target);
   }
 
-  // uint32 chatroomMemberFlag = 6;
-  if (this->_internal_chatroommemberflag() != 0) {
+  // required uint32 chatroomMemberFlag = 6;
+  if (cached_has_bits & 0x00000800u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(6, this->_internal_chatroommemberflag(), target);
   }
 
   // optional string inviterUserName = 7;
-  if (_internal_has_inviterusername()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_inviterusername().data(), static_cast<int>(this->_internal_inviterusername().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.inviterUserName");
+  if (cached_has_bits & 0x00000020u) {
     target = stream->WriteStringMaybeAliased(
         7, this->_internal_inviterusername(), target);
   }
 
   // optional uint32 status = 8;
-  if (_internal_has_status()) {
+  if (cached_has_bits & 0x00001000u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(8, this->_internal_status(), target);
   }
 
   // optional string textStatus = 9;
-  if (_internal_has_textstatus()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_textstatus().data(), static_cast<int>(this->_internal_textstatus().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.textStatus");
+  if (cached_has_bits & 0x00000040u) {
     target = stream->WriteStringMaybeAliased(
         9, this->_internal_textstatus(), target);
   }
 
   // optional string associateOpenImappId = 10;
-  if (_internal_has_associateopenimappid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_associateopenimappid().data(), static_cast<int>(this->_internal_associateopenimappid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.associateOpenImappId");
+  if (cached_has_bits & 0x00000080u) {
     target = stream->WriteStringMaybeAliased(
         10, this->_internal_associateopenimappid(), target);
   }
 
   // optional string associateOpenImdescId = 11;
-  if (_internal_has_associateopenimdescid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_associateopenimdescid().data(), static_cast<int>(this->_internal_associateopenimdescid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.associateOpenImdescId");
+  if (cached_has_bits & 0x00000100u) {
     target = stream->WriteStringMaybeAliased(
         11, this->_internal_associateopenimdescid(), target);
   }
 
   // optional string textStatusId = 17;
-  if (_internal_has_textstatusid()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_textstatusid().data(), static_cast<int>(this->_internal_textstatusid().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.textStatusId");
+  if (cached_has_bits & 0x00000200u) {
     target = stream->WriteStringMaybeAliased(
         17, this->_internal_textstatusid(), target);
   }
 
   // optional string textStatusExtInfo = 19;
-  if (_internal_has_textstatusextinfo()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_textstatusextinfo().data(), static_cast<int>(this->_internal_textstatusextinfo().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "ChatRoomMemberInfo.textStatusExtInfo");
+  if (cached_has_bits & 0x00000400u) {
     target = stream->WriteStringMaybeAliased(
         19, this->_internal_textstatusextinfo(), target);
   }
@@ -920,6 +872,10 @@ size_t ChatRoomMemberInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ChatRoomMemberInfo)
   size_t total_size = 0;
 
+  // required uint32 chatroomMemberFlag = 6;
+  if (_internal_has_chatroommemberflag()) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_chatroommemberflag());
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1006,13 +962,8 @@ size_t ChatRoomMemberInfo::ByteSizeLong() const {
     }
 
   }
-  // uint32 chatroomMemberFlag = 6;
-  if (this->_internal_chatroommemberflag() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_chatroommemberflag());
-  }
-
   // optional uint32 status = 8;
-  if (cached_has_bits & 0x00000800u) {
+  if (cached_has_bits & 0x00001000u) {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_status());
   }
 
@@ -1064,7 +1015,7 @@ void ChatRoomMemberInfo::MergeFrom(const ChatRoomMemberInfo& from) {
       _this->_internal_set_associateopenimappid(from._internal_associateopenimappid());
     }
   }
-  if (cached_has_bits & 0x00000700u) {
+  if (cached_has_bits & 0x00001f00u) {
     if (cached_has_bits & 0x00000100u) {
       _this->_internal_set_associateopenimdescid(from._internal_associateopenimdescid());
     }
@@ -1074,12 +1025,13 @@ void ChatRoomMemberInfo::MergeFrom(const ChatRoomMemberInfo& from) {
     if (cached_has_bits & 0x00000400u) {
       _this->_internal_set_textstatusextinfo(from._internal_textstatusextinfo());
     }
-  }
-  if (from._internal_chatroommemberflag() != 0) {
-    _this->_internal_set_chatroommemberflag(from._internal_chatroommemberflag());
-  }
-  if (cached_has_bits & 0x00000800u) {
-    _this->_internal_set_status(from._internal_status());
+    if (cached_has_bits & 0x00000800u) {
+      _this->_impl_.chatroommemberflag_ = from._impl_.chatroommemberflag_;
+    }
+    if (cached_has_bits & 0x00001000u) {
+      _this->_impl_.status_ = from._impl_.status_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -1092,6 +1044,7 @@ void ChatRoomMemberInfo::CopyFrom(const ChatRoomMemberInfo& from) {
 }
 
 bool ChatRoomMemberInfo::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
@@ -1163,15 +1116,21 @@ std::string ChatRoomMemberInfo::GetTypeName() const {
 class ChatRoomMemberData::_Internal {
  public:
   using HasBits = decltype(std::declval<ChatRoomMemberData>()._impl_._has_bits_);
-  static void set_has_infomask(HasBits* has_bits) {
+  static void set_has_membercount(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
+  }
+  static void set_has_infomask(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
   }
   static const ::SKBuiltinString_t& chatroomusername(const ChatRoomMemberData* msg);
   static void set_has_chatroomusername(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_watchmembercount(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
+    (*has_bits)[0] |= 8u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x00000002) ^ 0x00000002) != 0;
   }
 };
 
@@ -1261,11 +1220,10 @@ void ChatRoomMemberData::Clear() {
     GOOGLE_DCHECK(_impl_.chatroomusername_ != nullptr);
     _impl_.chatroomusername_->Clear();
   }
-  _impl_.membercount_ = 0u;
-  if (cached_has_bits & 0x00000006u) {
-    ::memset(&_impl_.infomask_, 0, static_cast<size_t>(
+  if (cached_has_bits & 0x0000000eu) {
+    ::memset(&_impl_.membercount_, 0, static_cast<size_t>(
         reinterpret_cast<char*>(&_impl_.watchmembercount_) -
-        reinterpret_cast<char*>(&_impl_.infomask_)) + sizeof(_impl_.watchmembercount_));
+        reinterpret_cast<char*>(&_impl_.membercount_)) + sizeof(_impl_.watchmembercount_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
@@ -1278,9 +1236,10 @@ const char* ChatRoomMemberData::_InternalParse(const char* ptr, ::_pbi::ParseCon
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // uint32 memberCount = 1;
+      // required uint32 memberCount = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_membercount(&has_bits);
           _impl_.membercount_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
@@ -1368,8 +1327,9 @@ uint8_t* ChatRoomMemberData::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // uint32 memberCount = 1;
-  if (this->_internal_membercount() != 0) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required uint32 memberCount = 1;
+  if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_membercount(), target);
   }
@@ -1383,20 +1343,20 @@ uint8_t* ChatRoomMemberData::_InternalSerialize(
   }
 
   // optional uint32 infoMask = 3;
-  if (_internal_has_infomask()) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_infomask(), target);
   }
 
   // optional .SKBuiltinString_t chatRoomUserName = 4;
-  if (_internal_has_chatroomusername()) {
+  if (cached_has_bits & 0x00000001u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::chatroomusername(this),
         _Internal::chatroomusername(this).GetCachedSize(), target, stream);
   }
 
   // optional uint32 watchMemberCount = 5;
-  if (_internal_has_watchmembercount()) {
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(5, this->_internal_watchmembercount(), target);
   }
@@ -1421,6 +1381,10 @@ size_t ChatRoomMemberData::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:ChatRoomMemberData)
   size_t total_size = 0;
 
+  // required uint32 memberCount = 1;
+  if (_internal_has_membercount()) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_membercount());
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1447,19 +1411,14 @@ size_t ChatRoomMemberData::ByteSizeLong() const {
         *_impl_.chatroomusername_);
   }
 
-  // uint32 memberCount = 1;
-  if (this->_internal_membercount() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_membercount());
-  }
-
-  if (cached_has_bits & 0x00000006u) {
+  if (cached_has_bits & 0x0000000cu) {
     // optional uint32 infoMask = 3;
-    if (cached_has_bits & 0x00000002u) {
+    if (cached_has_bits & 0x00000004u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_infomask());
     }
 
     // optional uint32 watchMemberCount = 5;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000008u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_watchmembercount());
     }
 
@@ -1487,19 +1446,19 @@ void ChatRoomMemberData::MergeFrom(const ChatRoomMemberData& from) {
 
   _this->_impl_.chatroommember_.MergeFrom(from._impl_.chatroommember_);
   _this->_impl_.watchmembers_.MergeFrom(from._impl_.watchmembers_);
-  if (from._internal_has_chatroomusername()) {
-    _this->_internal_mutable_chatroomusername()->::SKBuiltinString_t::MergeFrom(
-        from._internal_chatroomusername());
-  }
-  if (from._internal_membercount() != 0) {
-    _this->_internal_set_membercount(from._internal_membercount());
-  }
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000006u) {
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_mutable_chatroomusername()->::SKBuiltinString_t::MergeFrom(
+          from._internal_chatroomusername());
+    }
     if (cached_has_bits & 0x00000002u) {
-      _this->_impl_.infomask_ = from._impl_.infomask_;
+      _this->_impl_.membercount_ = from._impl_.membercount_;
     }
     if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.infomask_ = from._impl_.infomask_;
+    }
+    if (cached_has_bits & 0x00000008u) {
       _this->_impl_.watchmembercount_ = from._impl_.watchmembercount_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -1515,6 +1474,9 @@ void ChatRoomMemberData::CopyFrom(const ChatRoomMemberData& from) {
 }
 
 bool ChatRoomMemberData::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(_impl_.chatroommember_))
+    return false;
   return true;
 }
 
@@ -1543,10 +1505,22 @@ class GetChatroomMemberDetailResponse::_Internal {
  public:
   using HasBits = decltype(std::declval<GetChatroomMemberDetailResponse>()._impl_._has_bits_);
   static const ::BaseResponse& baseresponse(const GetChatroomMemberDetailResponse* msg);
+  static void set_has_baseresponse(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
   static void set_has_chatroomusername(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
+  static void set_has_serverversion(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
   static const ::ChatRoomMemberData& newchatroomdata(const GetChatroomMemberDetailResponse* msg);
+  static void set_has_newchatroomdata(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static bool MissingRequiredFields(const HasBits& has_bits) {
+    return ((has_bits[0] & 0x0000000e) ^ 0x0000000e) != 0;
+  }
 };
 
 const ::BaseResponse&
@@ -1558,10 +1532,8 @@ GetChatroomMemberDetailResponse::_Internal::newchatroomdata(const GetChatroomMem
   return *msg->_impl_.newchatroomdata_;
 }
 void GetChatroomMemberDetailResponse::clear_baseresponse() {
-  if (GetArenaForAllocation() == nullptr && _impl_.baseresponse_ != nullptr) {
-    delete _impl_.baseresponse_;
-  }
-  _impl_.baseresponse_ = nullptr;
+  if (_impl_.baseresponse_ != nullptr) _impl_.baseresponse_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 GetChatroomMemberDetailResponse::GetChatroomMemberDetailResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -1644,17 +1616,19 @@ void GetChatroomMemberDetailResponse::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    _impl_.chatroomusername_.ClearNonDefaultToEmpty();
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.chatroomusername_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(_impl_.baseresponse_ != nullptr);
+      _impl_.baseresponse_->Clear();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      GOOGLE_DCHECK(_impl_.newchatroomdata_ != nullptr);
+      _impl_.newchatroomdata_->Clear();
+    }
   }
-  if (GetArenaForAllocation() == nullptr && _impl_.baseresponse_ != nullptr) {
-    delete _impl_.baseresponse_;
-  }
-  _impl_.baseresponse_ = nullptr;
-  if (GetArenaForAllocation() == nullptr && _impl_.newchatroomdata_ != nullptr) {
-    delete _impl_.newchatroomdata_;
-  }
-  _impl_.newchatroomdata_ = nullptr;
   _impl_.serverversion_ = 0u;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<std::string>();
@@ -1667,7 +1641,7 @@ const char* GetChatroomMemberDetailResponse::_InternalParse(const char* ptr, ::_
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .BaseResponse baseResponse = 1;
+      // required .BaseResponse baseResponse = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_baseresponse(), ptr);
@@ -1681,19 +1655,19 @@ const char* GetChatroomMemberDetailResponse::_InternalParse(const char* ptr, ::_
           auto str = _internal_mutable_chatroomusername();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, nullptr));
         } else
           goto handle_unusual;
         continue;
-      // uint32 serverVersion = 3;
+      // required uint32 serverVersion = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_serverversion(&has_bits);
           _impl_.serverversion_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .ChatRoomMemberData newChatroomData = 4;
+      // required .ChatRoomMemberData newChatroomData = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
           ptr = ctx->ParseMessage(_internal_mutable_newchatroomdata(), ptr);
@@ -1731,31 +1705,28 @@ uint8_t* GetChatroomMemberDetailResponse::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .BaseResponse baseResponse = 1;
-  if (this->_internal_has_baseresponse()) {
+  cached_has_bits = _impl_._has_bits_[0];
+  // required .BaseResponse baseResponse = 1;
+  if (cached_has_bits & 0x00000002u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::baseresponse(this),
         _Internal::baseresponse(this).GetCachedSize(), target, stream);
   }
 
   // optional string chatroomUserName = 2;
-  if (_internal_has_chatroomusername()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_chatroomusername().data(), static_cast<int>(this->_internal_chatroomusername().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "GetChatroomMemberDetailResponse.chatroomUserName");
+  if (cached_has_bits & 0x00000001u) {
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_chatroomusername(), target);
   }
 
-  // uint32 serverVersion = 3;
-  if (this->_internal_serverversion() != 0) {
+  // required uint32 serverVersion = 3;
+  if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_serverversion(), target);
   }
 
-  // .ChatRoomMemberData newChatroomData = 4;
-  if (this->_internal_has_newchatroomdata()) {
+  // required .ChatRoomMemberData newChatroomData = 4;
+  if (cached_has_bits & 0x00000004u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(4, _Internal::newchatroomdata(this),
         _Internal::newchatroomdata(this).GetCachedSize(), target, stream);
@@ -1769,10 +1740,52 @@ uint8_t* GetChatroomMemberDetailResponse::_InternalSerialize(
   return target;
 }
 
+size_t GetChatroomMemberDetailResponse::RequiredFieldsByteSizeFallback() const {
+// @@protoc_insertion_point(required_fields_byte_size_fallback_start:GetChatroomMemberDetailResponse)
+  size_t total_size = 0;
+
+  if (_internal_has_baseresponse()) {
+    // required .BaseResponse baseResponse = 1;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.baseresponse_);
+  }
+
+  if (_internal_has_newchatroomdata()) {
+    // required .ChatRoomMemberData newChatroomData = 4;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.newchatroomdata_);
+  }
+
+  if (_internal_has_serverversion()) {
+    // required uint32 serverVersion = 3;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_serverversion());
+  }
+
+  return total_size;
+}
 size_t GetChatroomMemberDetailResponse::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:GetChatroomMemberDetailResponse)
   size_t total_size = 0;
 
+  if (((_impl_._has_bits_[0] & 0x0000000e) ^ 0x0000000e) == 0) {  // All required fields are present.
+    // required .BaseResponse baseResponse = 1;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.baseresponse_);
+
+    // required .ChatRoomMemberData newChatroomData = 4;
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+        *_impl_.newchatroomdata_);
+
+    // required uint32 serverVersion = 3;
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_serverversion());
+
+  } else {
+    total_size += RequiredFieldsByteSizeFallback();
+  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1783,25 +1796,6 @@ size_t GetChatroomMemberDetailResponse::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_chatroomusername());
-  }
-
-  // .BaseResponse baseResponse = 1;
-  if (this->_internal_has_baseresponse()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.baseresponse_);
-  }
-
-  // .ChatRoomMemberData newChatroomData = 4;
-  if (this->_internal_has_newchatroomdata()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.newchatroomdata_);
-  }
-
-  // uint32 serverVersion = 3;
-  if (this->_internal_serverversion() != 0) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_serverversion());
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -1825,19 +1819,23 @@ void GetChatroomMemberDetailResponse::MergeFrom(const GetChatroomMemberDetailRes
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_has_chatroomusername()) {
-    _this->_internal_set_chatroomusername(from._internal_chatroomusername());
-  }
-  if (from._internal_has_baseresponse()) {
-    _this->_internal_mutable_baseresponse()->::BaseResponse::MergeFrom(
-        from._internal_baseresponse());
-  }
-  if (from._internal_has_newchatroomdata()) {
-    _this->_internal_mutable_newchatroomdata()->::ChatRoomMemberData::MergeFrom(
-        from._internal_newchatroomdata());
-  }
-  if (from._internal_serverversion() != 0) {
-    _this->_internal_set_serverversion(from._internal_serverversion());
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_chatroomusername(from._internal_chatroomusername());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_baseresponse()->::BaseResponse::MergeFrom(
+          from._internal_baseresponse());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_mutable_newchatroomdata()->::ChatRoomMemberData::MergeFrom(
+          from._internal_newchatroomdata());
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.serverversion_ = from._impl_.serverversion_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<std::string>(from._internal_metadata_);
 }
@@ -1850,6 +1848,13 @@ void GetChatroomMemberDetailResponse::CopyFrom(const GetChatroomMemberDetailResp
 }
 
 bool GetChatroomMemberDetailResponse::IsInitialized() const {
+  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
+  if (_internal_has_baseresponse()) {
+    if (!_impl_.baseresponse_->IsInitialized()) return false;
+  }
+  if (_internal_has_newchatroomdata()) {
+    if (!_impl_.newchatroomdata_->IsInitialized()) return false;
+  }
   return true;
 }
 

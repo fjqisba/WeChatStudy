@@ -146,6 +146,13 @@ class GmailList final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const GmailList& default_instance() {
     return *internal_default_instance();
   }
@@ -239,7 +246,11 @@ class GmailList final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::GmailInfo >&
       list() const;
 
-  // uint32 count = 1;
+  // required uint32 count = 1;
+  bool has_count() const;
+  private:
+  bool _internal_has_count() const;
+  public:
   void clear_count();
   uint32_t count() const;
   void set_count(uint32_t value);
@@ -256,9 +267,10 @@ class GmailList final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::GmailInfo > list_;
     uint32_t count_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_UserInfo_2eproto;
@@ -294,6 +306,13 @@ class MusicRingBackSetting final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const MusicRingBackSetting& default_instance() {
@@ -429,6 +448,13 @@ class FinderRingBackSetting final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const FinderRingBackSetting& default_instance() {
@@ -584,6 +610,13 @@ class NewRingBackSetting final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const NewRingBackSetting& default_instance() {
@@ -791,6 +824,13 @@ class RingBackSetting final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const RingBackSetting& default_instance() {
     return *internal_default_instance();
   }
@@ -868,7 +908,11 @@ class RingBackSetting final :
     kStartTsFieldNumber = 3,
     kEndTsFieldNumber = 4,
   };
-  // string finderNonceId = 2;
+  // required string finderNonceId = 2;
+  bool has_findernonceid() const;
+  private:
+  bool _internal_has_findernonceid() const;
+  public:
   void clear_findernonceid();
   const std::string& findernonceid() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -882,7 +926,11 @@ class RingBackSetting final :
   std::string* _internal_mutable_findernonceid();
   public:
 
-  // uint64 finderObjectId = 1;
+  // required uint64 finderObjectId = 1;
+  bool has_finderobjectid() const;
+  private:
+  bool _internal_has_finderobjectid() const;
+  public:
   void clear_finderobjectid();
   uint64_t finderobjectid() const;
   void set_finderobjectid(uint64_t value);
@@ -891,7 +939,11 @@ class RingBackSetting final :
   void _internal_set_finderobjectid(uint64_t value);
   public:
 
-  // uint32 startTs = 3;
+  // required uint32 startTs = 3;
+  bool has_startts() const;
+  private:
+  bool _internal_has_startts() const;
+  public:
   void clear_startts();
   uint32_t startts() const;
   void set_startts(uint32_t value);
@@ -900,7 +952,11 @@ class RingBackSetting final :
   void _internal_set_startts(uint32_t value);
   public:
 
-  // uint32 endTs = 4;
+  // required uint32 endTs = 4;
+  bool has_endts() const;
+  private:
+  bool _internal_has_endts() const;
+  public:
   void clear_endts();
   uint32_t endts() const;
   void set_endts(uint32_t value);
@@ -913,15 +969,19 @@ class RingBackSetting final :
  private:
   class _Internal;
 
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr findernonceid_;
     uint64_t finderobjectid_;
     uint32_t startts_;
     uint32_t endts_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_UserInfo_2eproto;
@@ -957,6 +1017,13 @@ class XAgreementInfo final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const XAgreementInfo& default_instance() {
@@ -1107,6 +1174,13 @@ class LinkedinContactItem final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const LinkedinContactItem& default_instance() {
@@ -1289,6 +1363,13 @@ class PatternLockInfo final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const PatternLockInfo& default_instance() {
     return *internal_default_instance();
   }
@@ -1459,6 +1540,13 @@ class SafeDevice final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const SafeDevice& default_instance() {
     return *internal_default_instance();
   }
@@ -1590,7 +1678,11 @@ class SafeDevice final :
   std::string* _internal_mutable_devicetype();
   public:
 
-  // uint32 createTime = 4;
+  // required uint32 createTime = 4;
+  bool has_createtime() const;
+  private:
+  bool _internal_has_createtime() const;
+  public:
   void clear_createtime();
   uint32_t createtime() const;
   void set_createtime(uint32_t value);
@@ -1648,6 +1740,13 @@ class SafeDeviceList final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const SafeDeviceList& default_instance() {
@@ -1743,7 +1842,11 @@ class SafeDeviceList final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::SafeDevice >&
       list() const;
 
-  // uint32 count = 1;
+  // required uint32 count = 1;
+  bool has_count() const;
+  private:
+  bool _internal_has_count() const;
+  public:
   void clear_count();
   uint32_t count() const;
   void set_count(uint32_t value);
@@ -1760,9 +1863,10 @@ class SafeDeviceList final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::SafeDevice > list_;
     uint32_t count_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_UserInfo_2eproto;
@@ -1798,6 +1902,13 @@ class SnsUserInfo final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const SnsUserInfo& default_instance() {
@@ -1896,7 +2007,11 @@ class SnsUserInfo final :
   std::string* _internal_mutable_snsbgimgid();
   public:
 
-  // uint32 snsFlag = 1;
+  // required uint32 snsFlag = 1;
+  bool has_snsflag() const;
+  private:
+  bool _internal_has_snsflag() const;
+  public:
   void clear_snsflag();
   uint32_t snsflag() const;
   void set_snsflag(uint32_t value);
@@ -1996,6 +2111,13 @@ class GmailInfo final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const GmailInfo& default_instance() {
     return *internal_default_instance();
   }
@@ -2090,7 +2212,11 @@ class GmailInfo final :
   std::string* _internal_mutable_gmailacct();
   public:
 
-  // uint32 gmailSwitch = 2;
+  // required uint32 gmailSwitch = 2;
+  bool has_gmailswitch() const;
+  private:
+  bool _internal_has_gmailswitch() const;
+  public:
   void clear_gmailswitch();
   uint32_t gmailswitch() const;
   void set_gmailswitch(uint32_t value);
@@ -2099,7 +2225,11 @@ class GmailInfo final :
   void _internal_set_gmailswitch(uint32_t value);
   public:
 
-  // uint32 gmailErrCode = 3;
+  // required uint32 gmailErrCode = 3;
+  bool has_gmailerrcode() const;
+  private:
+  bool _internal_has_gmailerrcode() const;
+  public:
   void clear_gmailerrcode();
   uint32_t gmailerrcode() const;
   void set_gmailerrcode(uint32_t value);
@@ -2111,6 +2241,9 @@ class GmailInfo final :
   // @@protoc_insertion_point(class_scope:GmailInfo)
  private:
   class _Internal;
+
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -2156,6 +2289,13 @@ class DisturbTimeSpan final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const DisturbTimeSpan& default_instance() {
@@ -2233,7 +2373,11 @@ class DisturbTimeSpan final :
     kBeginTimeFieldNumber = 1,
     kEndTimeFieldNumber = 2,
   };
-  // uint32 beginTime = 1;
+  // required uint32 beginTime = 1;
+  bool has_begintime() const;
+  private:
+  bool _internal_has_begintime() const;
+  public:
   void clear_begintime();
   uint32_t begintime() const;
   void set_begintime(uint32_t value);
@@ -2242,7 +2386,11 @@ class DisturbTimeSpan final :
   void _internal_set_begintime(uint32_t value);
   public:
 
-  // uint32 endTime = 2;
+  // required uint32 endTime = 2;
+  bool has_endtime() const;
+  private:
+  bool _internal_has_endtime() const;
+  public:
   void clear_endtime();
   uint32_t endtime() const;
   void set_endtime(uint32_t value);
@@ -2255,13 +2403,17 @@ class DisturbTimeSpan final :
  private:
   class _Internal;
 
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     uint32_t begintime_;
     uint32_t endtime_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_UserInfo_2eproto;
@@ -2297,6 +2449,13 @@ class DisturbSetting final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const DisturbSetting& default_instance() {
@@ -2376,7 +2535,7 @@ class DisturbSetting final :
     kNightSettingFieldNumber = 1,
     kAllDaySettingFieldNumber = 3,
   };
-  // .DisturbTimeSpan nightTime = 2;
+  // required .DisturbTimeSpan nightTime = 2;
   bool has_nighttime() const;
   private:
   bool _internal_has_nighttime() const;
@@ -2394,7 +2553,7 @@ class DisturbSetting final :
       ::DisturbTimeSpan* nighttime);
   ::DisturbTimeSpan* unsafe_arena_release_nighttime();
 
-  // .DisturbTimeSpan allDayTime = 4;
+  // required .DisturbTimeSpan allDayTime = 4;
   bool has_alldaytime() const;
   private:
   bool _internal_has_alldaytime() const;
@@ -2412,7 +2571,11 @@ class DisturbSetting final :
       ::DisturbTimeSpan* alldaytime);
   ::DisturbTimeSpan* unsafe_arena_release_alldaytime();
 
-  // uint32 nightSetting = 1;
+  // required uint32 nightSetting = 1;
+  bool has_nightsetting() const;
+  private:
+  bool _internal_has_nightsetting() const;
+  public:
   void clear_nightsetting();
   uint32_t nightsetting() const;
   void set_nightsetting(uint32_t value);
@@ -2421,7 +2584,11 @@ class DisturbSetting final :
   void _internal_set_nightsetting(uint32_t value);
   public:
 
-  // uint32 allDaySetting = 3;
+  // required uint32 allDaySetting = 3;
+  bool has_alldaysetting() const;
+  private:
+  bool _internal_has_alldaysetting() const;
+  public:
   void clear_alldaysetting();
   uint32_t alldaysetting() const;
   void set_alldaysetting(uint32_t value);
@@ -2434,15 +2601,19 @@ class DisturbSetting final :
  private:
   class _Internal;
 
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::DisturbTimeSpan* nighttime_;
     ::DisturbTimeSpan* alldaytime_;
     uint32_t nightsetting_;
     uint32_t alldaysetting_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_UserInfo_2eproto;
@@ -2478,6 +2649,13 @@ class ModUserInfo final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const ModUserInfo& default_instance() {
@@ -2807,7 +2985,7 @@ class ModUserInfo final :
   std::string* _internal_mutable_country();
   public:
 
-  // .SKBuiltinString_t userName = 2;
+  // required .SKBuiltinString_t userName = 2;
   bool has_username() const;
   private:
   bool _internal_has_username() const;
@@ -2825,7 +3003,7 @@ class ModUserInfo final :
       ::SKBuiltinString_t* username);
   ::SKBuiltinString_t* unsafe_arena_release_username();
 
-  // .SKBuiltinString_t nickName = 3;
+  // required .SKBuiltinString_t nickName = 3;
   bool has_nickname() const;
   private:
   bool _internal_has_nickname() const;
@@ -2843,7 +3021,7 @@ class ModUserInfo final :
       ::SKBuiltinString_t* nickname);
   ::SKBuiltinString_t* unsafe_arena_release_nickname();
 
-  // .SKBuiltinString_t bindEmail = 5;
+  // required .SKBuiltinString_t bindEmail = 5;
   bool has_bindemail() const;
   private:
   bool _internal_has_bindemail() const;
@@ -2861,7 +3039,7 @@ class ModUserInfo final :
       ::SKBuiltinString_t* bindemail);
   ::SKBuiltinString_t* unsafe_arena_release_bindemail();
 
-  // .SKBuiltinString_t bindMobile = 6;
+  // required .SKBuiltinString_t bindMobile = 6;
   bool has_bindmobile() const;
   private:
   bool _internal_has_bindmobile() const;
@@ -2915,7 +3093,11 @@ class ModUserInfo final :
       ::GmailList* gmaillist);
   ::GmailList* unsafe_arena_release_gmaillist();
 
-  // uint32 bitFlag = 1;
+  // required uint32 bitFlag = 1;
+  bool has_bitflag() const;
+  private:
+  bool _internal_has_bitflag() const;
+  public:
   void clear_bitflag();
   uint32_t bitflag() const;
   void set_bitflag(uint32_t value);
@@ -2924,7 +3106,11 @@ class ModUserInfo final :
   void _internal_set_bitflag(uint32_t value);
   public:
 
-  // uint32 bindUin = 4;
+  // required uint32 bindUin = 4;
+  bool has_binduin() const;
+  private:
+  bool _internal_has_binduin() const;
+  public:
   void clear_binduin();
   uint32_t binduin() const;
   void set_binduin(uint32_t value);
@@ -2933,7 +3119,11 @@ class ModUserInfo final :
   void _internal_set_binduin(uint32_t value);
   public:
 
-  // uint32 status = 7;
+  // required uint32 status = 7;
+  bool has_status() const;
+  private:
+  bool _internal_has_status() const;
+  public:
   void clear_status();
   uint32_t status() const;
   void set_status(uint32_t value);
@@ -2942,7 +3132,11 @@ class ModUserInfo final :
   void _internal_set_status(uint32_t value);
   public:
 
-  // uint32 imgLen = 8;
+  // required uint32 imgLen = 8;
+  bool has_imglen() const;
+  private:
+  bool _internal_has_imglen() const;
+  public:
   void clear_imglen();
   uint32_t imglen() const;
   void set_imglen(uint32_t value);
@@ -3163,11 +3357,14 @@ class ModUserInfo final :
  private:
   class _Internal;
 
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<2> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr imgbuf_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr province_;
@@ -3242,6 +3439,13 @@ class UserInfoExt final :
       CopyFrom(from);
     }
     return *this;
+  }
+
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
   }
 
   static const UserInfoExt& default_instance() {
@@ -3762,7 +3966,7 @@ class UserInfoExt final :
   std::string* _internal_mutable_salt();
   public:
 
-  // .SnsUserInfo snsUserInfo = 1;
+  // required .SnsUserInfo snsUserInfo = 1;
   bool has_snsuserinfo() const;
   private:
   bool _internal_has_snsuserinfo() const;
@@ -4249,6 +4453,13 @@ class GetProfileResponse final :
     return *this;
   }
 
+  inline const std::string& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<std::string>(::PROTOBUF_NAMESPACE_ID::internal::GetEmptyString);
+  }
+  inline std::string* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<std::string>();
+  }
+
   static const GetProfileResponse& default_instance() {
     return *internal_default_instance();
   }
@@ -4325,7 +4536,7 @@ class GetProfileResponse final :
     kUserInfoFieldNumber = 2,
     kUserInfoExtFieldNumber = 3,
   };
-  // .BaseResponse baseResponse = 1;
+  // required .BaseResponse baseResponse = 1;
   bool has_baseresponse() const;
   private:
   bool _internal_has_baseresponse() const;
@@ -4343,7 +4554,7 @@ class GetProfileResponse final :
       ::BaseResponse* baseresponse);
   ::BaseResponse* unsafe_arena_release_baseresponse();
 
-  // .ModUserInfo userInfo = 2;
+  // required .ModUserInfo userInfo = 2;
   bool has_userinfo() const;
   private:
   bool _internal_has_userinfo() const;
@@ -4361,7 +4572,7 @@ class GetProfileResponse final :
       ::ModUserInfo* userinfo);
   ::ModUserInfo* unsafe_arena_release_userinfo();
 
-  // .UserInfoExt userInfoExt = 3;
+  // required .UserInfoExt userInfoExt = 3;
   bool has_userinfoext() const;
   private:
   bool _internal_has_userinfoext() const;
@@ -4383,14 +4594,18 @@ class GetProfileResponse final :
  private:
   class _Internal;
 
+  // helper for ByteSizeLong()
+  size_t RequiredFieldsByteSizeFallback() const;
+
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::BaseResponse* baseresponse_;
     ::ModUserInfo* userinfo_;
     ::UserInfoExt* userinfoext_;
-    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_UserInfo_2eproto;
@@ -4406,9 +4621,17 @@ class GetProfileResponse final :
 #endif  // __GNUC__
 // GmailList
 
-// uint32 count = 1;
+// required uint32 count = 1;
+inline bool GmailList::_internal_has_count() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool GmailList::has_count() const {
+  return _internal_has_count();
+}
 inline void GmailList::clear_count() {
   _impl_.count_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline uint32_t GmailList::_internal_count() const {
   return _impl_.count_;
@@ -4418,7 +4641,7 @@ inline uint32_t GmailList::count() const {
   return _internal_count();
 }
 inline void GmailList::_internal_set_count(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.count_ = value;
 }
 inline void GmailList::set_count(uint32_t value) {
@@ -4870,9 +5093,17 @@ inline void NewRingBackSetting::set_allocated_finder(::FinderRingBackSetting* fi
 
 // RingBackSetting
 
-// uint64 finderObjectId = 1;
+// required uint64 finderObjectId = 1;
+inline bool RingBackSetting::_internal_has_finderobjectid() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool RingBackSetting::has_finderobjectid() const {
+  return _internal_has_finderobjectid();
+}
 inline void RingBackSetting::clear_finderobjectid() {
   _impl_.finderobjectid_ = uint64_t{0u};
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint64_t RingBackSetting::_internal_finderobjectid() const {
   return _impl_.finderobjectid_;
@@ -4882,7 +5113,7 @@ inline uint64_t RingBackSetting::finderobjectid() const {
   return _internal_finderobjectid();
 }
 inline void RingBackSetting::_internal_set_finderobjectid(uint64_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.finderobjectid_ = value;
 }
 inline void RingBackSetting::set_finderobjectid(uint64_t value) {
@@ -4890,9 +5121,17 @@ inline void RingBackSetting::set_finderobjectid(uint64_t value) {
   // @@protoc_insertion_point(field_set:RingBackSetting.finderObjectId)
 }
 
-// string finderNonceId = 2;
+// required string finderNonceId = 2;
+inline bool RingBackSetting::_internal_has_findernonceid() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool RingBackSetting::has_findernonceid() const {
+  return _internal_has_findernonceid();
+}
 inline void RingBackSetting::clear_findernonceid() {
   _impl_.findernonceid_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const std::string& RingBackSetting::findernonceid() const {
   // @@protoc_insertion_point(field_get:RingBackSetting.finderNonceId)
@@ -4901,7 +5140,7 @@ inline const std::string& RingBackSetting::findernonceid() const {
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void RingBackSetting::set_findernonceid(ArgT0&& arg0, ArgT... args) {
- 
+ _impl_._has_bits_[0] |= 0x00000001u;
  _impl_.findernonceid_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:RingBackSetting.finderNonceId)
 }
@@ -4914,22 +5153,32 @@ inline const std::string& RingBackSetting::_internal_findernonceid() const {
   return _impl_.findernonceid_.Get();
 }
 inline void RingBackSetting::_internal_set_findernonceid(const std::string& value) {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.findernonceid_.Set(value, GetArenaForAllocation());
 }
 inline std::string* RingBackSetting::_internal_mutable_findernonceid() {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   return _impl_.findernonceid_.Mutable(GetArenaForAllocation());
 }
 inline std::string* RingBackSetting::release_findernonceid() {
   // @@protoc_insertion_point(field_release:RingBackSetting.finderNonceId)
-  return _impl_.findernonceid_.Release();
+  if (!_internal_has_findernonceid()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.findernonceid_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.findernonceid_.IsDefault()) {
+    _impl_.findernonceid_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
 }
 inline void RingBackSetting::set_allocated_findernonceid(std::string* findernonceid) {
   if (findernonceid != nullptr) {
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.findernonceid_.SetAllocated(findernonceid, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -4940,9 +5189,17 @@ inline void RingBackSetting::set_allocated_findernonceid(std::string* findernonc
   // @@protoc_insertion_point(field_set_allocated:RingBackSetting.finderNonceId)
 }
 
-// uint32 startTs = 3;
+// required uint32 startTs = 3;
+inline bool RingBackSetting::_internal_has_startts() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool RingBackSetting::has_startts() const {
+  return _internal_has_startts();
+}
 inline void RingBackSetting::clear_startts() {
   _impl_.startts_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t RingBackSetting::_internal_startts() const {
   return _impl_.startts_;
@@ -4952,7 +5209,7 @@ inline uint32_t RingBackSetting::startts() const {
   return _internal_startts();
 }
 inline void RingBackSetting::_internal_set_startts(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.startts_ = value;
 }
 inline void RingBackSetting::set_startts(uint32_t value) {
@@ -4960,9 +5217,17 @@ inline void RingBackSetting::set_startts(uint32_t value) {
   // @@protoc_insertion_point(field_set:RingBackSetting.startTs)
 }
 
-// uint32 endTs = 4;
+// required uint32 endTs = 4;
+inline bool RingBackSetting::_internal_has_endts() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool RingBackSetting::has_endts() const {
+  return _internal_has_endts();
+}
 inline void RingBackSetting::clear_endts() {
   _impl_.endts_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t RingBackSetting::_internal_endts() const {
   return _impl_.endts_;
@@ -4972,7 +5237,7 @@ inline uint32_t RingBackSetting::endts() const {
   return _internal_endts();
 }
 inline void RingBackSetting::_internal_set_endts(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.endts_ = value;
 }
 inline void RingBackSetting::set_endts(uint32_t value) {
@@ -5603,9 +5868,17 @@ inline void SafeDevice::set_allocated_devicetype(std::string* devicetype) {
   // @@protoc_insertion_point(field_set_allocated:SafeDevice.deviceType)
 }
 
-// uint32 createTime = 4;
+// required uint32 createTime = 4;
+inline bool SafeDevice::_internal_has_createtime() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool SafeDevice::has_createtime() const {
+  return _internal_has_createtime();
+}
 inline void SafeDevice::clear_createtime() {
   _impl_.createtime_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t SafeDevice::_internal_createtime() const {
   return _impl_.createtime_;
@@ -5615,7 +5888,7 @@ inline uint32_t SafeDevice::createtime() const {
   return _internal_createtime();
 }
 inline void SafeDevice::_internal_set_createtime(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.createtime_ = value;
 }
 inline void SafeDevice::set_createtime(uint32_t value) {
@@ -5627,9 +5900,17 @@ inline void SafeDevice::set_createtime(uint32_t value) {
 
 // SafeDeviceList
 
-// uint32 count = 1;
+// required uint32 count = 1;
+inline bool SafeDeviceList::_internal_has_count() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool SafeDeviceList::has_count() const {
+  return _internal_has_count();
+}
 inline void SafeDeviceList::clear_count() {
   _impl_.count_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline uint32_t SafeDeviceList::_internal_count() const {
   return _impl_.count_;
@@ -5639,7 +5920,7 @@ inline uint32_t SafeDeviceList::count() const {
   return _internal_count();
 }
 inline void SafeDeviceList::_internal_set_count(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.count_ = value;
 }
 inline void SafeDeviceList::set_count(uint32_t value) {
@@ -5691,9 +5972,17 @@ SafeDeviceList::list() const {
 
 // SnsUserInfo
 
-// uint32 snsFlag = 1;
+// required uint32 snsFlag = 1;
+inline bool SnsUserInfo::_internal_has_snsflag() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool SnsUserInfo::has_snsflag() const {
+  return _internal_has_snsflag();
+}
 inline void SnsUserInfo::clear_snsflag() {
   _impl_.snsflag_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t SnsUserInfo::_internal_snsflag() const {
   return _impl_.snsflag_;
@@ -5703,7 +5992,7 @@ inline uint32_t SnsUserInfo::snsflag() const {
   return _internal_snsflag();
 }
 inline void SnsUserInfo::_internal_set_snsflag(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.snsflag_ = value;
 }
 inline void SnsUserInfo::set_snsflag(uint32_t value) {
@@ -5781,7 +6070,7 @@ inline void SnsUserInfo::set_allocated_snsbgimgid(std::string* snsbgimgid) {
 
 // optional uint64 snsBgobjectId = 3;
 inline bool SnsUserInfo::_internal_has_snsbgobjectid() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool SnsUserInfo::has_snsbgobjectid() const {
@@ -5789,7 +6078,7 @@ inline bool SnsUserInfo::has_snsbgobjectid() const {
 }
 inline void SnsUserInfo::clear_snsbgobjectid() {
   _impl_.snsbgobjectid_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint64_t SnsUserInfo::_internal_snsbgobjectid() const {
   return _impl_.snsbgobjectid_;
@@ -5799,7 +6088,7 @@ inline uint64_t SnsUserInfo::snsbgobjectid() const {
   return _internal_snsbgobjectid();
 }
 inline void SnsUserInfo::_internal_set_snsbgobjectid(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.snsbgobjectid_ = value;
 }
 inline void SnsUserInfo::set_snsbgobjectid(uint64_t value) {
@@ -5809,7 +6098,7 @@ inline void SnsUserInfo::set_snsbgobjectid(uint64_t value) {
 
 // optional uint32 snsFlagEx = 4;
 inline bool SnsUserInfo::_internal_has_snsflagex() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
 }
 inline bool SnsUserInfo::has_snsflagex() const {
@@ -5817,7 +6106,7 @@ inline bool SnsUserInfo::has_snsflagex() const {
 }
 inline void SnsUserInfo::clear_snsflagex() {
   _impl_.snsflagex_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000002u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t SnsUserInfo::_internal_snsflagex() const {
   return _impl_.snsflagex_;
@@ -5827,7 +6116,7 @@ inline uint32_t SnsUserInfo::snsflagex() const {
   return _internal_snsflagex();
 }
 inline void SnsUserInfo::_internal_set_snsflagex(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.snsflagex_ = value;
 }
 inline void SnsUserInfo::set_snsflagex(uint32_t value) {
@@ -5837,7 +6126,7 @@ inline void SnsUserInfo::set_snsflagex(uint32_t value) {
 
 // optional uint32 snsPrivacyRecent = 5;
 inline bool SnsUserInfo::_internal_has_snsprivacyrecent() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
 }
 inline bool SnsUserInfo::has_snsprivacyrecent() const {
@@ -5845,7 +6134,7 @@ inline bool SnsUserInfo::has_snsprivacyrecent() const {
 }
 inline void SnsUserInfo::clear_snsprivacyrecent() {
   _impl_.snsprivacyrecent_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00000008u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
 }
 inline uint32_t SnsUserInfo::_internal_snsprivacyrecent() const {
   return _impl_.snsprivacyrecent_;
@@ -5855,7 +6144,7 @@ inline uint32_t SnsUserInfo::snsprivacyrecent() const {
   return _internal_snsprivacyrecent();
 }
 inline void SnsUserInfo::_internal_set_snsprivacyrecent(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_._has_bits_[0] |= 0x00000010u;
   _impl_.snsprivacyrecent_ = value;
 }
 inline void SnsUserInfo::set_snsprivacyrecent(uint32_t value) {
@@ -5935,9 +6224,17 @@ inline void GmailInfo::set_allocated_gmailacct(std::string* gmailacct) {
   // @@protoc_insertion_point(field_set_allocated:GmailInfo.gmailAcct)
 }
 
-// uint32 gmailSwitch = 2;
+// required uint32 gmailSwitch = 2;
+inline bool GmailInfo::_internal_has_gmailswitch() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool GmailInfo::has_gmailswitch() const {
+  return _internal_has_gmailswitch();
+}
 inline void GmailInfo::clear_gmailswitch() {
   _impl_.gmailswitch_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t GmailInfo::_internal_gmailswitch() const {
   return _impl_.gmailswitch_;
@@ -5947,7 +6244,7 @@ inline uint32_t GmailInfo::gmailswitch() const {
   return _internal_gmailswitch();
 }
 inline void GmailInfo::_internal_set_gmailswitch(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.gmailswitch_ = value;
 }
 inline void GmailInfo::set_gmailswitch(uint32_t value) {
@@ -5955,9 +6252,17 @@ inline void GmailInfo::set_gmailswitch(uint32_t value) {
   // @@protoc_insertion_point(field_set:GmailInfo.gmailSwitch)
 }
 
-// uint32 gmailErrCode = 3;
+// required uint32 gmailErrCode = 3;
+inline bool GmailInfo::_internal_has_gmailerrcode() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool GmailInfo::has_gmailerrcode() const {
+  return _internal_has_gmailerrcode();
+}
 inline void GmailInfo::clear_gmailerrcode() {
   _impl_.gmailerrcode_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t GmailInfo::_internal_gmailerrcode() const {
   return _impl_.gmailerrcode_;
@@ -5967,7 +6272,7 @@ inline uint32_t GmailInfo::gmailerrcode() const {
   return _internal_gmailerrcode();
 }
 inline void GmailInfo::_internal_set_gmailerrcode(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.gmailerrcode_ = value;
 }
 inline void GmailInfo::set_gmailerrcode(uint32_t value) {
@@ -5979,9 +6284,17 @@ inline void GmailInfo::set_gmailerrcode(uint32_t value) {
 
 // DisturbTimeSpan
 
-// uint32 beginTime = 1;
+// required uint32 beginTime = 1;
+inline bool DisturbTimeSpan::_internal_has_begintime() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool DisturbTimeSpan::has_begintime() const {
+  return _internal_has_begintime();
+}
 inline void DisturbTimeSpan::clear_begintime() {
   _impl_.begintime_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline uint32_t DisturbTimeSpan::_internal_begintime() const {
   return _impl_.begintime_;
@@ -5991,7 +6304,7 @@ inline uint32_t DisturbTimeSpan::begintime() const {
   return _internal_begintime();
 }
 inline void DisturbTimeSpan::_internal_set_begintime(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   _impl_.begintime_ = value;
 }
 inline void DisturbTimeSpan::set_begintime(uint32_t value) {
@@ -5999,9 +6312,17 @@ inline void DisturbTimeSpan::set_begintime(uint32_t value) {
   // @@protoc_insertion_point(field_set:DisturbTimeSpan.beginTime)
 }
 
-// uint32 endTime = 2;
+// required uint32 endTime = 2;
+inline bool DisturbTimeSpan::_internal_has_endtime() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool DisturbTimeSpan::has_endtime() const {
+  return _internal_has_endtime();
+}
 inline void DisturbTimeSpan::clear_endtime() {
   _impl_.endtime_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline uint32_t DisturbTimeSpan::_internal_endtime() const {
   return _impl_.endtime_;
@@ -6011,7 +6332,7 @@ inline uint32_t DisturbTimeSpan::endtime() const {
   return _internal_endtime();
 }
 inline void DisturbTimeSpan::_internal_set_endtime(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   _impl_.endtime_ = value;
 }
 inline void DisturbTimeSpan::set_endtime(uint32_t value) {
@@ -6023,9 +6344,17 @@ inline void DisturbTimeSpan::set_endtime(uint32_t value) {
 
 // DisturbSetting
 
-// uint32 nightSetting = 1;
+// required uint32 nightSetting = 1;
+inline bool DisturbSetting::_internal_has_nightsetting() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool DisturbSetting::has_nightsetting() const {
+  return _internal_has_nightsetting();
+}
 inline void DisturbSetting::clear_nightsetting() {
   _impl_.nightsetting_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline uint32_t DisturbSetting::_internal_nightsetting() const {
   return _impl_.nightsetting_;
@@ -6035,7 +6364,7 @@ inline uint32_t DisturbSetting::nightsetting() const {
   return _internal_nightsetting();
 }
 inline void DisturbSetting::_internal_set_nightsetting(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000004u;
   _impl_.nightsetting_ = value;
 }
 inline void DisturbSetting::set_nightsetting(uint32_t value) {
@@ -6043,18 +6372,18 @@ inline void DisturbSetting::set_nightsetting(uint32_t value) {
   // @@protoc_insertion_point(field_set:DisturbSetting.nightSetting)
 }
 
-// .DisturbTimeSpan nightTime = 2;
+// required .DisturbTimeSpan nightTime = 2;
 inline bool DisturbSetting::_internal_has_nighttime() const {
-  return this != internal_default_instance() && _impl_.nighttime_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.nighttime_ != nullptr);
+  return value;
 }
 inline bool DisturbSetting::has_nighttime() const {
   return _internal_has_nighttime();
 }
 inline void DisturbSetting::clear_nighttime() {
-  if (GetArenaForAllocation() == nullptr && _impl_.nighttime_ != nullptr) {
-    delete _impl_.nighttime_;
-  }
-  _impl_.nighttime_ = nullptr;
+  if (_impl_.nighttime_ != nullptr) _impl_.nighttime_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000001u;
 }
 inline const ::DisturbTimeSpan& DisturbSetting::_internal_nighttime() const {
   const ::DisturbTimeSpan* p = _impl_.nighttime_;
@@ -6072,14 +6401,14 @@ inline void DisturbSetting::unsafe_arena_set_allocated_nighttime(
   }
   _impl_.nighttime_ = nighttime;
   if (nighttime) {
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:DisturbSetting.nightTime)
 }
 inline ::DisturbTimeSpan* DisturbSetting::release_nighttime() {
-  
+  _impl_._has_bits_[0] &= ~0x00000001u;
   ::DisturbTimeSpan* temp = _impl_.nighttime_;
   _impl_.nighttime_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -6095,13 +6424,13 @@ inline ::DisturbTimeSpan* DisturbSetting::release_nighttime() {
 }
 inline ::DisturbTimeSpan* DisturbSetting::unsafe_arena_release_nighttime() {
   // @@protoc_insertion_point(field_release:DisturbSetting.nightTime)
-  
+  _impl_._has_bits_[0] &= ~0x00000001u;
   ::DisturbTimeSpan* temp = _impl_.nighttime_;
   _impl_.nighttime_ = nullptr;
   return temp;
 }
 inline ::DisturbTimeSpan* DisturbSetting::_internal_mutable_nighttime() {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.nighttime_ == nullptr) {
     auto* p = CreateMaybeMessage<::DisturbTimeSpan>(GetArenaForAllocation());
     _impl_.nighttime_ = p;
@@ -6125,17 +6454,25 @@ inline void DisturbSetting::set_allocated_nighttime(::DisturbTimeSpan* nighttime
       nighttime = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, nighttime, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.nighttime_ = nighttime;
   // @@protoc_insertion_point(field_set_allocated:DisturbSetting.nightTime)
 }
 
-// uint32 allDaySetting = 3;
+// required uint32 allDaySetting = 3;
+inline bool DisturbSetting::_internal_has_alldaysetting() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool DisturbSetting::has_alldaysetting() const {
+  return _internal_has_alldaysetting();
+}
 inline void DisturbSetting::clear_alldaysetting() {
   _impl_.alldaysetting_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline uint32_t DisturbSetting::_internal_alldaysetting() const {
   return _impl_.alldaysetting_;
@@ -6145,7 +6482,7 @@ inline uint32_t DisturbSetting::alldaysetting() const {
   return _internal_alldaysetting();
 }
 inline void DisturbSetting::_internal_set_alldaysetting(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.alldaysetting_ = value;
 }
 inline void DisturbSetting::set_alldaysetting(uint32_t value) {
@@ -6153,18 +6490,18 @@ inline void DisturbSetting::set_alldaysetting(uint32_t value) {
   // @@protoc_insertion_point(field_set:DisturbSetting.allDaySetting)
 }
 
-// .DisturbTimeSpan allDayTime = 4;
+// required .DisturbTimeSpan allDayTime = 4;
 inline bool DisturbSetting::_internal_has_alldaytime() const {
-  return this != internal_default_instance() && _impl_.alldaytime_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.alldaytime_ != nullptr);
+  return value;
 }
 inline bool DisturbSetting::has_alldaytime() const {
   return _internal_has_alldaytime();
 }
 inline void DisturbSetting::clear_alldaytime() {
-  if (GetArenaForAllocation() == nullptr && _impl_.alldaytime_ != nullptr) {
-    delete _impl_.alldaytime_;
-  }
-  _impl_.alldaytime_ = nullptr;
+  if (_impl_.alldaytime_ != nullptr) _impl_.alldaytime_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::DisturbTimeSpan& DisturbSetting::_internal_alldaytime() const {
   const ::DisturbTimeSpan* p = _impl_.alldaytime_;
@@ -6182,14 +6519,14 @@ inline void DisturbSetting::unsafe_arena_set_allocated_alldaytime(
   }
   _impl_.alldaytime_ = alldaytime;
   if (alldaytime) {
-    
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:DisturbSetting.allDayTime)
 }
 inline ::DisturbTimeSpan* DisturbSetting::release_alldaytime() {
-  
+  _impl_._has_bits_[0] &= ~0x00000002u;
   ::DisturbTimeSpan* temp = _impl_.alldaytime_;
   _impl_.alldaytime_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -6205,13 +6542,13 @@ inline ::DisturbTimeSpan* DisturbSetting::release_alldaytime() {
 }
 inline ::DisturbTimeSpan* DisturbSetting::unsafe_arena_release_alldaytime() {
   // @@protoc_insertion_point(field_release:DisturbSetting.allDayTime)
-  
+  _impl_._has_bits_[0] &= ~0x00000002u;
   ::DisturbTimeSpan* temp = _impl_.alldaytime_;
   _impl_.alldaytime_ = nullptr;
   return temp;
 }
 inline ::DisturbTimeSpan* DisturbSetting::_internal_mutable_alldaytime() {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   if (_impl_.alldaytime_ == nullptr) {
     auto* p = CreateMaybeMessage<::DisturbTimeSpan>(GetArenaForAllocation());
     _impl_.alldaytime_ = p;
@@ -6235,9 +6572,9 @@ inline void DisturbSetting::set_allocated_alldaytime(::DisturbTimeSpan* alldayti
       alldaytime = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, alldaytime, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.alldaytime_ = alldaytime;
   // @@protoc_insertion_point(field_set_allocated:DisturbSetting.allDayTime)
@@ -6247,9 +6584,17 @@ inline void DisturbSetting::set_allocated_alldaytime(::DisturbTimeSpan* alldayti
 
 // ModUserInfo
 
-// uint32 bitFlag = 1;
+// required uint32 bitFlag = 1;
+inline bool ModUserInfo::_internal_has_bitflag() const {
+  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  return value;
+}
+inline bool ModUserInfo::has_bitflag() const {
+  return _internal_has_bitflag();
+}
 inline void ModUserInfo::clear_bitflag() {
   _impl_.bitflag_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00040000u;
 }
 inline uint32_t ModUserInfo::_internal_bitflag() const {
   return _impl_.bitflag_;
@@ -6259,7 +6604,7 @@ inline uint32_t ModUserInfo::bitflag() const {
   return _internal_bitflag();
 }
 inline void ModUserInfo::_internal_set_bitflag(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00040000u;
   _impl_.bitflag_ = value;
 }
 inline void ModUserInfo::set_bitflag(uint32_t value) {
@@ -6267,9 +6612,11 @@ inline void ModUserInfo::set_bitflag(uint32_t value) {
   // @@protoc_insertion_point(field_set:ModUserInfo.bitFlag)
 }
 
-// .SKBuiltinString_t userName = 2;
+// required .SKBuiltinString_t userName = 2;
 inline bool ModUserInfo::_internal_has_username() const {
-  return this != internal_default_instance() && _impl_.username_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.username_ != nullptr);
+  return value;
 }
 inline bool ModUserInfo::has_username() const {
   return _internal_has_username();
@@ -6290,14 +6637,14 @@ inline void ModUserInfo::unsafe_arena_set_allocated_username(
   }
   _impl_.username_ = username;
   if (username) {
-    
+    _impl_._has_bits_[0] |= 0x00001000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00001000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ModUserInfo.userName)
 }
 inline ::SKBuiltinString_t* ModUserInfo::release_username() {
-  
+  _impl_._has_bits_[0] &= ~0x00001000u;
   ::SKBuiltinString_t* temp = _impl_.username_;
   _impl_.username_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -6313,13 +6660,13 @@ inline ::SKBuiltinString_t* ModUserInfo::release_username() {
 }
 inline ::SKBuiltinString_t* ModUserInfo::unsafe_arena_release_username() {
   // @@protoc_insertion_point(field_release:ModUserInfo.userName)
-  
+  _impl_._has_bits_[0] &= ~0x00001000u;
   ::SKBuiltinString_t* temp = _impl_.username_;
   _impl_.username_ = nullptr;
   return temp;
 }
 inline ::SKBuiltinString_t* ModUserInfo::_internal_mutable_username() {
-  
+  _impl_._has_bits_[0] |= 0x00001000u;
   if (_impl_.username_ == nullptr) {
     auto* p = CreateMaybeMessage<::SKBuiltinString_t>(GetArenaForAllocation());
     _impl_.username_ = p;
@@ -6344,17 +6691,19 @@ inline void ModUserInfo::set_allocated_username(::SKBuiltinString_t* username) {
       username = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, username, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00001000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00001000u;
   }
   _impl_.username_ = username;
   // @@protoc_insertion_point(field_set_allocated:ModUserInfo.userName)
 }
 
-// .SKBuiltinString_t nickName = 3;
+// required .SKBuiltinString_t nickName = 3;
 inline bool ModUserInfo::_internal_has_nickname() const {
-  return this != internal_default_instance() && _impl_.nickname_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.nickname_ != nullptr);
+  return value;
 }
 inline bool ModUserInfo::has_nickname() const {
   return _internal_has_nickname();
@@ -6375,14 +6724,14 @@ inline void ModUserInfo::unsafe_arena_set_allocated_nickname(
   }
   _impl_.nickname_ = nickname;
   if (nickname) {
-    
+    _impl_._has_bits_[0] |= 0x00002000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00002000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ModUserInfo.nickName)
 }
 inline ::SKBuiltinString_t* ModUserInfo::release_nickname() {
-  
+  _impl_._has_bits_[0] &= ~0x00002000u;
   ::SKBuiltinString_t* temp = _impl_.nickname_;
   _impl_.nickname_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -6398,13 +6747,13 @@ inline ::SKBuiltinString_t* ModUserInfo::release_nickname() {
 }
 inline ::SKBuiltinString_t* ModUserInfo::unsafe_arena_release_nickname() {
   // @@protoc_insertion_point(field_release:ModUserInfo.nickName)
-  
+  _impl_._has_bits_[0] &= ~0x00002000u;
   ::SKBuiltinString_t* temp = _impl_.nickname_;
   _impl_.nickname_ = nullptr;
   return temp;
 }
 inline ::SKBuiltinString_t* ModUserInfo::_internal_mutable_nickname() {
-  
+  _impl_._has_bits_[0] |= 0x00002000u;
   if (_impl_.nickname_ == nullptr) {
     auto* p = CreateMaybeMessage<::SKBuiltinString_t>(GetArenaForAllocation());
     _impl_.nickname_ = p;
@@ -6429,17 +6778,25 @@ inline void ModUserInfo::set_allocated_nickname(::SKBuiltinString_t* nickname) {
       nickname = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, nickname, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00002000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00002000u;
   }
   _impl_.nickname_ = nickname;
   // @@protoc_insertion_point(field_set_allocated:ModUserInfo.nickName)
 }
 
-// uint32 bindUin = 4;
+// required uint32 bindUin = 4;
+inline bool ModUserInfo::_internal_has_binduin() const {
+  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
+  return value;
+}
+inline bool ModUserInfo::has_binduin() const {
+  return _internal_has_binduin();
+}
 inline void ModUserInfo::clear_binduin() {
   _impl_.binduin_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00080000u;
 }
 inline uint32_t ModUserInfo::_internal_binduin() const {
   return _impl_.binduin_;
@@ -6449,7 +6806,7 @@ inline uint32_t ModUserInfo::binduin() const {
   return _internal_binduin();
 }
 inline void ModUserInfo::_internal_set_binduin(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00080000u;
   _impl_.binduin_ = value;
 }
 inline void ModUserInfo::set_binduin(uint32_t value) {
@@ -6457,9 +6814,11 @@ inline void ModUserInfo::set_binduin(uint32_t value) {
   // @@protoc_insertion_point(field_set:ModUserInfo.bindUin)
 }
 
-// .SKBuiltinString_t bindEmail = 5;
+// required .SKBuiltinString_t bindEmail = 5;
 inline bool ModUserInfo::_internal_has_bindemail() const {
-  return this != internal_default_instance() && _impl_.bindemail_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.bindemail_ != nullptr);
+  return value;
 }
 inline bool ModUserInfo::has_bindemail() const {
   return _internal_has_bindemail();
@@ -6480,14 +6839,14 @@ inline void ModUserInfo::unsafe_arena_set_allocated_bindemail(
   }
   _impl_.bindemail_ = bindemail;
   if (bindemail) {
-    
+    _impl_._has_bits_[0] |= 0x00004000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00004000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ModUserInfo.bindEmail)
 }
 inline ::SKBuiltinString_t* ModUserInfo::release_bindemail() {
-  
+  _impl_._has_bits_[0] &= ~0x00004000u;
   ::SKBuiltinString_t* temp = _impl_.bindemail_;
   _impl_.bindemail_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -6503,13 +6862,13 @@ inline ::SKBuiltinString_t* ModUserInfo::release_bindemail() {
 }
 inline ::SKBuiltinString_t* ModUserInfo::unsafe_arena_release_bindemail() {
   // @@protoc_insertion_point(field_release:ModUserInfo.bindEmail)
-  
+  _impl_._has_bits_[0] &= ~0x00004000u;
   ::SKBuiltinString_t* temp = _impl_.bindemail_;
   _impl_.bindemail_ = nullptr;
   return temp;
 }
 inline ::SKBuiltinString_t* ModUserInfo::_internal_mutable_bindemail() {
-  
+  _impl_._has_bits_[0] |= 0x00004000u;
   if (_impl_.bindemail_ == nullptr) {
     auto* p = CreateMaybeMessage<::SKBuiltinString_t>(GetArenaForAllocation());
     _impl_.bindemail_ = p;
@@ -6534,17 +6893,19 @@ inline void ModUserInfo::set_allocated_bindemail(::SKBuiltinString_t* bindemail)
       bindemail = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, bindemail, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00004000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00004000u;
   }
   _impl_.bindemail_ = bindemail;
   // @@protoc_insertion_point(field_set_allocated:ModUserInfo.bindEmail)
 }
 
-// .SKBuiltinString_t bindMobile = 6;
+// required .SKBuiltinString_t bindMobile = 6;
 inline bool ModUserInfo::_internal_has_bindmobile() const {
-  return this != internal_default_instance() && _impl_.bindmobile_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.bindmobile_ != nullptr);
+  return value;
 }
 inline bool ModUserInfo::has_bindmobile() const {
   return _internal_has_bindmobile();
@@ -6565,14 +6926,14 @@ inline void ModUserInfo::unsafe_arena_set_allocated_bindmobile(
   }
   _impl_.bindmobile_ = bindmobile;
   if (bindmobile) {
-    
+    _impl_._has_bits_[0] |= 0x00008000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00008000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ModUserInfo.bindMobile)
 }
 inline ::SKBuiltinString_t* ModUserInfo::release_bindmobile() {
-  
+  _impl_._has_bits_[0] &= ~0x00008000u;
   ::SKBuiltinString_t* temp = _impl_.bindmobile_;
   _impl_.bindmobile_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -6588,13 +6949,13 @@ inline ::SKBuiltinString_t* ModUserInfo::release_bindmobile() {
 }
 inline ::SKBuiltinString_t* ModUserInfo::unsafe_arena_release_bindmobile() {
   // @@protoc_insertion_point(field_release:ModUserInfo.bindMobile)
-  
+  _impl_._has_bits_[0] &= ~0x00008000u;
   ::SKBuiltinString_t* temp = _impl_.bindmobile_;
   _impl_.bindmobile_ = nullptr;
   return temp;
 }
 inline ::SKBuiltinString_t* ModUserInfo::_internal_mutable_bindmobile() {
-  
+  _impl_._has_bits_[0] |= 0x00008000u;
   if (_impl_.bindmobile_ == nullptr) {
     auto* p = CreateMaybeMessage<::SKBuiltinString_t>(GetArenaForAllocation());
     _impl_.bindmobile_ = p;
@@ -6619,17 +6980,25 @@ inline void ModUserInfo::set_allocated_bindmobile(::SKBuiltinString_t* bindmobil
       bindmobile = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, bindmobile, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00008000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00008000u;
   }
   _impl_.bindmobile_ = bindmobile;
   // @@protoc_insertion_point(field_set_allocated:ModUserInfo.bindMobile)
 }
 
-// uint32 status = 7;
+// required uint32 status = 7;
+inline bool ModUserInfo::_internal_has_status() const {
+  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
+  return value;
+}
+inline bool ModUserInfo::has_status() const {
+  return _internal_has_status();
+}
 inline void ModUserInfo::clear_status() {
   _impl_.status_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00100000u;
 }
 inline uint32_t ModUserInfo::_internal_status() const {
   return _impl_.status_;
@@ -6639,7 +7008,7 @@ inline uint32_t ModUserInfo::status() const {
   return _internal_status();
 }
 inline void ModUserInfo::_internal_set_status(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00100000u;
   _impl_.status_ = value;
 }
 inline void ModUserInfo::set_status(uint32_t value) {
@@ -6647,9 +7016,17 @@ inline void ModUserInfo::set_status(uint32_t value) {
   // @@protoc_insertion_point(field_set:ModUserInfo.status)
 }
 
-// uint32 imgLen = 8;
+// required uint32 imgLen = 8;
+inline bool ModUserInfo::_internal_has_imglen() const {
+  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  return value;
+}
+inline bool ModUserInfo::has_imglen() const {
+  return _internal_has_imglen();
+}
 inline void ModUserInfo::clear_imglen() {
   _impl_.imglen_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00200000u;
 }
 inline uint32_t ModUserInfo::_internal_imglen() const {
   return _impl_.imglen_;
@@ -6659,7 +7036,7 @@ inline uint32_t ModUserInfo::imglen() const {
   return _internal_imglen();
 }
 inline void ModUserInfo::_internal_set_imglen(uint32_t value) {
-  
+  _impl_._has_bits_[0] |= 0x00200000u;
   _impl_.imglen_ = value;
 }
 inline void ModUserInfo::set_imglen(uint32_t value) {
@@ -6737,7 +7114,7 @@ inline void ModUserInfo::set_allocated_imgbuf(std::string* imgbuf) {
 
 // optional int32 sex = 10;
 inline bool ModUserInfo::_internal_has_sex() const {
-  bool value = (_impl_._has_bits_[0] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_sex() const {
@@ -6745,7 +7122,7 @@ inline bool ModUserInfo::has_sex() const {
 }
 inline void ModUserInfo::clear_sex() {
   _impl_.sex_ = 0;
-  _impl_._has_bits_[0] &= ~0x00004000u;
+  _impl_._has_bits_[0] &= ~0x00400000u;
 }
 inline int32_t ModUserInfo::_internal_sex() const {
   return _impl_.sex_;
@@ -6755,7 +7132,7 @@ inline int32_t ModUserInfo::sex() const {
   return _internal_sex();
 }
 inline void ModUserInfo::_internal_set_sex(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00004000u;
+  _impl_._has_bits_[0] |= 0x00400000u;
   _impl_.sex_ = value;
 }
 inline void ModUserInfo::set_sex(int32_t value) {
@@ -6969,7 +7346,7 @@ inline void ModUserInfo::set_allocated_signature(std::string* signature) {
 
 // optional uint32 personalCard = 14;
 inline bool ModUserInfo::_internal_has_personalcard() const {
-  bool value = (_impl_._has_bits_[0] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_personalcard() const {
@@ -6977,7 +7354,7 @@ inline bool ModUserInfo::has_personalcard() const {
 }
 inline void ModUserInfo::clear_personalcard() {
   _impl_.personalcard_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00008000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
 }
 inline uint32_t ModUserInfo::_internal_personalcard() const {
   return _impl_.personalcard_;
@@ -6987,7 +7364,7 @@ inline uint32_t ModUserInfo::personalcard() const {
   return _internal_personalcard();
 }
 inline void ModUserInfo::_internal_set_personalcard(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00008000u;
+  _impl_._has_bits_[0] |= 0x00800000u;
   _impl_.personalcard_ = value;
 }
 inline void ModUserInfo::set_personalcard(uint32_t value) {
@@ -6997,7 +7374,7 @@ inline void ModUserInfo::set_personalcard(uint32_t value) {
 
 // optional .DisturbSetting disturbSetting = 15;
 inline bool ModUserInfo::_internal_has_disturbsetting() const {
-  bool value = (_impl_._has_bits_[0] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.disturbsetting_ != nullptr);
   return value;
 }
@@ -7006,7 +7383,7 @@ inline bool ModUserInfo::has_disturbsetting() const {
 }
 inline void ModUserInfo::clear_disturbsetting() {
   if (_impl_.disturbsetting_ != nullptr) _impl_.disturbsetting_->Clear();
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
 }
 inline const ::DisturbSetting& ModUserInfo::_internal_disturbsetting() const {
   const ::DisturbSetting* p = _impl_.disturbsetting_;
@@ -7024,14 +7401,14 @@ inline void ModUserInfo::unsafe_arena_set_allocated_disturbsetting(
   }
   _impl_.disturbsetting_ = disturbsetting;
   if (disturbsetting) {
-    _impl_._has_bits_[0] |= 0x00001000u;
+    _impl_._has_bits_[0] |= 0x00010000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00001000u;
+    _impl_._has_bits_[0] &= ~0x00010000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ModUserInfo.disturbSetting)
 }
 inline ::DisturbSetting* ModUserInfo::release_disturbsetting() {
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
   ::DisturbSetting* temp = _impl_.disturbsetting_;
   _impl_.disturbsetting_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -7047,13 +7424,13 @@ inline ::DisturbSetting* ModUserInfo::release_disturbsetting() {
 }
 inline ::DisturbSetting* ModUserInfo::unsafe_arena_release_disturbsetting() {
   // @@protoc_insertion_point(field_release:ModUserInfo.disturbSetting)
-  _impl_._has_bits_[0] &= ~0x00001000u;
+  _impl_._has_bits_[0] &= ~0x00010000u;
   ::DisturbSetting* temp = _impl_.disturbsetting_;
   _impl_.disturbsetting_ = nullptr;
   return temp;
 }
 inline ::DisturbSetting* ModUserInfo::_internal_mutable_disturbsetting() {
-  _impl_._has_bits_[0] |= 0x00001000u;
+  _impl_._has_bits_[0] |= 0x00010000u;
   if (_impl_.disturbsetting_ == nullptr) {
     auto* p = CreateMaybeMessage<::DisturbSetting>(GetArenaForAllocation());
     _impl_.disturbsetting_ = p;
@@ -7077,9 +7454,9 @@ inline void ModUserInfo::set_allocated_disturbsetting(::DisturbSetting* disturbs
       disturbsetting = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, disturbsetting, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00001000u;
+    _impl_._has_bits_[0] |= 0x00010000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00001000u;
+    _impl_._has_bits_[0] &= ~0x00010000u;
   }
   _impl_.disturbsetting_ = disturbsetting;
   // @@protoc_insertion_point(field_set_allocated:ModUserInfo.disturbSetting)
@@ -7087,7 +7464,7 @@ inline void ModUserInfo::set_allocated_disturbsetting(::DisturbSetting* disturbs
 
 // optional uint32 pluginFlag = 16;
 inline bool ModUserInfo::_internal_has_pluginflag() const {
-  bool value = (_impl_._has_bits_[0] & 0x00010000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_pluginflag() const {
@@ -7095,7 +7472,7 @@ inline bool ModUserInfo::has_pluginflag() const {
 }
 inline void ModUserInfo::clear_pluginflag() {
   _impl_.pluginflag_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00010000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
 }
 inline uint32_t ModUserInfo::_internal_pluginflag() const {
   return _impl_.pluginflag_;
@@ -7105,7 +7482,7 @@ inline uint32_t ModUserInfo::pluginflag() const {
   return _internal_pluginflag();
 }
 inline void ModUserInfo::_internal_set_pluginflag(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00010000u;
+  _impl_._has_bits_[0] |= 0x01000000u;
   _impl_.pluginflag_ = value;
 }
 inline void ModUserInfo::set_pluginflag(uint32_t value) {
@@ -7115,7 +7492,7 @@ inline void ModUserInfo::set_pluginflag(uint32_t value) {
 
 // optional uint32 verifyFlag = 17;
 inline bool ModUserInfo::_internal_has_verifyflag() const {
-  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_verifyflag() const {
@@ -7123,7 +7500,7 @@ inline bool ModUserInfo::has_verifyflag() const {
 }
 inline void ModUserInfo::clear_verifyflag() {
   _impl_.verifyflag_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00020000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
 }
 inline uint32_t ModUserInfo::_internal_verifyflag() const {
   return _impl_.verifyflag_;
@@ -7133,7 +7510,7 @@ inline uint32_t ModUserInfo::verifyflag() const {
   return _internal_verifyflag();
 }
 inline void ModUserInfo::_internal_set_verifyflag(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00020000u;
+  _impl_._has_bits_[0] |= 0x02000000u;
   _impl_.verifyflag_ = value;
 }
 inline void ModUserInfo::set_verifyflag(uint32_t value) {
@@ -7211,7 +7588,7 @@ inline void ModUserInfo::set_allocated_verifyinfo(std::string* verifyinfo) {
 
 // optional int32 point = 19;
 inline bool ModUserInfo::_internal_has_point() const {
-  bool value = (_impl_._has_bits_[0] & 0x00040000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x04000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_point() const {
@@ -7219,7 +7596,7 @@ inline bool ModUserInfo::has_point() const {
 }
 inline void ModUserInfo::clear_point() {
   _impl_.point_ = 0;
-  _impl_._has_bits_[0] &= ~0x00040000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
 }
 inline int32_t ModUserInfo::_internal_point() const {
   return _impl_.point_;
@@ -7229,7 +7606,7 @@ inline int32_t ModUserInfo::point() const {
   return _internal_point();
 }
 inline void ModUserInfo::_internal_set_point(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00040000u;
+  _impl_._has_bits_[0] |= 0x04000000u;
   _impl_.point_ = value;
 }
 inline void ModUserInfo::set_point(int32_t value) {
@@ -7239,7 +7616,7 @@ inline void ModUserInfo::set_point(int32_t value) {
 
 // optional int32 experience = 20;
 inline bool ModUserInfo::_internal_has_experience() const {
-  bool value = (_impl_._has_bits_[0] & 0x00080000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x08000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_experience() const {
@@ -7247,7 +7624,7 @@ inline bool ModUserInfo::has_experience() const {
 }
 inline void ModUserInfo::clear_experience() {
   _impl_.experience_ = 0;
-  _impl_._has_bits_[0] &= ~0x00080000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
 }
 inline int32_t ModUserInfo::_internal_experience() const {
   return _impl_.experience_;
@@ -7257,7 +7634,7 @@ inline int32_t ModUserInfo::experience() const {
   return _internal_experience();
 }
 inline void ModUserInfo::_internal_set_experience(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00080000u;
+  _impl_._has_bits_[0] |= 0x08000000u;
   _impl_.experience_ = value;
 }
 inline void ModUserInfo::set_experience(int32_t value) {
@@ -7267,7 +7644,7 @@ inline void ModUserInfo::set_experience(int32_t value) {
 
 // optional int32 level = 21;
 inline bool ModUserInfo::_internal_has_level() const {
-  bool value = (_impl_._has_bits_[0] & 0x00100000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x10000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_level() const {
@@ -7275,7 +7652,7 @@ inline bool ModUserInfo::has_level() const {
 }
 inline void ModUserInfo::clear_level() {
   _impl_.level_ = 0;
-  _impl_._has_bits_[0] &= ~0x00100000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
 }
 inline int32_t ModUserInfo::_internal_level() const {
   return _impl_.level_;
@@ -7285,7 +7662,7 @@ inline int32_t ModUserInfo::level() const {
   return _internal_level();
 }
 inline void ModUserInfo::_internal_set_level(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00100000u;
+  _impl_._has_bits_[0] |= 0x10000000u;
   _impl_.level_ = value;
 }
 inline void ModUserInfo::set_level(int32_t value) {
@@ -7295,7 +7672,7 @@ inline void ModUserInfo::set_level(int32_t value) {
 
 // optional int32 levelLowExp = 22;
 inline bool ModUserInfo::_internal_has_levellowexp() const {
-  bool value = (_impl_._has_bits_[0] & 0x00200000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x20000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_levellowexp() const {
@@ -7303,7 +7680,7 @@ inline bool ModUserInfo::has_levellowexp() const {
 }
 inline void ModUserInfo::clear_levellowexp() {
   _impl_.levellowexp_ = 0;
-  _impl_._has_bits_[0] &= ~0x00200000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
 }
 inline int32_t ModUserInfo::_internal_levellowexp() const {
   return _impl_.levellowexp_;
@@ -7313,7 +7690,7 @@ inline int32_t ModUserInfo::levellowexp() const {
   return _internal_levellowexp();
 }
 inline void ModUserInfo::_internal_set_levellowexp(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00200000u;
+  _impl_._has_bits_[0] |= 0x20000000u;
   _impl_.levellowexp_ = value;
 }
 inline void ModUserInfo::set_levellowexp(int32_t value) {
@@ -7323,7 +7700,7 @@ inline void ModUserInfo::set_levellowexp(int32_t value) {
 
 // optional int32 levelHighExp = 23;
 inline bool ModUserInfo::_internal_has_levelhighexp() const {
-  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x40000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_levelhighexp() const {
@@ -7331,7 +7708,7 @@ inline bool ModUserInfo::has_levelhighexp() const {
 }
 inline void ModUserInfo::clear_levelhighexp() {
   _impl_.levelhighexp_ = 0;
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x40000000u;
 }
 inline int32_t ModUserInfo::_internal_levelhighexp() const {
   return _impl_.levelhighexp_;
@@ -7341,7 +7718,7 @@ inline int32_t ModUserInfo::levelhighexp() const {
   return _internal_levelhighexp();
 }
 inline void ModUserInfo::_internal_set_levelhighexp(int32_t value) {
-  _impl_._has_bits_[0] |= 0x00400000u;
+  _impl_._has_bits_[0] |= 0x40000000u;
   _impl_.levelhighexp_ = value;
 }
 inline void ModUserInfo::set_levelhighexp(int32_t value) {
@@ -7419,7 +7796,7 @@ inline void ModUserInfo::set_allocated_weibo(std::string* weibo) {
 
 // optional uint32 pluginSwitch = 25;
 inline bool ModUserInfo::_internal_has_pluginswitch() const {
-  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x80000000u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_pluginswitch() const {
@@ -7427,7 +7804,7 @@ inline bool ModUserInfo::has_pluginswitch() const {
 }
 inline void ModUserInfo::clear_pluginswitch() {
   _impl_.pluginswitch_ = 0u;
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x80000000u;
 }
 inline uint32_t ModUserInfo::_internal_pluginswitch() const {
   return _impl_.pluginswitch_;
@@ -7437,7 +7814,7 @@ inline uint32_t ModUserInfo::pluginswitch() const {
   return _internal_pluginswitch();
 }
 inline void ModUserInfo::_internal_set_pluginswitch(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x00800000u;
+  _impl_._has_bits_[0] |= 0x80000000u;
   _impl_.pluginswitch_ = value;
 }
 inline void ModUserInfo::set_pluginswitch(uint32_t value) {
@@ -7447,7 +7824,7 @@ inline void ModUserInfo::set_pluginswitch(uint32_t value) {
 
 // optional .GmailList gmailList = 26;
 inline bool ModUserInfo::_internal_has_gmaillist() const {
-  bool value = (_impl_._has_bits_[0] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00020000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.gmaillist_ != nullptr);
   return value;
 }
@@ -7456,7 +7833,7 @@ inline bool ModUserInfo::has_gmaillist() const {
 }
 inline void ModUserInfo::clear_gmaillist() {
   if (_impl_.gmaillist_ != nullptr) _impl_.gmaillist_->Clear();
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
 }
 inline const ::GmailList& ModUserInfo::_internal_gmaillist() const {
   const ::GmailList* p = _impl_.gmaillist_;
@@ -7474,14 +7851,14 @@ inline void ModUserInfo::unsafe_arena_set_allocated_gmaillist(
   }
   _impl_.gmaillist_ = gmaillist;
   if (gmaillist) {
-    _impl_._has_bits_[0] |= 0x00002000u;
+    _impl_._has_bits_[0] |= 0x00020000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00002000u;
+    _impl_._has_bits_[0] &= ~0x00020000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:ModUserInfo.gmailList)
 }
 inline ::GmailList* ModUserInfo::release_gmaillist() {
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
   ::GmailList* temp = _impl_.gmaillist_;
   _impl_.gmaillist_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -7497,13 +7874,13 @@ inline ::GmailList* ModUserInfo::release_gmaillist() {
 }
 inline ::GmailList* ModUserInfo::unsafe_arena_release_gmaillist() {
   // @@protoc_insertion_point(field_release:ModUserInfo.gmailList)
-  _impl_._has_bits_[0] &= ~0x00002000u;
+  _impl_._has_bits_[0] &= ~0x00020000u;
   ::GmailList* temp = _impl_.gmaillist_;
   _impl_.gmaillist_ = nullptr;
   return temp;
 }
 inline ::GmailList* ModUserInfo::_internal_mutable_gmaillist() {
-  _impl_._has_bits_[0] |= 0x00002000u;
+  _impl_._has_bits_[0] |= 0x00020000u;
   if (_impl_.gmaillist_ == nullptr) {
     auto* p = CreateMaybeMessage<::GmailList>(GetArenaForAllocation());
     _impl_.gmaillist_ = p;
@@ -7527,9 +7904,9 @@ inline void ModUserInfo::set_allocated_gmaillist(::GmailList* gmaillist) {
       gmaillist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, gmaillist, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00002000u;
+    _impl_._has_bits_[0] |= 0x00020000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00002000u;
+    _impl_._has_bits_[0] &= ~0x00020000u;
   }
   _impl_.gmaillist_ = gmaillist;
   // @@protoc_insertion_point(field_set_allocated:ModUserInfo.gmailList)
@@ -7673,7 +8050,7 @@ inline void ModUserInfo::set_allocated_weibonickname(std::string* weibonickname)
 
 // optional uint32 weiboFlag = 29;
 inline bool ModUserInfo::_internal_has_weiboflag() const {
-  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000001u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_weiboflag() const {
@@ -7681,7 +8058,7 @@ inline bool ModUserInfo::has_weiboflag() const {
 }
 inline void ModUserInfo::clear_weiboflag() {
   _impl_.weiboflag_ = 0u;
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[1] &= ~0x00000001u;
 }
 inline uint32_t ModUserInfo::_internal_weiboflag() const {
   return _impl_.weiboflag_;
@@ -7691,7 +8068,7 @@ inline uint32_t ModUserInfo::weiboflag() const {
   return _internal_weiboflag();
 }
 inline void ModUserInfo::_internal_set_weiboflag(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x01000000u;
+  _impl_._has_bits_[1] |= 0x00000001u;
   _impl_.weiboflag_ = value;
 }
 inline void ModUserInfo::set_weiboflag(uint32_t value) {
@@ -7701,7 +8078,7 @@ inline void ModUserInfo::set_weiboflag(uint32_t value) {
 
 // optional uint32 faceBookFlag = 30;
 inline bool ModUserInfo::_internal_has_facebookflag() const {
-  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000002u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_facebookflag() const {
@@ -7709,7 +8086,7 @@ inline bool ModUserInfo::has_facebookflag() const {
 }
 inline void ModUserInfo::clear_facebookflag() {
   _impl_.facebookflag_ = 0u;
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[1] &= ~0x00000002u;
 }
 inline uint32_t ModUserInfo::_internal_facebookflag() const {
   return _impl_.facebookflag_;
@@ -7719,7 +8096,7 @@ inline uint32_t ModUserInfo::facebookflag() const {
   return _internal_facebookflag();
 }
 inline void ModUserInfo::_internal_set_facebookflag(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x02000000u;
+  _impl_._has_bits_[1] |= 0x00000002u;
   _impl_.facebookflag_ = value;
 }
 inline void ModUserInfo::set_facebookflag(uint32_t value) {
@@ -7729,7 +8106,7 @@ inline void ModUserInfo::set_facebookflag(uint32_t value) {
 
 // optional uint64 fbuserId = 31;
 inline bool ModUserInfo::_internal_has_fbuserid() const {
-  bool value = (_impl_._has_bits_[0] & 0x04000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000004u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_fbuserid() const {
@@ -7737,7 +8114,7 @@ inline bool ModUserInfo::has_fbuserid() const {
 }
 inline void ModUserInfo::clear_fbuserid() {
   _impl_.fbuserid_ = uint64_t{0u};
-  _impl_._has_bits_[0] &= ~0x04000000u;
+  _impl_._has_bits_[1] &= ~0x00000004u;
 }
 inline uint64_t ModUserInfo::_internal_fbuserid() const {
   return _impl_.fbuserid_;
@@ -7747,7 +8124,7 @@ inline uint64_t ModUserInfo::fbuserid() const {
   return _internal_fbuserid();
 }
 inline void ModUserInfo::_internal_set_fbuserid(uint64_t value) {
-  _impl_._has_bits_[0] |= 0x04000000u;
+  _impl_._has_bits_[1] |= 0x00000004u;
   _impl_.fbuserid_ = value;
 }
 inline void ModUserInfo::set_fbuserid(uint64_t value) {
@@ -7825,7 +8202,7 @@ inline void ModUserInfo::set_allocated_fbusername(std::string* fbusername) {
 
 // optional int32 albumStyle = 33;
 inline bool ModUserInfo::_internal_has_albumstyle() const {
-  bool value = (_impl_._has_bits_[0] & 0x08000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000008u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_albumstyle() const {
@@ -7833,7 +8210,7 @@ inline bool ModUserInfo::has_albumstyle() const {
 }
 inline void ModUserInfo::clear_albumstyle() {
   _impl_.albumstyle_ = 0;
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[1] &= ~0x00000008u;
 }
 inline int32_t ModUserInfo::_internal_albumstyle() const {
   return _impl_.albumstyle_;
@@ -7843,7 +8220,7 @@ inline int32_t ModUserInfo::albumstyle() const {
   return _internal_albumstyle();
 }
 inline void ModUserInfo::_internal_set_albumstyle(int32_t value) {
-  _impl_._has_bits_[0] |= 0x08000000u;
+  _impl_._has_bits_[1] |= 0x00000008u;
   _impl_.albumstyle_ = value;
 }
 inline void ModUserInfo::set_albumstyle(int32_t value) {
@@ -7853,7 +8230,7 @@ inline void ModUserInfo::set_albumstyle(int32_t value) {
 
 // optional int32 albumFlag = 34;
 inline bool ModUserInfo::_internal_has_albumflag() const {
-  bool value = (_impl_._has_bits_[0] & 0x10000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000010u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_albumflag() const {
@@ -7861,7 +8238,7 @@ inline bool ModUserInfo::has_albumflag() const {
 }
 inline void ModUserInfo::clear_albumflag() {
   _impl_.albumflag_ = 0;
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[1] &= ~0x00000010u;
 }
 inline int32_t ModUserInfo::_internal_albumflag() const {
   return _impl_.albumflag_;
@@ -7871,7 +8248,7 @@ inline int32_t ModUserInfo::albumflag() const {
   return _internal_albumflag();
 }
 inline void ModUserInfo::_internal_set_albumflag(int32_t value) {
-  _impl_._has_bits_[0] |= 0x10000000u;
+  _impl_._has_bits_[1] |= 0x00000010u;
   _impl_.albumflag_ = value;
 }
 inline void ModUserInfo::set_albumflag(int32_t value) {
@@ -7949,7 +8326,7 @@ inline void ModUserInfo::set_allocated_albumbgimgid(std::string* albumbgimgid) {
 
 // optional uint32 txnewsCategory = 36;
 inline bool ModUserInfo::_internal_has_txnewscategory() const {
-  bool value = (_impl_._has_bits_[0] & 0x20000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000020u) != 0;
   return value;
 }
 inline bool ModUserInfo::has_txnewscategory() const {
@@ -7957,7 +8334,7 @@ inline bool ModUserInfo::has_txnewscategory() const {
 }
 inline void ModUserInfo::clear_txnewscategory() {
   _impl_.txnewscategory_ = 0u;
-  _impl_._has_bits_[0] &= ~0x20000000u;
+  _impl_._has_bits_[1] &= ~0x00000020u;
 }
 inline uint32_t ModUserInfo::_internal_txnewscategory() const {
   return _impl_.txnewscategory_;
@@ -7967,7 +8344,7 @@ inline uint32_t ModUserInfo::txnewscategory() const {
   return _internal_txnewscategory();
 }
 inline void ModUserInfo::_internal_set_txnewscategory(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x20000000u;
+  _impl_._has_bits_[1] |= 0x00000020u;
   _impl_.txnewscategory_ = value;
 }
 inline void ModUserInfo::set_txnewscategory(uint32_t value) {
@@ -8115,18 +8492,18 @@ inline void ModUserInfo::set_allocated_country(std::string* country) {
 
 // UserInfoExt
 
-// .SnsUserInfo snsUserInfo = 1;
+// required .SnsUserInfo snsUserInfo = 1;
 inline bool UserInfoExt::_internal_has_snsuserinfo() const {
-  return this != internal_default_instance() && _impl_.snsuserinfo_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.snsuserinfo_ != nullptr);
+  return value;
 }
 inline bool UserInfoExt::has_snsuserinfo() const {
   return _internal_has_snsuserinfo();
 }
 inline void UserInfoExt::clear_snsuserinfo() {
-  if (GetArenaForAllocation() == nullptr && _impl_.snsuserinfo_ != nullptr) {
-    delete _impl_.snsuserinfo_;
-  }
-  _impl_.snsuserinfo_ = nullptr;
+  if (_impl_.snsuserinfo_ != nullptr) _impl_.snsuserinfo_->Clear();
+  _impl_._has_bits_[0] &= ~0x00400000u;
 }
 inline const ::SnsUserInfo& UserInfoExt::_internal_snsuserinfo() const {
   const ::SnsUserInfo* p = _impl_.snsuserinfo_;
@@ -8144,14 +8521,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_snsuserinfo(
   }
   _impl_.snsuserinfo_ = snsuserinfo;
   if (snsuserinfo) {
-    
+    _impl_._has_bits_[0] |= 0x00400000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00400000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.snsUserInfo)
 }
 inline ::SnsUserInfo* UserInfoExt::release_snsuserinfo() {
-  
+  _impl_._has_bits_[0] &= ~0x00400000u;
   ::SnsUserInfo* temp = _impl_.snsuserinfo_;
   _impl_.snsuserinfo_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -8167,13 +8544,13 @@ inline ::SnsUserInfo* UserInfoExt::release_snsuserinfo() {
 }
 inline ::SnsUserInfo* UserInfoExt::unsafe_arena_release_snsuserinfo() {
   // @@protoc_insertion_point(field_release:UserInfoExt.snsUserInfo)
-  
+  _impl_._has_bits_[0] &= ~0x00400000u;
   ::SnsUserInfo* temp = _impl_.snsuserinfo_;
   _impl_.snsuserinfo_ = nullptr;
   return temp;
 }
 inline ::SnsUserInfo* UserInfoExt::_internal_mutable_snsuserinfo() {
-  
+  _impl_._has_bits_[0] |= 0x00400000u;
   if (_impl_.snsuserinfo_ == nullptr) {
     auto* p = CreateMaybeMessage<::SnsUserInfo>(GetArenaForAllocation());
     _impl_.snsuserinfo_ = p;
@@ -8197,9 +8574,9 @@ inline void UserInfoExt::set_allocated_snsuserinfo(::SnsUserInfo* snsuserinfo) {
       snsuserinfo = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, snsuserinfo, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00400000u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00400000u;
   }
   _impl_.snsuserinfo_ = snsuserinfo;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.snsUserInfo)
@@ -8411,7 +8788,7 @@ inline void UserInfoExt::set_allocated_voippushsound(std::string* voippushsound)
 
 // optional uint32 bigChatRoomSize = 5;
 inline bool UserInfoExt::_internal_has_bigchatroomsize() const {
-  bool value = (_impl_._has_bits_[0] & 0x20000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x40000000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_bigchatroomsize() const {
@@ -8419,7 +8796,7 @@ inline bool UserInfoExt::has_bigchatroomsize() const {
 }
 inline void UserInfoExt::clear_bigchatroomsize() {
   _impl_.bigchatroomsize_ = 0u;
-  _impl_._has_bits_[0] &= ~0x20000000u;
+  _impl_._has_bits_[0] &= ~0x40000000u;
 }
 inline uint32_t UserInfoExt::_internal_bigchatroomsize() const {
   return _impl_.bigchatroomsize_;
@@ -8429,7 +8806,7 @@ inline uint32_t UserInfoExt::bigchatroomsize() const {
   return _internal_bigchatroomsize();
 }
 inline void UserInfoExt::_internal_set_bigchatroomsize(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x20000000u;
+  _impl_._has_bits_[0] |= 0x40000000u;
   _impl_.bigchatroomsize_ = value;
 }
 inline void UserInfoExt::set_bigchatroomsize(uint32_t value) {
@@ -8439,7 +8816,7 @@ inline void UserInfoExt::set_bigchatroomsize(uint32_t value) {
 
 // optional uint32 bigChatRoomQuota = 6;
 inline bool UserInfoExt::_internal_has_bigchatroomquota() const {
-  bool value = (_impl_._has_bits_[0] & 0x40000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x80000000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_bigchatroomquota() const {
@@ -8447,7 +8824,7 @@ inline bool UserInfoExt::has_bigchatroomquota() const {
 }
 inline void UserInfoExt::clear_bigchatroomquota() {
   _impl_.bigchatroomquota_ = 0u;
-  _impl_._has_bits_[0] &= ~0x40000000u;
+  _impl_._has_bits_[0] &= ~0x80000000u;
 }
 inline uint32_t UserInfoExt::_internal_bigchatroomquota() const {
   return _impl_.bigchatroomquota_;
@@ -8457,7 +8834,7 @@ inline uint32_t UserInfoExt::bigchatroomquota() const {
   return _internal_bigchatroomquota();
 }
 inline void UserInfoExt::_internal_set_bigchatroomquota(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x40000000u;
+  _impl_._has_bits_[0] |= 0x80000000u;
   _impl_.bigchatroomquota_ = value;
 }
 inline void UserInfoExt::set_bigchatroomquota(uint32_t value) {
@@ -8467,7 +8844,7 @@ inline void UserInfoExt::set_bigchatroomquota(uint32_t value) {
 
 // optional uint32 bigChatRoomInvite = 7;
 inline bool UserInfoExt::_internal_has_bigchatroominvite() const {
-  bool value = (_impl_._has_bits_[0] & 0x80000000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000001u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_bigchatroominvite() const {
@@ -8475,7 +8852,7 @@ inline bool UserInfoExt::has_bigchatroominvite() const {
 }
 inline void UserInfoExt::clear_bigchatroominvite() {
   _impl_.bigchatroominvite_ = 0u;
-  _impl_._has_bits_[0] &= ~0x80000000u;
+  _impl_._has_bits_[1] &= ~0x00000001u;
 }
 inline uint32_t UserInfoExt::_internal_bigchatroominvite() const {
   return _impl_.bigchatroominvite_;
@@ -8485,7 +8862,7 @@ inline uint32_t UserInfoExt::bigchatroominvite() const {
   return _internal_bigchatroominvite();
 }
 inline void UserInfoExt::_internal_set_bigchatroominvite(uint32_t value) {
-  _impl_._has_bits_[0] |= 0x80000000u;
+  _impl_._has_bits_[1] |= 0x00000001u;
   _impl_.bigchatroominvite_ = value;
 }
 inline void UserInfoExt::set_bigchatroominvite(uint32_t value) {
@@ -8699,7 +9076,7 @@ inline void UserInfoExt::set_allocated_smallheadimgurl(std::string* smallheadimg
 
 // optional uint32 mainAcctType = 11;
 inline bool UserInfoExt::_internal_has_mainaccttype() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000001u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000002u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_mainaccttype() const {
@@ -8707,7 +9084,7 @@ inline bool UserInfoExt::has_mainaccttype() const {
 }
 inline void UserInfoExt::clear_mainaccttype() {
   _impl_.mainaccttype_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000001u;
+  _impl_._has_bits_[1] &= ~0x00000002u;
 }
 inline uint32_t UserInfoExt::_internal_mainaccttype() const {
   return _impl_.mainaccttype_;
@@ -8717,7 +9094,7 @@ inline uint32_t UserInfoExt::mainaccttype() const {
   return _internal_mainaccttype();
 }
 inline void UserInfoExt::_internal_set_mainaccttype(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000001u;
+  _impl_._has_bits_[1] |= 0x00000002u;
   _impl_.mainaccttype_ = value;
 }
 inline void UserInfoExt::set_mainaccttype(uint32_t value) {
@@ -8727,7 +9104,7 @@ inline void UserInfoExt::set_mainaccttype(uint32_t value) {
 
 // optional .SKBuiltinString_t extXml = 12;
 inline bool UserInfoExt::_internal_has_extxml() const {
-  bool value = (_impl_._has_bits_[0] & 0x00400000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.extxml_ != nullptr);
   return value;
 }
@@ -8750,14 +9127,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_extxml(
   }
   _impl_.extxml_ = extxml;
   if (extxml) {
-    _impl_._has_bits_[0] |= 0x00400000u;
+    _impl_._has_bits_[0] |= 0x00800000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00400000u;
+    _impl_._has_bits_[0] &= ~0x00800000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.extXml)
 }
 inline ::SKBuiltinString_t* UserInfoExt::release_extxml() {
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
   ::SKBuiltinString_t* temp = _impl_.extxml_;
   _impl_.extxml_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -8773,13 +9150,13 @@ inline ::SKBuiltinString_t* UserInfoExt::release_extxml() {
 }
 inline ::SKBuiltinString_t* UserInfoExt::unsafe_arena_release_extxml() {
   // @@protoc_insertion_point(field_release:UserInfoExt.extXml)
-  _impl_._has_bits_[0] &= ~0x00400000u;
+  _impl_._has_bits_[0] &= ~0x00800000u;
   ::SKBuiltinString_t* temp = _impl_.extxml_;
   _impl_.extxml_ = nullptr;
   return temp;
 }
 inline ::SKBuiltinString_t* UserInfoExt::_internal_mutable_extxml() {
-  _impl_._has_bits_[0] |= 0x00400000u;
+  _impl_._has_bits_[0] |= 0x00800000u;
   if (_impl_.extxml_ == nullptr) {
     auto* p = CreateMaybeMessage<::SKBuiltinString_t>(GetArenaForAllocation());
     _impl_.extxml_ = p;
@@ -8804,9 +9181,9 @@ inline void UserInfoExt::set_allocated_extxml(::SKBuiltinString_t* extxml) {
       extxml = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, extxml, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00400000u;
+    _impl_._has_bits_[0] |= 0x00800000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00400000u;
+    _impl_._has_bits_[0] &= ~0x00800000u;
   }
   _impl_.extxml_ = extxml;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.extXml)
@@ -8814,7 +9191,7 @@ inline void UserInfoExt::set_allocated_extxml(::SKBuiltinString_t* extxml) {
 
 // optional .SafeDeviceList safeDeviceList = 13;
 inline bool UserInfoExt::_internal_has_safedevicelist() const {
-  bool value = (_impl_._has_bits_[0] & 0x00800000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.safedevicelist_ != nullptr);
   return value;
 }
@@ -8823,7 +9200,7 @@ inline bool UserInfoExt::has_safedevicelist() const {
 }
 inline void UserInfoExt::clear_safedevicelist() {
   if (_impl_.safedevicelist_ != nullptr) _impl_.safedevicelist_->Clear();
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
 }
 inline const ::SafeDeviceList& UserInfoExt::_internal_safedevicelist() const {
   const ::SafeDeviceList* p = _impl_.safedevicelist_;
@@ -8841,14 +9218,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_safedevicelist(
   }
   _impl_.safedevicelist_ = safedevicelist;
   if (safedevicelist) {
-    _impl_._has_bits_[0] |= 0x00800000u;
+    _impl_._has_bits_[0] |= 0x01000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00800000u;
+    _impl_._has_bits_[0] &= ~0x01000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.safeDeviceList)
 }
 inline ::SafeDeviceList* UserInfoExt::release_safedevicelist() {
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
   ::SafeDeviceList* temp = _impl_.safedevicelist_;
   _impl_.safedevicelist_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -8864,13 +9241,13 @@ inline ::SafeDeviceList* UserInfoExt::release_safedevicelist() {
 }
 inline ::SafeDeviceList* UserInfoExt::unsafe_arena_release_safedevicelist() {
   // @@protoc_insertion_point(field_release:UserInfoExt.safeDeviceList)
-  _impl_._has_bits_[0] &= ~0x00800000u;
+  _impl_._has_bits_[0] &= ~0x01000000u;
   ::SafeDeviceList* temp = _impl_.safedevicelist_;
   _impl_.safedevicelist_ = nullptr;
   return temp;
 }
 inline ::SafeDeviceList* UserInfoExt::_internal_mutable_safedevicelist() {
-  _impl_._has_bits_[0] |= 0x00800000u;
+  _impl_._has_bits_[0] |= 0x01000000u;
   if (_impl_.safedevicelist_ == nullptr) {
     auto* p = CreateMaybeMessage<::SafeDeviceList>(GetArenaForAllocation());
     _impl_.safedevicelist_ = p;
@@ -8894,9 +9271,9 @@ inline void UserInfoExt::set_allocated_safedevicelist(::SafeDeviceList* safedevi
       safedevicelist = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, safedevicelist, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x00800000u;
+    _impl_._has_bits_[0] |= 0x01000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x00800000u;
+    _impl_._has_bits_[0] &= ~0x01000000u;
   }
   _impl_.safedevicelist_ = safedevicelist;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.safeDeviceList)
@@ -8904,7 +9281,7 @@ inline void UserInfoExt::set_allocated_safedevicelist(::SafeDeviceList* safedevi
 
 // optional uint32 safeDevice = 14;
 inline bool UserInfoExt::_internal_has_safedevice() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000002u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000004u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_safedevice() const {
@@ -8912,7 +9289,7 @@ inline bool UserInfoExt::has_safedevice() const {
 }
 inline void UserInfoExt::clear_safedevice() {
   _impl_.safedevice_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000002u;
+  _impl_._has_bits_[1] &= ~0x00000004u;
 }
 inline uint32_t UserInfoExt::_internal_safedevice() const {
   return _impl_.safedevice_;
@@ -8922,7 +9299,7 @@ inline uint32_t UserInfoExt::safedevice() const {
   return _internal_safedevice();
 }
 inline void UserInfoExt::_internal_set_safedevice(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000002u;
+  _impl_._has_bits_[1] |= 0x00000004u;
   _impl_.safedevice_ = value;
 }
 inline void UserInfoExt::set_safedevice(uint32_t value) {
@@ -8932,7 +9309,7 @@ inline void UserInfoExt::set_safedevice(uint32_t value) {
 
 // optional uint32 grayscaleFlag = 15;
 inline bool UserInfoExt::_internal_has_grayscaleflag() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000008u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_grayscaleflag() const {
@@ -8940,7 +9317,7 @@ inline bool UserInfoExt::has_grayscaleflag() const {
 }
 inline void UserInfoExt::clear_grayscaleflag() {
   _impl_.grayscaleflag_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000004u;
+  _impl_._has_bits_[1] &= ~0x00000008u;
 }
 inline uint32_t UserInfoExt::_internal_grayscaleflag() const {
   return _impl_.grayscaleflag_;
@@ -8950,7 +9327,7 @@ inline uint32_t UserInfoExt::grayscaleflag() const {
   return _internal_grayscaleflag();
 }
 inline void UserInfoExt::_internal_set_grayscaleflag(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000004u;
+  _impl_._has_bits_[1] |= 0x00000008u;
   _impl_.grayscaleflag_ = value;
 }
 inline void UserInfoExt::set_grayscaleflag(uint32_t value) {
@@ -9436,7 +9813,7 @@ inline void UserInfoExt::set_allocated_bbmnickname(std::string* bbmnickname) {
 
 // optional .LinkedinContactItem linkedinContactItem = 23;
 inline bool UserInfoExt::_internal_has_linkedincontactitem() const {
-  bool value = (_impl_._has_bits_[0] & 0x01000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.linkedincontactitem_ != nullptr);
   return value;
 }
@@ -9445,7 +9822,7 @@ inline bool UserInfoExt::has_linkedincontactitem() const {
 }
 inline void UserInfoExt::clear_linkedincontactitem() {
   if (_impl_.linkedincontactitem_ != nullptr) _impl_.linkedincontactitem_->Clear();
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
 }
 inline const ::LinkedinContactItem& UserInfoExt::_internal_linkedincontactitem() const {
   const ::LinkedinContactItem* p = _impl_.linkedincontactitem_;
@@ -9463,14 +9840,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_linkedincontactitem(
   }
   _impl_.linkedincontactitem_ = linkedincontactitem;
   if (linkedincontactitem) {
-    _impl_._has_bits_[0] |= 0x01000000u;
+    _impl_._has_bits_[0] |= 0x02000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x01000000u;
+    _impl_._has_bits_[0] &= ~0x02000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.linkedinContactItem)
 }
 inline ::LinkedinContactItem* UserInfoExt::release_linkedincontactitem() {
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
   ::LinkedinContactItem* temp = _impl_.linkedincontactitem_;
   _impl_.linkedincontactitem_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -9486,13 +9863,13 @@ inline ::LinkedinContactItem* UserInfoExt::release_linkedincontactitem() {
 }
 inline ::LinkedinContactItem* UserInfoExt::unsafe_arena_release_linkedincontactitem() {
   // @@protoc_insertion_point(field_release:UserInfoExt.linkedinContactItem)
-  _impl_._has_bits_[0] &= ~0x01000000u;
+  _impl_._has_bits_[0] &= ~0x02000000u;
   ::LinkedinContactItem* temp = _impl_.linkedincontactitem_;
   _impl_.linkedincontactitem_ = nullptr;
   return temp;
 }
 inline ::LinkedinContactItem* UserInfoExt::_internal_mutable_linkedincontactitem() {
-  _impl_._has_bits_[0] |= 0x01000000u;
+  _impl_._has_bits_[0] |= 0x02000000u;
   if (_impl_.linkedincontactitem_ == nullptr) {
     auto* p = CreateMaybeMessage<::LinkedinContactItem>(GetArenaForAllocation());
     _impl_.linkedincontactitem_ = p;
@@ -9516,9 +9893,9 @@ inline void UserInfoExt::set_allocated_linkedincontactitem(::LinkedinContactItem
       linkedincontactitem = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, linkedincontactitem, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x01000000u;
+    _impl_._has_bits_[0] |= 0x02000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x01000000u;
+    _impl_._has_bits_[0] &= ~0x02000000u;
   }
   _impl_.linkedincontactitem_ = linkedincontactitem;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.linkedinContactItem)
@@ -9594,7 +9971,7 @@ inline void UserInfoExt::set_allocated_kfinfo(std::string* kfinfo) {
 
 // optional .PatternLockInfo patternLockInfo = 25;
 inline bool UserInfoExt::_internal_has_patternlockinfo() const {
-  bool value = (_impl_._has_bits_[0] & 0x02000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x04000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.patternlockinfo_ != nullptr);
   return value;
 }
@@ -9603,7 +9980,7 @@ inline bool UserInfoExt::has_patternlockinfo() const {
 }
 inline void UserInfoExt::clear_patternlockinfo() {
   if (_impl_.patternlockinfo_ != nullptr) _impl_.patternlockinfo_->Clear();
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
 }
 inline const ::PatternLockInfo& UserInfoExt::_internal_patternlockinfo() const {
   const ::PatternLockInfo* p = _impl_.patternlockinfo_;
@@ -9621,14 +9998,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_patternlockinfo(
   }
   _impl_.patternlockinfo_ = patternlockinfo;
   if (patternlockinfo) {
-    _impl_._has_bits_[0] |= 0x02000000u;
+    _impl_._has_bits_[0] |= 0x04000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x02000000u;
+    _impl_._has_bits_[0] &= ~0x04000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.patternLockInfo)
 }
 inline ::PatternLockInfo* UserInfoExt::release_patternlockinfo() {
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
   ::PatternLockInfo* temp = _impl_.patternlockinfo_;
   _impl_.patternlockinfo_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -9644,13 +10021,13 @@ inline ::PatternLockInfo* UserInfoExt::release_patternlockinfo() {
 }
 inline ::PatternLockInfo* UserInfoExt::unsafe_arena_release_patternlockinfo() {
   // @@protoc_insertion_point(field_release:UserInfoExt.patternLockInfo)
-  _impl_._has_bits_[0] &= ~0x02000000u;
+  _impl_._has_bits_[0] &= ~0x04000000u;
   ::PatternLockInfo* temp = _impl_.patternlockinfo_;
   _impl_.patternlockinfo_ = nullptr;
   return temp;
 }
 inline ::PatternLockInfo* UserInfoExt::_internal_mutable_patternlockinfo() {
-  _impl_._has_bits_[0] |= 0x02000000u;
+  _impl_._has_bits_[0] |= 0x04000000u;
   if (_impl_.patternlockinfo_ == nullptr) {
     auto* p = CreateMaybeMessage<::PatternLockInfo>(GetArenaForAllocation());
     _impl_.patternlockinfo_ = p;
@@ -9674,9 +10051,9 @@ inline void UserInfoExt::set_allocated_patternlockinfo(::PatternLockInfo* patter
       patternlockinfo = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, patternlockinfo, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x02000000u;
+    _impl_._has_bits_[0] |= 0x04000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x02000000u;
+    _impl_._has_bits_[0] &= ~0x04000000u;
   }
   _impl_.patternlockinfo_ = patternlockinfo;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.patternLockInfo)
@@ -9752,7 +10129,7 @@ inline void UserInfoExt::set_allocated_securitydeviceid(std::string* securitydev
 
 // optional uint32 payWalletType = 27;
 inline bool UserInfoExt::_internal_has_paywallettype() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000008u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000010u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_paywallettype() const {
@@ -9760,7 +10137,7 @@ inline bool UserInfoExt::has_paywallettype() const {
 }
 inline void UserInfoExt::clear_paywallettype() {
   _impl_.paywallettype_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000008u;
+  _impl_._has_bits_[1] &= ~0x00000010u;
 }
 inline uint32_t UserInfoExt::_internal_paywallettype() const {
   return _impl_.paywallettype_;
@@ -9770,7 +10147,7 @@ inline uint32_t UserInfoExt::paywallettype() const {
   return _internal_paywallettype();
 }
 inline void UserInfoExt::_internal_set_paywallettype(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000008u;
+  _impl_._has_bits_[1] |= 0x00000010u;
   _impl_.paywallettype_ = value;
 }
 inline void UserInfoExt::set_paywallettype(uint32_t value) {
@@ -9848,7 +10225,7 @@ inline void UserInfoExt::set_allocated_weidianinfo(std::string* weidianinfo) {
 
 // optional uint32 walletRegion = 29;
 inline bool UserInfoExt::_internal_has_walletregion() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000010u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000020u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_walletregion() const {
@@ -9856,7 +10233,7 @@ inline bool UserInfoExt::has_walletregion() const {
 }
 inline void UserInfoExt::clear_walletregion() {
   _impl_.walletregion_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000010u;
+  _impl_._has_bits_[1] &= ~0x00000020u;
 }
 inline uint32_t UserInfoExt::_internal_walletregion() const {
   return _impl_.walletregion_;
@@ -9866,7 +10243,7 @@ inline uint32_t UserInfoExt::walletregion() const {
   return _internal_walletregion();
 }
 inline void UserInfoExt::_internal_set_walletregion(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000010u;
+  _impl_._has_bits_[1] |= 0x00000020u;
   _impl_.walletregion_ = value;
 }
 inline void UserInfoExt::set_walletregion(uint32_t value) {
@@ -9876,7 +10253,7 @@ inline void UserInfoExt::set_walletregion(uint32_t value) {
 
 // optional uint64 extStatus = 30;
 inline bool UserInfoExt::_internal_has_extstatus() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000020u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000040u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_extstatus() const {
@@ -9884,7 +10261,7 @@ inline bool UserInfoExt::has_extstatus() const {
 }
 inline void UserInfoExt::clear_extstatus() {
   _impl_.extstatus_ = uint64_t{0u};
-  _impl_._has_bits_[1] &= ~0x00000020u;
+  _impl_._has_bits_[1] &= ~0x00000040u;
 }
 inline uint64_t UserInfoExt::_internal_extstatus() const {
   return _impl_.extstatus_;
@@ -9894,7 +10271,7 @@ inline uint64_t UserInfoExt::extstatus() const {
   return _internal_extstatus();
 }
 inline void UserInfoExt::_internal_set_extstatus(uint64_t value) {
-  _impl_._has_bits_[1] |= 0x00000020u;
+  _impl_._has_bits_[1] |= 0x00000040u;
   _impl_.extstatus_ = value;
 }
 inline void UserInfoExt::set_extstatus(uint64_t value) {
@@ -9972,7 +10349,7 @@ inline void UserInfoExt::set_allocated_f2fpushsound(std::string* f2fpushsound) {
 
 // optional uint32 userStatus = 32;
 inline bool UserInfoExt::_internal_has_userstatus() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000080u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000100u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_userstatus() const {
@@ -9980,7 +10357,7 @@ inline bool UserInfoExt::has_userstatus() const {
 }
 inline void UserInfoExt::clear_userstatus() {
   _impl_.userstatus_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000080u;
+  _impl_._has_bits_[1] &= ~0x00000100u;
 }
 inline uint32_t UserInfoExt::_internal_userstatus() const {
   return _impl_.userstatus_;
@@ -9990,7 +10367,7 @@ inline uint32_t UserInfoExt::userstatus() const {
   return _internal_userstatus();
 }
 inline void UserInfoExt::_internal_set_userstatus(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000080u;
+  _impl_._has_bits_[1] |= 0x00000100u;
   _impl_.userstatus_ = value;
 }
 inline void UserInfoExt::set_userstatus(uint32_t value) {
@@ -10000,7 +10377,7 @@ inline void UserInfoExt::set_userstatus(uint32_t value) {
 
 // optional uint64 paySetting = 34;
 inline bool UserInfoExt::_internal_has_paysetting() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000040u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000080u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_paysetting() const {
@@ -10008,7 +10385,7 @@ inline bool UserInfoExt::has_paysetting() const {
 }
 inline void UserInfoExt::clear_paysetting() {
   _impl_.paysetting_ = uint64_t{0u};
-  _impl_._has_bits_[1] &= ~0x00000040u;
+  _impl_._has_bits_[1] &= ~0x00000080u;
 }
 inline uint64_t UserInfoExt::_internal_paysetting() const {
   return _impl_.paysetting_;
@@ -10018,7 +10395,7 @@ inline uint64_t UserInfoExt::paysetting() const {
   return _internal_paysetting();
 }
 inline void UserInfoExt::_internal_set_paysetting(uint64_t value) {
-  _impl_._has_bits_[1] |= 0x00000040u;
+  _impl_._has_bits_[1] |= 0x00000080u;
   _impl_.paysetting_ = value;
 }
 inline void UserInfoExt::set_paysetting(uint64_t value) {
@@ -10164,7 +10541,7 @@ inline void UserInfoExt::set_allocated_patsuffix(std::string* patsuffix) {
 
 // optional uint32 patSuffixVersion = 39;
 inline bool UserInfoExt::_internal_has_patsuffixversion() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000100u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000200u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_patsuffixversion() const {
@@ -10172,7 +10549,7 @@ inline bool UserInfoExt::has_patsuffixversion() const {
 }
 inline void UserInfoExt::clear_patsuffixversion() {
   _impl_.patsuffixversion_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000100u;
+  _impl_._has_bits_[1] &= ~0x00000200u;
 }
 inline uint32_t UserInfoExt::_internal_patsuffixversion() const {
   return _impl_.patsuffixversion_;
@@ -10182,7 +10559,7 @@ inline uint32_t UserInfoExt::patsuffixversion() const {
   return _internal_patsuffixversion();
 }
 inline void UserInfoExt::_internal_set_patsuffixversion(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000100u;
+  _impl_._has_bits_[1] |= 0x00000200u;
   _impl_.patsuffixversion_ = value;
 }
 inline void UserInfoExt::set_patsuffixversion(uint32_t value) {
@@ -10192,7 +10569,7 @@ inline void UserInfoExt::set_patsuffixversion(uint32_t value) {
 
 // optional uint32 teenagerModeFinderSetting = 44;
 inline bool UserInfoExt::_internal_has_teenagermodefindersetting() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000200u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000400u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_teenagermodefindersetting() const {
@@ -10200,7 +10577,7 @@ inline bool UserInfoExt::has_teenagermodefindersetting() const {
 }
 inline void UserInfoExt::clear_teenagermodefindersetting() {
   _impl_.teenagermodefindersetting_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000200u;
+  _impl_._has_bits_[1] &= ~0x00000400u;
 }
 inline uint32_t UserInfoExt::_internal_teenagermodefindersetting() const {
   return _impl_.teenagermodefindersetting_;
@@ -10210,7 +10587,7 @@ inline uint32_t UserInfoExt::teenagermodefindersetting() const {
   return _internal_teenagermodefindersetting();
 }
 inline void UserInfoExt::_internal_set_teenagermodefindersetting(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000200u;
+  _impl_._has_bits_[1] |= 0x00000400u;
   _impl_.teenagermodefindersetting_ = value;
 }
 inline void UserInfoExt::set_teenagermodefindersetting(uint32_t value) {
@@ -10220,7 +10597,7 @@ inline void UserInfoExt::set_teenagermodefindersetting(uint32_t value) {
 
 // optional uint32 teenagerModeBizAcctSetting = 45;
 inline bool UserInfoExt::_internal_has_teenagermodebizacctsetting() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000400u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00000800u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_teenagermodebizacctsetting() const {
@@ -10228,7 +10605,7 @@ inline bool UserInfoExt::has_teenagermodebizacctsetting() const {
 }
 inline void UserInfoExt::clear_teenagermodebizacctsetting() {
   _impl_.teenagermodebizacctsetting_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000400u;
+  _impl_._has_bits_[1] &= ~0x00000800u;
 }
 inline uint32_t UserInfoExt::_internal_teenagermodebizacctsetting() const {
   return _impl_.teenagermodebizacctsetting_;
@@ -10238,7 +10615,7 @@ inline uint32_t UserInfoExt::teenagermodebizacctsetting() const {
   return _internal_teenagermodebizacctsetting();
 }
 inline void UserInfoExt::_internal_set_teenagermodebizacctsetting(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000400u;
+  _impl_._has_bits_[1] |= 0x00000800u;
   _impl_.teenagermodebizacctsetting_ = value;
 }
 inline void UserInfoExt::set_teenagermodebizacctsetting(uint32_t value) {
@@ -10248,7 +10625,7 @@ inline void UserInfoExt::set_teenagermodebizacctsetting(uint32_t value) {
 
 // optional uint32 teenagerModeMiniProgramSetting = 46;
 inline bool UserInfoExt::_internal_has_teenagermodeminiprogramsetting() const {
-  bool value = (_impl_._has_bits_[1] & 0x00000800u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00001000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_teenagermodeminiprogramsetting() const {
@@ -10256,7 +10633,7 @@ inline bool UserInfoExt::has_teenagermodeminiprogramsetting() const {
 }
 inline void UserInfoExt::clear_teenagermodeminiprogramsetting() {
   _impl_.teenagermodeminiprogramsetting_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00000800u;
+  _impl_._has_bits_[1] &= ~0x00001000u;
 }
 inline uint32_t UserInfoExt::_internal_teenagermodeminiprogramsetting() const {
   return _impl_.teenagermodeminiprogramsetting_;
@@ -10266,7 +10643,7 @@ inline uint32_t UserInfoExt::teenagermodeminiprogramsetting() const {
   return _internal_teenagermodeminiprogramsetting();
 }
 inline void UserInfoExt::_internal_set_teenagermodeminiprogramsetting(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00000800u;
+  _impl_._has_bits_[1] |= 0x00001000u;
   _impl_.teenagermodeminiprogramsetting_ = value;
 }
 inline void UserInfoExt::set_teenagermodeminiprogramsetting(uint32_t value) {
@@ -10276,7 +10653,7 @@ inline void UserInfoExt::set_teenagermodeminiprogramsetting(uint32_t value) {
 
 // optional .XAgreementInfo xagreementInfo = 47;
 inline bool UserInfoExt::_internal_has_xagreementinfo() const {
-  bool value = (_impl_._has_bits_[0] & 0x04000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x08000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.xagreementinfo_ != nullptr);
   return value;
 }
@@ -10285,7 +10662,7 @@ inline bool UserInfoExt::has_xagreementinfo() const {
 }
 inline void UserInfoExt::clear_xagreementinfo() {
   if (_impl_.xagreementinfo_ != nullptr) _impl_.xagreementinfo_->Clear();
-  _impl_._has_bits_[0] &= ~0x04000000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
 }
 inline const ::XAgreementInfo& UserInfoExt::_internal_xagreementinfo() const {
   const ::XAgreementInfo* p = _impl_.xagreementinfo_;
@@ -10303,14 +10680,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_xagreementinfo(
   }
   _impl_.xagreementinfo_ = xagreementinfo;
   if (xagreementinfo) {
-    _impl_._has_bits_[0] |= 0x04000000u;
+    _impl_._has_bits_[0] |= 0x08000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x04000000u;
+    _impl_._has_bits_[0] &= ~0x08000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.xagreementInfo)
 }
 inline ::XAgreementInfo* UserInfoExt::release_xagreementinfo() {
-  _impl_._has_bits_[0] &= ~0x04000000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
   ::XAgreementInfo* temp = _impl_.xagreementinfo_;
   _impl_.xagreementinfo_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -10326,13 +10703,13 @@ inline ::XAgreementInfo* UserInfoExt::release_xagreementinfo() {
 }
 inline ::XAgreementInfo* UserInfoExt::unsafe_arena_release_xagreementinfo() {
   // @@protoc_insertion_point(field_release:UserInfoExt.xagreementInfo)
-  _impl_._has_bits_[0] &= ~0x04000000u;
+  _impl_._has_bits_[0] &= ~0x08000000u;
   ::XAgreementInfo* temp = _impl_.xagreementinfo_;
   _impl_.xagreementinfo_ = nullptr;
   return temp;
 }
 inline ::XAgreementInfo* UserInfoExt::_internal_mutable_xagreementinfo() {
-  _impl_._has_bits_[0] |= 0x04000000u;
+  _impl_._has_bits_[0] |= 0x08000000u;
   if (_impl_.xagreementinfo_ == nullptr) {
     auto* p = CreateMaybeMessage<::XAgreementInfo>(GetArenaForAllocation());
     _impl_.xagreementinfo_ = p;
@@ -10356,9 +10733,9 @@ inline void UserInfoExt::set_allocated_xagreementinfo(::XAgreementInfo* xagreeme
       xagreementinfo = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, xagreementinfo, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x04000000u;
+    _impl_._has_bits_[0] |= 0x08000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x04000000u;
+    _impl_._has_bits_[0] &= ~0x08000000u;
   }
   _impl_.xagreementinfo_ = xagreementinfo;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.xagreementInfo)
@@ -10570,7 +10947,7 @@ inline void UserInfoExt::set_allocated_salt(std::string* salt) {
 
 // optional uint64 finderSetting = 53;
 inline bool UserInfoExt::_internal_has_findersetting() const {
-  bool value = (_impl_._has_bits_[1] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00004000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_findersetting() const {
@@ -10578,7 +10955,7 @@ inline bool UserInfoExt::has_findersetting() const {
 }
 inline void UserInfoExt::clear_findersetting() {
   _impl_.findersetting_ = uint64_t{0u};
-  _impl_._has_bits_[1] &= ~0x00002000u;
+  _impl_._has_bits_[1] &= ~0x00004000u;
 }
 inline uint64_t UserInfoExt::_internal_findersetting() const {
   return _impl_.findersetting_;
@@ -10588,7 +10965,7 @@ inline uint64_t UserInfoExt::findersetting() const {
   return _internal_findersetting();
 }
 inline void UserInfoExt::_internal_set_findersetting(uint64_t value) {
-  _impl_._has_bits_[1] |= 0x00002000u;
+  _impl_._has_bits_[1] |= 0x00004000u;
   _impl_.findersetting_ = value;
 }
 inline void UserInfoExt::set_findersetting(uint64_t value) {
@@ -10598,7 +10975,7 @@ inline void UserInfoExt::set_findersetting(uint64_t value) {
 
 // optional .RingBackSetting ringBackSetting = 55;
 inline bool UserInfoExt::_internal_has_ringbacksetting() const {
-  bool value = (_impl_._has_bits_[0] & 0x08000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x10000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.ringbacksetting_ != nullptr);
   return value;
 }
@@ -10607,7 +10984,7 @@ inline bool UserInfoExt::has_ringbacksetting() const {
 }
 inline void UserInfoExt::clear_ringbacksetting() {
   if (_impl_.ringbacksetting_ != nullptr) _impl_.ringbacksetting_->Clear();
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
 }
 inline const ::RingBackSetting& UserInfoExt::_internal_ringbacksetting() const {
   const ::RingBackSetting* p = _impl_.ringbacksetting_;
@@ -10625,14 +11002,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_ringbacksetting(
   }
   _impl_.ringbacksetting_ = ringbacksetting;
   if (ringbacksetting) {
-    _impl_._has_bits_[0] |= 0x08000000u;
+    _impl_._has_bits_[0] |= 0x10000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x08000000u;
+    _impl_._has_bits_[0] &= ~0x10000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.ringBackSetting)
 }
 inline ::RingBackSetting* UserInfoExt::release_ringbacksetting() {
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
   ::RingBackSetting* temp = _impl_.ringbacksetting_;
   _impl_.ringbacksetting_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -10648,13 +11025,13 @@ inline ::RingBackSetting* UserInfoExt::release_ringbacksetting() {
 }
 inline ::RingBackSetting* UserInfoExt::unsafe_arena_release_ringbacksetting() {
   // @@protoc_insertion_point(field_release:UserInfoExt.ringBackSetting)
-  _impl_._has_bits_[0] &= ~0x08000000u;
+  _impl_._has_bits_[0] &= ~0x10000000u;
   ::RingBackSetting* temp = _impl_.ringbacksetting_;
   _impl_.ringbacksetting_ = nullptr;
   return temp;
 }
 inline ::RingBackSetting* UserInfoExt::_internal_mutable_ringbacksetting() {
-  _impl_._has_bits_[0] |= 0x08000000u;
+  _impl_._has_bits_[0] |= 0x10000000u;
   if (_impl_.ringbacksetting_ == nullptr) {
     auto* p = CreateMaybeMessage<::RingBackSetting>(GetArenaForAllocation());
     _impl_.ringbacksetting_ = p;
@@ -10678,9 +11055,9 @@ inline void UserInfoExt::set_allocated_ringbacksetting(::RingBackSetting* ringba
       ringbacksetting = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, ringbacksetting, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x08000000u;
+    _impl_._has_bits_[0] |= 0x10000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x08000000u;
+    _impl_._has_bits_[0] &= ~0x10000000u;
   }
   _impl_.ringbacksetting_ = ringbacksetting;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.ringBackSetting)
@@ -10688,7 +11065,7 @@ inline void UserInfoExt::set_allocated_ringbacksetting(::RingBackSetting* ringba
 
 // optional uint32 smcryptoFlag = 56;
 inline bool UserInfoExt::_internal_has_smcryptoflag() const {
-  bool value = (_impl_._has_bits_[1] & 0x00001000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00002000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_smcryptoflag() const {
@@ -10696,7 +11073,7 @@ inline bool UserInfoExt::has_smcryptoflag() const {
 }
 inline void UserInfoExt::clear_smcryptoflag() {
   _impl_.smcryptoflag_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00001000u;
+  _impl_._has_bits_[1] &= ~0x00002000u;
 }
 inline uint32_t UserInfoExt::_internal_smcryptoflag() const {
   return _impl_.smcryptoflag_;
@@ -10706,7 +11083,7 @@ inline uint32_t UserInfoExt::smcryptoflag() const {
   return _internal_smcryptoflag();
 }
 inline void UserInfoExt::_internal_set_smcryptoflag(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00001000u;
+  _impl_._has_bits_[1] |= 0x00002000u;
   _impl_.smcryptoflag_ = value;
 }
 inline void UserInfoExt::set_smcryptoflag(uint32_t value) {
@@ -10716,7 +11093,7 @@ inline void UserInfoExt::set_smcryptoflag(uint32_t value) {
 
 // optional .NewRingBackSetting globalRingBackSetting = 57;
 inline bool UserInfoExt::_internal_has_globalringbacksetting() const {
-  bool value = (_impl_._has_bits_[0] & 0x10000000u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x20000000u) != 0;
   PROTOBUF_ASSUME(!value || _impl_.globalringbacksetting_ != nullptr);
   return value;
 }
@@ -10725,7 +11102,7 @@ inline bool UserInfoExt::has_globalringbacksetting() const {
 }
 inline void UserInfoExt::clear_globalringbacksetting() {
   if (_impl_.globalringbacksetting_ != nullptr) _impl_.globalringbacksetting_->Clear();
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
 }
 inline const ::NewRingBackSetting& UserInfoExt::_internal_globalringbacksetting() const {
   const ::NewRingBackSetting* p = _impl_.globalringbacksetting_;
@@ -10743,14 +11120,14 @@ inline void UserInfoExt::unsafe_arena_set_allocated_globalringbacksetting(
   }
   _impl_.globalringbacksetting_ = globalringbacksetting;
   if (globalringbacksetting) {
-    _impl_._has_bits_[0] |= 0x10000000u;
+    _impl_._has_bits_[0] |= 0x20000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x10000000u;
+    _impl_._has_bits_[0] &= ~0x20000000u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:UserInfoExt.globalRingBackSetting)
 }
 inline ::NewRingBackSetting* UserInfoExt::release_globalringbacksetting() {
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
   ::NewRingBackSetting* temp = _impl_.globalringbacksetting_;
   _impl_.globalringbacksetting_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -10766,13 +11143,13 @@ inline ::NewRingBackSetting* UserInfoExt::release_globalringbacksetting() {
 }
 inline ::NewRingBackSetting* UserInfoExt::unsafe_arena_release_globalringbacksetting() {
   // @@protoc_insertion_point(field_release:UserInfoExt.globalRingBackSetting)
-  _impl_._has_bits_[0] &= ~0x10000000u;
+  _impl_._has_bits_[0] &= ~0x20000000u;
   ::NewRingBackSetting* temp = _impl_.globalringbacksetting_;
   _impl_.globalringbacksetting_ = nullptr;
   return temp;
 }
 inline ::NewRingBackSetting* UserInfoExt::_internal_mutable_globalringbacksetting() {
-  _impl_._has_bits_[0] |= 0x10000000u;
+  _impl_._has_bits_[0] |= 0x20000000u;
   if (_impl_.globalringbacksetting_ == nullptr) {
     auto* p = CreateMaybeMessage<::NewRingBackSetting>(GetArenaForAllocation());
     _impl_.globalringbacksetting_ = p;
@@ -10796,9 +11173,9 @@ inline void UserInfoExt::set_allocated_globalringbacksetting(::NewRingBackSettin
       globalringbacksetting = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, globalringbacksetting, submessage_arena);
     }
-    _impl_._has_bits_[0] |= 0x10000000u;
+    _impl_._has_bits_[0] |= 0x20000000u;
   } else {
-    _impl_._has_bits_[0] &= ~0x10000000u;
+    _impl_._has_bits_[0] &= ~0x20000000u;
   }
   _impl_.globalringbacksetting_ = globalringbacksetting;
   // @@protoc_insertion_point(field_set_allocated:UserInfoExt.globalRingBackSetting)
@@ -10806,7 +11183,7 @@ inline void UserInfoExt::set_allocated_globalringbacksetting(::NewRingBackSettin
 
 // optional uint32 newcomeMsgDefaultVoiceNumber = 58;
 inline bool UserInfoExt::_internal_has_newcomemsgdefaultvoicenumber() const {
-  bool value = (_impl_._has_bits_[1] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00010000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_newcomemsgdefaultvoicenumber() const {
@@ -10814,7 +11191,7 @@ inline bool UserInfoExt::has_newcomemsgdefaultvoicenumber() const {
 }
 inline void UserInfoExt::clear_newcomemsgdefaultvoicenumber() {
   _impl_.newcomemsgdefaultvoicenumber_ = 0u;
-  _impl_._has_bits_[1] &= ~0x00008000u;
+  _impl_._has_bits_[1] &= ~0x00010000u;
 }
 inline uint32_t UserInfoExt::_internal_newcomemsgdefaultvoicenumber() const {
   return _impl_.newcomemsgdefaultvoicenumber_;
@@ -10824,7 +11201,7 @@ inline uint32_t UserInfoExt::newcomemsgdefaultvoicenumber() const {
   return _internal_newcomemsgdefaultvoicenumber();
 }
 inline void UserInfoExt::_internal_set_newcomemsgdefaultvoicenumber(uint32_t value) {
-  _impl_._has_bits_[1] |= 0x00008000u;
+  _impl_._has_bits_[1] |= 0x00010000u;
   _impl_.newcomemsgdefaultvoicenumber_ = value;
 }
 inline void UserInfoExt::set_newcomemsgdefaultvoicenumber(uint32_t value) {
@@ -10834,7 +11211,7 @@ inline void UserInfoExt::set_newcomemsgdefaultvoicenumber(uint32_t value) {
 
 // optional uint64 discoveryPageCtrlFlag = 59;
 inline bool UserInfoExt::_internal_has_discoverypagectrlflag() const {
-  bool value = (_impl_._has_bits_[1] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[1] & 0x00008000u) != 0;
   return value;
 }
 inline bool UserInfoExt::has_discoverypagectrlflag() const {
@@ -10842,7 +11219,7 @@ inline bool UserInfoExt::has_discoverypagectrlflag() const {
 }
 inline void UserInfoExt::clear_discoverypagectrlflag() {
   _impl_.discoverypagectrlflag_ = uint64_t{0u};
-  _impl_._has_bits_[1] &= ~0x00004000u;
+  _impl_._has_bits_[1] &= ~0x00008000u;
 }
 inline uint64_t UserInfoExt::_internal_discoverypagectrlflag() const {
   return _impl_.discoverypagectrlflag_;
@@ -10852,7 +11229,7 @@ inline uint64_t UserInfoExt::discoverypagectrlflag() const {
   return _internal_discoverypagectrlflag();
 }
 inline void UserInfoExt::_internal_set_discoverypagectrlflag(uint64_t value) {
-  _impl_._has_bits_[1] |= 0x00004000u;
+  _impl_._has_bits_[1] |= 0x00008000u;
   _impl_.discoverypagectrlflag_ = value;
 }
 inline void UserInfoExt::set_discoverypagectrlflag(uint64_t value) {
@@ -10864,9 +11241,11 @@ inline void UserInfoExt::set_discoverypagectrlflag(uint64_t value) {
 
 // GetProfileResponse
 
-// .BaseResponse baseResponse = 1;
+// required .BaseResponse baseResponse = 1;
 inline bool GetProfileResponse::_internal_has_baseresponse() const {
-  return this != internal_default_instance() && _impl_.baseresponse_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.baseresponse_ != nullptr);
+  return value;
 }
 inline bool GetProfileResponse::has_baseresponse() const {
   return _internal_has_baseresponse();
@@ -10887,14 +11266,14 @@ inline void GetProfileResponse::unsafe_arena_set_allocated_baseresponse(
   }
   _impl_.baseresponse_ = baseresponse;
   if (baseresponse) {
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:GetProfileResponse.baseResponse)
 }
 inline ::BaseResponse* GetProfileResponse::release_baseresponse() {
-  
+  _impl_._has_bits_[0] &= ~0x00000001u;
   ::BaseResponse* temp = _impl_.baseresponse_;
   _impl_.baseresponse_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -10910,13 +11289,13 @@ inline ::BaseResponse* GetProfileResponse::release_baseresponse() {
 }
 inline ::BaseResponse* GetProfileResponse::unsafe_arena_release_baseresponse() {
   // @@protoc_insertion_point(field_release:GetProfileResponse.baseResponse)
-  
+  _impl_._has_bits_[0] &= ~0x00000001u;
   ::BaseResponse* temp = _impl_.baseresponse_;
   _impl_.baseresponse_ = nullptr;
   return temp;
 }
 inline ::BaseResponse* GetProfileResponse::_internal_mutable_baseresponse() {
-  
+  _impl_._has_bits_[0] |= 0x00000001u;
   if (_impl_.baseresponse_ == nullptr) {
     auto* p = CreateMaybeMessage<::BaseResponse>(GetArenaForAllocation());
     _impl_.baseresponse_ = p;
@@ -10941,26 +11320,26 @@ inline void GetProfileResponse::set_allocated_baseresponse(::BaseResponse* baser
       baseresponse = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, baseresponse, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000001u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000001u;
   }
   _impl_.baseresponse_ = baseresponse;
   // @@protoc_insertion_point(field_set_allocated:GetProfileResponse.baseResponse)
 }
 
-// .ModUserInfo userInfo = 2;
+// required .ModUserInfo userInfo = 2;
 inline bool GetProfileResponse::_internal_has_userinfo() const {
-  return this != internal_default_instance() && _impl_.userinfo_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.userinfo_ != nullptr);
+  return value;
 }
 inline bool GetProfileResponse::has_userinfo() const {
   return _internal_has_userinfo();
 }
 inline void GetProfileResponse::clear_userinfo() {
-  if (GetArenaForAllocation() == nullptr && _impl_.userinfo_ != nullptr) {
-    delete _impl_.userinfo_;
-  }
-  _impl_.userinfo_ = nullptr;
+  if (_impl_.userinfo_ != nullptr) _impl_.userinfo_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000002u;
 }
 inline const ::ModUserInfo& GetProfileResponse::_internal_userinfo() const {
   const ::ModUserInfo* p = _impl_.userinfo_;
@@ -10978,14 +11357,14 @@ inline void GetProfileResponse::unsafe_arena_set_allocated_userinfo(
   }
   _impl_.userinfo_ = userinfo;
   if (userinfo) {
-    
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:GetProfileResponse.userInfo)
 }
 inline ::ModUserInfo* GetProfileResponse::release_userinfo() {
-  
+  _impl_._has_bits_[0] &= ~0x00000002u;
   ::ModUserInfo* temp = _impl_.userinfo_;
   _impl_.userinfo_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -11001,13 +11380,13 @@ inline ::ModUserInfo* GetProfileResponse::release_userinfo() {
 }
 inline ::ModUserInfo* GetProfileResponse::unsafe_arena_release_userinfo() {
   // @@protoc_insertion_point(field_release:GetProfileResponse.userInfo)
-  
+  _impl_._has_bits_[0] &= ~0x00000002u;
   ::ModUserInfo* temp = _impl_.userinfo_;
   _impl_.userinfo_ = nullptr;
   return temp;
 }
 inline ::ModUserInfo* GetProfileResponse::_internal_mutable_userinfo() {
-  
+  _impl_._has_bits_[0] |= 0x00000002u;
   if (_impl_.userinfo_ == nullptr) {
     auto* p = CreateMaybeMessage<::ModUserInfo>(GetArenaForAllocation());
     _impl_.userinfo_ = p;
@@ -11031,26 +11410,26 @@ inline void GetProfileResponse::set_allocated_userinfo(::ModUserInfo* userinfo) 
       userinfo = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, userinfo, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000002u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000002u;
   }
   _impl_.userinfo_ = userinfo;
   // @@protoc_insertion_point(field_set_allocated:GetProfileResponse.userInfo)
 }
 
-// .UserInfoExt userInfoExt = 3;
+// required .UserInfoExt userInfoExt = 3;
 inline bool GetProfileResponse::_internal_has_userinfoext() const {
-  return this != internal_default_instance() && _impl_.userinfoext_ != nullptr;
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  PROTOBUF_ASSUME(!value || _impl_.userinfoext_ != nullptr);
+  return value;
 }
 inline bool GetProfileResponse::has_userinfoext() const {
   return _internal_has_userinfoext();
 }
 inline void GetProfileResponse::clear_userinfoext() {
-  if (GetArenaForAllocation() == nullptr && _impl_.userinfoext_ != nullptr) {
-    delete _impl_.userinfoext_;
-  }
-  _impl_.userinfoext_ = nullptr;
+  if (_impl_.userinfoext_ != nullptr) _impl_.userinfoext_->Clear();
+  _impl_._has_bits_[0] &= ~0x00000004u;
 }
 inline const ::UserInfoExt& GetProfileResponse::_internal_userinfoext() const {
   const ::UserInfoExt* p = _impl_.userinfoext_;
@@ -11068,14 +11447,14 @@ inline void GetProfileResponse::unsafe_arena_set_allocated_userinfoext(
   }
   _impl_.userinfoext_ = userinfoext;
   if (userinfoext) {
-    
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:GetProfileResponse.userInfoExt)
 }
 inline ::UserInfoExt* GetProfileResponse::release_userinfoext() {
-  
+  _impl_._has_bits_[0] &= ~0x00000004u;
   ::UserInfoExt* temp = _impl_.userinfoext_;
   _impl_.userinfoext_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
@@ -11091,13 +11470,13 @@ inline ::UserInfoExt* GetProfileResponse::release_userinfoext() {
 }
 inline ::UserInfoExt* GetProfileResponse::unsafe_arena_release_userinfoext() {
   // @@protoc_insertion_point(field_release:GetProfileResponse.userInfoExt)
-  
+  _impl_._has_bits_[0] &= ~0x00000004u;
   ::UserInfoExt* temp = _impl_.userinfoext_;
   _impl_.userinfoext_ = nullptr;
   return temp;
 }
 inline ::UserInfoExt* GetProfileResponse::_internal_mutable_userinfoext() {
-  
+  _impl_._has_bits_[0] |= 0x00000004u;
   if (_impl_.userinfoext_ == nullptr) {
     auto* p = CreateMaybeMessage<::UserInfoExt>(GetArenaForAllocation());
     _impl_.userinfoext_ = p;
@@ -11121,9 +11500,9 @@ inline void GetProfileResponse::set_allocated_userinfoext(::UserInfoExt* userinf
       userinfoext = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
           message_arena, userinfoext, submessage_arena);
     }
-    
+    _impl_._has_bits_[0] |= 0x00000004u;
   } else {
-    
+    _impl_._has_bits_[0] &= ~0x00000004u;
   }
   _impl_.userinfoext_ = userinfoext;
   // @@protoc_insertion_point(field_set_allocated:GetProfileResponse.userInfoExt)
