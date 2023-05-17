@@ -1,5 +1,6 @@
 #include "Strings.h"
 #include <windows.h>
+#include "utf8.h"
 
 unsigned char BinMap[256] = {
 		0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -158,18 +159,13 @@ std::wstring AnsiToUnicode(const char* szStr)
 std::wstring Utf8ToUnicode(const char* szStr)
 {
 	std::wstring ret;
-	int nLen = MultiByteToWideChar(CP_UTF8, MB_PRECOMPOSED, szStr, -1, NULL, 0);
-	if (nLen == 0)
-	{
-		return ret;
+	try {
+		utf8::utf8to32(szStr, szStr + strlen(szStr), std::back_inserter(ret));
 	}
-	wchar_t* pResult = new wchar_t[nLen];
-	if (!pResult) {
-		return ret;
+	catch (const utf8::exception& e) {
+		// Conversion failed
+		return L"";
 	}
-	MultiByteToWideChar(CP_UTF8, MB_PRECOMPOSED, szStr, -1, pResult, nLen);
-	ret = pResult;
-	delete[]pResult;
 	return ret;
 }
 

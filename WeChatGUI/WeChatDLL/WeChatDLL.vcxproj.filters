@@ -350,5 +350,8 @@
     <ClInclude Include="Function\H5Web.h">
       <Filter>Function</Filter>
     </ClInclude>
+    <ClInclude Include="public\utf8.h">
+      <Filter>public</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -184,6 +184,7 @@
     <ClInclude Include="public\RWMutex.h" />
     <ClInclude Include="public\SigSearch.h" />
     <ClInclude Include="public\Strings.h" />
+    <ClInclude Include="public\utf8.h" />
     <ClInclude Include="public\WinApi.h" />
     <ClInclude Include="TinyXml\tinyxml2.h" />
     <ClInclude Include="WeChatDLL.h" />
